@@ -1,12 +1,23 @@
-header {
+body {
     font-family: Arial, Verdana, sans-serif;
+    bottom: 0;
+    padding: 0;
+}
+
+header {
     font-size: xx-large;
     font-weight: bold;
     background-color: cornflowerblue;
     text-align: center;
     text-transform: none;
-    padding: 75px;
+    padding: 40px;
+    color: beige;
+}
 
+header h6 {
+    color: beige;
+    font-size: initial;
+    font-weight: lighter;
 }
 
 footer {
@@ -16,10 +27,11 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    color: beige;
 }
 
 table {
-    background-color: cornflowerblue;
+    background-color: beige;
     border: 1px solid black;
     border-collapse: collapse;
     margin: 0 auto;
@@ -30,4 +42,39 @@ table {
 th {
     border: 1px solid black;
     padding: 5px;
+}
+
+nav {
+    background-color: beige;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+nav a {
+    text-align: center;
+    font-size: x-large;
+    color: cornflowerblue;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: aquamarine;
+}
+
+img {
+    width:400px;
+    padding: 50px 575px;
 }
