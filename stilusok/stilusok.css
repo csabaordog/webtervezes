@@ -102,7 +102,7 @@ th {
     margin: 50px auto;
 
 }
-main{
+main, header{
     max-width: 1000px;
     margin: 0 auto;
 }
