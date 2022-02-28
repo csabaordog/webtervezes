@@ -1,6 +1,6 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -33,10 +33,16 @@ header h6 {
     margin-left: auto;
     list-style-type: none;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
 }
-
+#felhasznalovalami li, #menu a{
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #000;
+}
 footer {
     background-color: cornflowerblue;
     text-align: center;
@@ -72,24 +78,21 @@ th {
     flex-wrap: wrap;
 }
 
-#menu li {
-
-    width: 120px;
+#oldalak li {
+    width: 100px;
     text-align: center;
-    padding: 10px
+    padding: 10px 0;
 }
 
-#menu a {
-    text-align: center;
-    font-size: x-large;
-    color: cornflowerblue;
-
-    text-decoration: none;
-
-}
 
 #menu li:hover {
     background-color: aquamarine;
+}
+#menu a:visited{
+    color: #000;
+}
+#felhasznalovalami a:visited{
+    color: #000;
 }
 
 #valami {
@@ -101,5 +104,5 @@ th {
 }
 main{
     max-width: 1000px;
-    margin: 0px auto;
+    margin: 0 auto;
 }
