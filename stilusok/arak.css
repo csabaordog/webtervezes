@@ -21,3 +21,7 @@ header {
     font-size: xx-large;
     font-weight: bold;
 }
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
