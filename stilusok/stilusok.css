@@ -50,6 +50,7 @@ footer {
     bottom: 0;
     width: 100%;
     color: beige;
+
 }
 
 table {
@@ -99,10 +100,10 @@ th {
     width: 400px;
     display: block;
 
-    margin: 50px auto;
+    margin: 40px auto;
 
 }
 main {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 40px auto;
 }
