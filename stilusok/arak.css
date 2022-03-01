@@ -15,13 +15,71 @@ th,td {
     height: 50px;
 }
 header {
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: cornflowerblue;
     text-align: center;
     text-transform: none;
     padding: 40px;
-    font-size: xx-large;
-    font-weight: bold;
+    color: beige;
 }
 main {
     max-width: 1000px;
     margin: 0 auto;
+    min-height: 100%;
+}
+footer {
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    color: beige;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+}
+#felhasznalovalami{
+    margin-left: auto;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#felhasznalovalami li, #menu a{
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #000;
+}
+
+#menu {
+    background-color: beige;
+
+}
+
+#oldalak {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#oldalak li {
+    width: 100px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+#menu li:hover {
+    background-color: aquamarine;
+}
+#menu a:visited{
+    color: #000;
+}
+#felhasznalovalami a:visited{
+    color: #000;
 }
