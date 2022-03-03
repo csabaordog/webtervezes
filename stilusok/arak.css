@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: Arial, Verdana, sans-serif;
+    bottom: 0;
+    padding: 0;
+}
+header h6 {
+    color: beige;
+    font-size: initial;
+    font-weight: lighter;
+}
 table {
     border: 1px solid black;
     text-align: center;
