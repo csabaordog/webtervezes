@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Regisztracio</title>
+        <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
     </head>
     <body>
+    <header>
+        Kutya birodalom
+        <h6>Az állatimádók oldala</h6>
+    </header>
+    <nav id="menu">
+        <ul id="oldalak">
+            <li>
+                <a href="index.html">Főoldal</a>
+            </li>
+            <li>
+                <a href="galeria.html">Galéria</a>
+            </li>
+            <li>
+                <a href="termekek.html">Termékek</a>
+            </li>
+            <li>
+                <a href="arak.html">Árak</a>
+            </li>
+            <li>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </li>
+            <li>
+                <a href="beallitasok.html">Beállítások</a>
+            </li>
+        </ul>
+        <ul id="felhasznalovalami">
+            <li onclick="bejelentkezes()"><a href="bejelentkezes.html">Bejelentkezes</a></li>
+            <li onclick="regisztracio()"><a href="#">Regisztracio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Regisztráció</h2>
 
+        <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+            <label for="usname">Felhasználónév (Kötelező):</label>
+            <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required>
+
+            <label for="pswd">Jelszó (Kötelező):</label>
+            <input type="password" name="password" id="pswd" maxlength="25" required>
+
+            <label for="pswd2">Jelszó ismét (Kötelező):</label>
+            <input type="password" name="password" id="pswd2" maxlength="25" required>
+
+            <label for="email">E-mail cím (Kötelező):</label>
+            <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required>
+
+            <label for="birth">Születési év (Kötelező):</label>
+            <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required>
+
+            <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
+            <select name="care0" id="care">
+                <option value="very-little">Naponta pár percet.</option>
+                <option value="little">Naponta fél órát.</option>
+                <option value="moderate">Naponta 1-2 órát.</option>
+                <option value="average">Naponta 3-4 órát.</option>
+                <option value="lot">Naponta 5-6 órát.</option>
+                <option value="very-much">Naponta több, mint 6 órát.</option>
+            </select>
+
+        </form>
+    </main>
+    <footer>
+
+    </footer>
     </body>
 </html>
