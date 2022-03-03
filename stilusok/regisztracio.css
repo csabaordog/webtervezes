@@ -1,3 +1,26 @@
 *{
     padding: 0px;
+    box-sizing: border-box;
+}
+.registration {
+    padding: 30px;
+    border: 3px solid cornflowerblue;
+    margin: 20px auto;
+    width: 600px;
+}
+
+main > h2 {
+    text-align: center;
+}
+
+form > input, form > textarea, form > select, form > div {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.checkbox > label {
+    display: block;
+    margin-bottom: 10px;
 }
