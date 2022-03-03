@@ -69,6 +69,8 @@ th {
 
 #menu {
     background-color: beige;
+    position: sticky;
+    top: 0;
 
 }
 
