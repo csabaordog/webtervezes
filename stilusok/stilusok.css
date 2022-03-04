@@ -50,21 +50,6 @@ footer {
     bottom: 0;
     width: 100%;
     color: beige;
-
-}
-
-table {
-    background-color: beige;
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 0 auto;
-    text-align: center;
-    width: 50%;
-}
-
-th {
-    border: 1px solid black;
-    padding: 5px;
 }
 
 #menu {
@@ -87,6 +72,10 @@ th {
     padding: 10px 0;
 }
 
+#menu > ul {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 #menu li:hover {
     background-color: aquamarine;
