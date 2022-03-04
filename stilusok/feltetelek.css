@@ -1,0 +1,11 @@
+main > h2 {
+    padding: 10px 0;
+}
+
+li {
+    padding: 10px;
+}
+
+main > ul {
+    padding: 0 0 0 20px;
+}

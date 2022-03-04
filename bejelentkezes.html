@@ -4,7 +4,13 @@
         <meta charset="UTF-8">
         <title>Bejelentkezes</title>
         <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
+        <link rel="stylesheet" href="stilusok/regisztracio.css" type="text/css">
         <link rel="icon" href="favicon.ico" type="image/ico">
+        <style>
+            footer {
+                position: fixed;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -38,6 +44,18 @@
             </ul>
         </nav>
         <main>
+            <h2>Bejelentkezés</h2>
+            <div class="login">
+                <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <label for="usname">Felhasználónév:</label>
+                    <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required>
+
+                    <label for="pswd">Jelszó:</label>
+                    <input type="password" name="password" id="pswd" maxlength="25" required>
+
+                    <input type="submit" name="login-btn" value="Bejelentkezés">
+                </form>
+            </div>
 
 
         </main>
