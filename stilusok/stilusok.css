@@ -2,18 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 
 body {
     font-family: Arial, Verdana, sans-serif;
     bottom: 0;
     padding: 0;
+    background-color: #49A2FC;
 }
 
 header {
     font-size: xx-large;
     font-weight: bold;
-    background-color: cornflowerblue;
+    background-color: #4F49FC;
     text-align: center;
     text-transform: none;
     padding: 40px;
@@ -41,7 +43,7 @@ header h6 {
     text-align: center;
     text-decoration: none;
     padding: 10px 0;
-    color: #000;
+
 }
 footer {
     background-color: cornflowerblue;
@@ -53,7 +55,7 @@ footer {
 }
 
 #menu {
-    background-color: beige;
+    background-color: #4E71E6;
     position: sticky;
     top: 0;
 
@@ -78,13 +80,14 @@ footer {
 }
 
 #menu li:hover {
-    background-color: aquamarine;
+    background-color: #9CBEDF;
+    cursor: pointer;
 }
 #menu a:visited{
-    color: #000;
+    color: #fff;
 }
 #felhasznalovalami a:visited{
-    color: #000;
+    color: #fff;
 }
 
 #valami {
