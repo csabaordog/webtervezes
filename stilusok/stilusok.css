@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
     background-color: #4F49FC;
     text-align: center;
@@ -37,6 +37,7 @@ header h6 {
 #menu a{
     text-decoration: none;
     padding: 10px 0;
+    display: block;
 
 }
 
@@ -74,9 +75,7 @@ footer {
 #menu li{
     display: inline-block;
 }
-#menu a{
-    display: block;
-}
+
 #menu a:hover {
     background-color: #9CBEDF;
     cursor: pointer;
