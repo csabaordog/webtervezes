@@ -13,8 +13,15 @@ main > h2 {
     text-align: center;
 }
 
-form > input, form > textarea, form > select, form > div {
+form > input, form > textarea, form > select, option {
     display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+    color: #000;
+}
+
+form > div {
     margin: 10px auto;
     padding: 10px;
     width: 100%;
