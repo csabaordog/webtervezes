@@ -6,6 +6,7 @@
 }
 #jelenlegiOldal{
     background-color:#3550C0;
+
 }
 body {
     font-family: Arial, Verdana, sans-serif;
@@ -34,17 +35,8 @@ header h6 {
 }
 
 
-#felhasznalovalami{
-    margin-left: auto;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 
-#felhasznalovalami li, #menu a{
-    width: 120px;
-    text-align: center;
+#menu a{
     text-decoration: none;
     padding: 10px 0;
 
@@ -61,34 +53,33 @@ footer {
 
 #menu {
     background-color: #4E71E6;
-
     position: sticky;
     top: 0;
-
-    display: flex;
-    flex-direction: row;
 
 }
 
 #oldalak {
+    justify-content: center;
     list-style-type: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
 }
 
 #oldalak li {
     width: 150px;
     text-align: center;
-    padding: 10px 0;
 }
 
-#menu > ul {
-    max-width: 900px;
-    margin: 0 auto;
-}
 
-#menu li:hover {
+#menu li{
+    display: inline-block;
+}
+#menu a{
+    display: block;
+}
+#menu a:hover {
     background-color: #9CBEDF;
     cursor: pointer;
 }
@@ -109,6 +100,7 @@ footer {
 }
 
 main {
+    padding: 20px;
     max-width: 1000px;
     margin: 40px auto;
 }
