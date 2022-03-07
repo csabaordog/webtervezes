@@ -78,13 +78,13 @@ footer {
 }
 
 #oldalak li {
-    width: 100px;
+    width: 150px;
     text-align: center;
     padding: 10px 0;
 }
 
 #menu > ul {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
