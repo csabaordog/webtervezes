@@ -9,7 +9,8 @@ body {
     font-family: Arial, Verdana, sans-serif;
     bottom: 0;
     padding: 0;
-    background-color: #49A2FC;
+
+    background: linear-gradient(90deg, #00c4ff, #494cfc);
 }
 
 header {
@@ -133,4 +134,29 @@ h2{
     animation-duration: 12s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+/* 600px-nel kisebb kijelzok (xs) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Legalabb 600px-es kijelzok (s) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Legalabb 768px-es kijelzok (md) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Legalabb 992px-es kijelzo (lg) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Legalabb 1200px-es kijelzo (xl) */
+@media only screen and (min-width: 1200px) {
+
 }
