@@ -102,8 +102,7 @@ a[href="#"]{
 }
 
 main {
-    padding: 20px;
-    max-width: 1000px;
+    padding: 20px 50px;
     margin: 40px auto;
     min-height: 100vh;
 }
@@ -135,7 +134,9 @@ h2{
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
+p{
+    max-width: 80%;
+}
 /* 600px-nel kisebb kijelzok (xs) */
 @media only screen and (max-width: 600px) {
 
