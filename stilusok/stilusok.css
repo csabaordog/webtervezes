@@ -20,14 +20,13 @@ header {
     text-align: center;
     text-transform: none;
     padding: 40px;
-    color: beige;
+    text-shadow: 2px 2px black;
 }
 h2{
     text-shadow: 2px 2px black;
 }
 
 header h6 {
-    color: beige;
     font-size: initial;
     font-weight: lighter;
 }
@@ -42,12 +41,11 @@ header h6 {
 }
 
 footer {
-    background-color: cornflowerblue;
+    background-color: #4F49FC;
     text-align: center;
     padding: 10px;
     bottom: 0;
     width: 100%;
-    color: beige;
 }
 
 #menu {
@@ -105,10 +103,10 @@ main {
     margin: 40px auto;
     min-height: 100vh;
 }
-h1{
+header > h1{
     font-size: 45px;
 }
-h2{
+header > h2{
     font-size: 20px;
 }
 @keyframes kepsorozat{

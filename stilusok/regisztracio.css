@@ -4,7 +4,7 @@
 }
 .registration, .login {
     padding: 30px;
-    border: 3px solid cornflowerblue;
+    border: 3px solid #4F49FC;
     margin: 20px auto;
     width: 600px;
 }
@@ -33,7 +33,7 @@ form > div {
 }
 
 input[type="submit"], input[type="reset"] {
-    background-color: cornflowerblue;
+    background-color: #4F49FC;
     color: beige;
     font-size: large;
     border: none;
