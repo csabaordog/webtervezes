@@ -22,9 +22,6 @@ header {
     padding: 40px;
     text-shadow: 2px 2px black;
 }
-h2{
-    text-shadow: 2px 2px black;
-}
 
 header h6 {
     font-size: initial;
@@ -108,6 +105,17 @@ header > h1{
 }
 header > h2{
     font-size: 20px;
+    text-shadow: 2px 2px black;
+}
+
+blockquote {
+    padding: 20px 0;
+}
+p{
+    padding: 10px 0;
+}
+ul {
+    padding: 10px;
 }
 @keyframes kepsorozat{
     0% { background-image: url('../media/kutya01.png'); }
