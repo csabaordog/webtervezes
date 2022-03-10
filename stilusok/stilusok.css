@@ -14,20 +14,19 @@ body {
 }
 
 header {
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
     background-color: #4F49FC;
     text-align: center;
     text-transform: none;
     padding: 40px;
-    color: beige;
+    text-shadow: 2px 2px black;
 }
 h2{
     text-shadow: 2px 2px black;
 }
 
 header h6 {
-    color: beige;
     font-size: initial;
     font-weight: lighter;
 }
@@ -37,16 +36,16 @@ header h6 {
 #menu a{
     text-decoration: none;
     padding: 10px 0;
+    display: block;
 
 }
 
 footer {
-    background-color: cornflowerblue;
+    background-color: #4F49FC;
     text-align: center;
     padding: 10px;
     bottom: 0;
     width: 100%;
-    color: beige;
 }
 
 #menu {
@@ -74,9 +73,7 @@ footer {
 #menu li{
     display: inline-block;
 }
-#menu a{
-    display: block;
-}
+
 #menu a:hover {
     background-color: #9CBEDF;
     cursor: pointer;
@@ -106,10 +103,10 @@ main {
     margin: 40px auto;
     min-height: 100vh;
 }
-h1{
+header > h1{
     font-size: 45px;
 }
-h2{
+header > h2{
     font-size: 20px;
 }
 @keyframes kepsorozat{
