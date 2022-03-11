@@ -46,7 +46,7 @@ footer {
 }
 
 #menu {
-    background-color: #4E71E6;
+    background-color: rgb(61, 64, 77);
     position: sticky;
     top: 0;
 
@@ -62,7 +62,7 @@ footer {
 }
 
 #oldalak li {
-    width: 150px;
+    width: 140px;
     text-align: center;
 }
 
@@ -124,7 +124,7 @@ ul {
 }
 
 #kepsorozat-doboz {
-    position: absolute;
+    float: right;
     right: 0;
     margin: 10px 20px 15px 10px;
     border: 5px solid lightgray;
@@ -142,9 +142,25 @@ ul {
 p{
     max-width: 80%;
 }
+/* Legalabb 1200px-es kijelzo (xl) */
+@media only screen and (max-width: 1300px) {
+    #menu{
+        position: static;
+    }
+    #menu li{
+        width: 50%;
+    }
+}
+
+
 /* 600px-nel kisebb kijelzok (xs) */
 @media only screen and (max-width: 600px) {
-
+    #menu{
+        position: static;
+    }
+    #menu li{
+        width: 100%;
+    }
 }
 
 /* Legalabb 600px-es kijelzok (s) */
@@ -162,7 +178,33 @@ p{
 
 }
 
-/* Legalabb 1200px-es kijelzo (xl) */
-@media only screen and (min-width: 1200px) {
 
+#ugras-gomb{
+    position:fixed;
+    right:0;
+    bottom:0;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    margin:1rem;
+    background-color:#353535;
+    box-shadow:0.125rem 0.125rem 1rem rgba(53,53,53,0.5);;
+    cursor:pointer;
+    border:2px solid rgba(255,255,255,0.05);
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    opacity:0.0;
+    transition:opacity 0.3s, transform 0.3s, background-color 0.3s;
+}
+#ugras-gomb:hover{
+    background-color:#404040;
+}
+#ugras-gomb p{
+    line-height:0.75rem;
+    display:flex;
+    align-self:center;
+    margin:0;
+    text-align:center;
+    color:white;
 }
