@@ -30,7 +30,7 @@ header h6 {
 
 
 
-#menu a{
+nav a{
     text-decoration: none;
     padding: 10px 0;
     display: block;
@@ -45,7 +45,7 @@ footer {
     width: 100%;
 }
 
-#menu {
+nav {
     background-color: rgb(61, 64, 77);
     position: sticky;
     top: 0;
@@ -62,21 +62,21 @@ footer {
 }
 
 #oldalak li {
-    width: 140px;
+    min-width: 140px;
     text-align: center;
 }
 
 
-#menu li{
+nav li{
     display: inline-block;
 }
 
-#menu a:hover {
+nav a:hover {
     background-color: #9CBEDF;
     cursor: pointer;
 }
 
-#menu a:visited{
+nav a:visited{
     color: #fff;
 }
 
@@ -144,10 +144,10 @@ p{
 }
 /* Legalabb 1200px-es kijelzo (xl) */
 @media only screen and (max-width: 1300px) {
-    #menu{
+    nav{
         position: static;
     }
-    #menu li{
+    nav li{
         width: 50%;
     }
 }
@@ -155,10 +155,16 @@ p{
 
 /* 600px-nel kisebb kijelzok (xs) */
 @media only screen and (max-width: 600px) {
-    #menu{
+    #kepsorozat-doboz {
+        float:none;
+        display: block;
+        margin: 10px auto;
+
+    }
+    nav{
         position: static;
     }
-    #menu li{
+    nav li{
         width: 100%;
     }
 }
