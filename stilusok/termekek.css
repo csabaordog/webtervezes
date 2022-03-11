@@ -1,0 +1,33 @@
+.grid-container{
+    display: inline-grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    width: 100%;
+}
+.termekek{
+    margin:0 auto;
+    width: 80%;
+}
+
+.grid-item{
+    display: grid;
+    background: red;
+}
+
+.item1{
+
+    grid-column-end: 2;
+    grid-row-end: 2;
+}
+
+.item2{
+    grid-column-end: 3;
+    grid-row-end: 2;
+}
+.item3{
+    grid-column-end: 4;
+    grid-row-end: 2;
+}
+.termek-kep{
+    max-width: 200px;
+}
