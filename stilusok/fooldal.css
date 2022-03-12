@@ -1,0 +1,23 @@
+
+#kepsorozat-doboz {
+    float: right;
+    right: 0;
+    margin: 10px 20px 15px 10px;
+    border: 5px solid lightgray;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 15px 30px black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation-name: kepsorozat;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes kepsorozat{
+    0% { background-image: url('../media/kutya01.png'); }
+    50% { background-image: url('../media/kutya02.png'); }
+    100% { background-image: url('../media/kutya03.png'); }
+}

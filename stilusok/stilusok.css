@@ -38,19 +38,43 @@ nav a{
 }
 
 footer {
-    background-color: #4F49FC;
     text-align: center;
     padding: 10px;
     bottom: 0;
     width: 100%;
     min-height: 50px;
+    background-color: rgb(61, 64, 77);
 }
 
 nav {
     background-color: rgb(61, 64, 77);
     position: sticky;
     top: 0;
+}
 
+nav li{
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #9CBEDF;
+    cursor: pointer;
+}
+
+nav a:visited{
+    color: #fff;
+}
+
+blockquote {
+    padding: 20px 0;
+}
+p{
+    padding: 10px 0;
+    max-width: 80%;
+
+}
+ul {
+    padding: 10px;
 }
 
 #oldalak {
@@ -65,20 +89,12 @@ nav {
 #oldalak li {
     min-width: 140px;
     text-align: center;
+    border-right: 1px solid white;
+
+
 }
-
-
-nav li{
-    display: inline-block;
-}
-
-nav a:hover {
-    background-color: #9CBEDF;
-    cursor: pointer;
-}
-
-nav a:visited{
-    color: #fff;
+#oldalak li:first-child{
+    border-left: 1px solid white;
 }
 
 #felhasznalovalami a:visited{
@@ -109,40 +125,8 @@ header > h2{
     text-shadow: 2px 2px black;
 }
 
-blockquote {
-    padding: 20px 0;
-}
-p{
-    padding: 10px 0;
-}
-ul {
-    padding: 10px;
-}
-@keyframes kepsorozat{
-    0% { background-image: url('../media/kutya01.png'); }
-    50% { background-image: url('../media/kutya02.png'); }
-    100% { background-image: url('../media/kutya03.png'); }
-}
 
-#kepsorozat-doboz {
-    float: right;
-    right: 0;
-    margin: 10px 20px 15px 10px;
-    border: 5px solid lightgray;
-    width: 300px;
-    height: 300px;
-    box-shadow: 0 15px 30px black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    animation-name: kepsorozat;
-    animation-duration: 12s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-p{
-    max-width: 80%;
-}
+
 /* Legalabb 1200px-es kijelzo (xl) */
 @media only screen and (max-width: 1300px) {
     nav{
@@ -185,13 +169,15 @@ p{
 
 }
 
-
+/*
+    Ugras a lap tetejere gomb formazasa
+ */
 #ugras-gomb{
     position:fixed;
     right:0;
     bottom:0;
-    width:64px;
-    height:64px;
+    width:50px;
+    height:50px;
     border-radius:50%;
     margin:1rem;
     background-color:#353535;
@@ -208,7 +194,7 @@ p{
     background-color:#404040;
 }
 #ugras-gomb p{
-    line-height:0.75rem;
+    line-height:0.7rem;
     display:flex;
     align-self:center;
     margin:0;
