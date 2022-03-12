@@ -11,6 +11,13 @@
 
 .grid-item{
     display: grid;
+    border: white 2px solid;
+    border-radius: 5%;
+    text-align: center;
+    padding: 15px;
+}
+.grid-item input{
+    max-width: 100px;
 }
 
 .item1{
@@ -29,4 +36,21 @@
 }
 .termek-kep{
     max-width: 200px;
+}
+@media only screen and (max-width: 600px) {
+    .termekek{
+        width: 100%;
+    }
+    .grid-container{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+
+    }
+    .grid-item{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 50px 0;
+    }
 }

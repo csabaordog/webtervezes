@@ -70,8 +70,6 @@ blockquote {
 }
 p{
     padding: 10px 0;
-    max-width: 80%;
-
 }
 ul {
     padding: 10px;
@@ -151,6 +149,7 @@ header > h2{
     }
     nav li{
         width: 100%;
+        border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz */
     }
 }
 
