@@ -31,7 +31,7 @@ h1,h2{
 }
 
 
-nav a{
+#menu a{
     text-decoration: none;
     padding: 10px 0;
     display: block;
@@ -46,7 +46,7 @@ footer {
     background-color: rgb(61, 64, 77);
 }
 
-nav {
+#menu {
     background-color: rgb(61, 64, 77);
     position: sticky;
     top: 0;
@@ -58,20 +58,17 @@ nav {
 }
 
 
-nav a:hover {
+#menu a:hover {
     background-color: #9CBEDF;
     cursor: pointer;
 }
 
-nav a:visited{
+#menu a:visited{
     color: #fff;
 }
 
 blockquote {
     padding: 20px 0;
-}
-p{
-    padding: 10px 0;
 }
 
 #menu a{
@@ -90,7 +87,7 @@ p{
 
 
 /* aktualis oldal menupontja */
-a[href="#"]{
+#menu a[href="#"]{
     background-color:#3550C0;
 }
 
@@ -111,10 +108,10 @@ header > h2{
 
 /* Legalabb 1200px-es kijelzo (xl) */
 @media only screen and (max-width: 1300px) {
-    nav{
+    #menu{
         position: static;
     }
-    nav a{
+    #menu a{
         width: 50%;
     }
 }
@@ -125,13 +122,13 @@ header > h2{
     #kepsorozat-doboz {
         float:none;
         display: block;
-        margin: 10px auto;
+        margin: 50px auto;
 
     }
-    nav{
+    #menu{
         position: static;
     }
-    nav a{
+    #menu a{
         width: 100%;
         border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz */
 
