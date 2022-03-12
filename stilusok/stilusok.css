@@ -9,13 +9,13 @@ body {
     bottom: 0;
     padding: 0;
 
-    background: linear-gradient(90deg, #0066ff, #0E3EDA);
+    background: linear-gradient(90deg, #0066ff, #0779E4);
 }
 
 header {
     font-size: x-large;
     font-weight: bold;
-    background: linear-gradient(90deg, #0066ff, #0E3EDA);
+    background: linear-gradient(90deg, #0779E4, #0E3EDA);
     text-align: center;
     text-transform: none;
     padding: 40px;
@@ -43,11 +43,11 @@ footer {
     bottom: 0;
     width: 100%;
     min-height: 50px;
-    background-color: rgb(61, 64, 77);
+    background-color: #3D404DFF;
 }
 
 #menu {
-    background-color: rgb(61, 64, 77);
+    background-color: #3D404DFF;
     position: sticky;
     top: 0;
     padding: 10px;
