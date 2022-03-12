@@ -50,11 +50,13 @@ nav {
     background-color: rgb(61, 64, 77);
     position: sticky;
     top: 0;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-nav li{
-    display: inline-block;
-}
 
 nav a:hover {
     background-color: #9CBEDF;
@@ -71,27 +73,14 @@ blockquote {
 p{
     padding: 10px 0;
 }
-ul {
-    padding: 10px;
-}
 
-#oldalak {
-    justify-content: center;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-}
-
-#oldalak li {
+#menu a{
     min-width: 140px;
     text-align: center;
     border-right: 1px solid white;
-
-
+    display: inline-block;
 }
-#oldalak li:first-child{
+#menu a:first-child{
     border-left: 1px solid white;
 }
 
@@ -99,12 +88,7 @@ ul {
     color: #fff;
 }
 
-#valami {
-    width: 400px;
-    display: block;
-    margin: 40px auto;
 
-}
 /* aktualis oldal menupontja */
 a[href="#"]{
     background-color:#3550C0;
@@ -130,7 +114,7 @@ header > h2{
     nav{
         position: static;
     }
-    nav li{
+    nav a{
         width: 50%;
     }
 }
@@ -147,9 +131,10 @@ header > h2{
     nav{
         position: static;
     }
-    nav li{
+    nav a{
         width: 100%;
         border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz */
+
     }
 }
 
