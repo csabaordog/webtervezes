@@ -60,11 +60,6 @@ footer {
 
 #menu a:hover {
     background-color: #9CBEDF;
-    cursor: pointer;
-}
-
-#menu a:visited{
-    color: #fff;
 }
 
 blockquote {
@@ -76,13 +71,10 @@ blockquote {
     text-align: center;
     border-right: 1px solid white;
     display: inline-block;
+    color: #fff;
 }
 #menu a:first-child{
     border-left: 1px solid white;
-}
-
-#felhasznalovalami a:visited{
-    color: #fff;
 }
 
 
