@@ -9,13 +9,13 @@ body {
     bottom: 0;
     padding: 0;
 
-    background: linear-gradient(90deg, #0066ff, #1516a2);
+    background: linear-gradient(90deg, #0066ff, #0E3EDA);
 }
 
 header {
     font-size: x-large;
     font-weight: bold;
-    background: linear-gradient(90deg, #0066ff, #1516a2);
+    background: linear-gradient(90deg, #0066ff, #0E3EDA);
     text-align: center;
     text-transform: none;
     padding: 40px;
