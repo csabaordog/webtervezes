@@ -2,9 +2,10 @@ ol {
     padding: 20px;
 }
 
-img {
+#img-asito-kutya {
     display: block;
     margin: 20px auto;
+    max-width: 500px;
 }
 caption{
     font-size: 30px;
