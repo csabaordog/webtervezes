@@ -1,6 +1,15 @@
 ol {
     padding: 20px;
 }
+h2 {
+    text-align: center;
+    padding: 5px;
+}
+audio {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
 
 #img-asito-kutya {
     display: block;
