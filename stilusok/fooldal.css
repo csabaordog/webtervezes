@@ -15,7 +15,9 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
+main li{
+    margin: 10px 0;
+}
 @keyframes kepsorozat{
     0% { background-image: url('../media/kutya01.png'); }
     50% { background-image: url('../media/kutya02.png'); }

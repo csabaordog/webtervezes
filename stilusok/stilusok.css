@@ -59,7 +59,7 @@ footer {
 
 
 #menu a:hover {
-    background-color: #9CBEDF;
+    background-color: #4D505D;
 }
 
 blockquote {
@@ -80,7 +80,7 @@ blockquote {
 
 /* aktualis oldal menupontja */
 #menu a[href="#"]{
-    background-color:#3550C0;
+    background-color: #2D303D;
 }
 
 main {
