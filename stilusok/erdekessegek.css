@@ -1,9 +1,8 @@
 ol {
     padding: 20px;
 }
-h2 {
-    text-align: center;
-    padding: 5px;
+p{
+    padding: 10px 0;
 }
 audio {
     margin-right: auto;
@@ -16,6 +15,7 @@ audio {
     margin: 20px auto;
     max-width: 500px;
 }
+
 caption{
     font-size: 30px;
     padding: 20px;
