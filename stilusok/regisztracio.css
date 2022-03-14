@@ -4,9 +4,11 @@
 }
 .registration, .login {
     padding: 30px;
-    border: 3px solid #0E3EDA;
+    border: 3px solid white;
+    border-radius: 20px 20px;
     margin: 20px auto;
-    width: 600px;
+    max-width: 700px;
+    width: 92%;
 }
 
 main > h2 {
@@ -20,6 +22,7 @@ form > input, form > textarea, form > select, option {
     width: 100%;
     color: #000;
 }
+
 
 form > div {
     margin: 10px auto;

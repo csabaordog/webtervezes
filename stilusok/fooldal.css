@@ -23,3 +23,7 @@ main li{
     50% { background-image: url('../media/kutya02.png'); }
     100% { background-image: url('../media/kutya03.png'); }
 }
+#video{
+    max-width: 700px;
+    width: 92%;
+}

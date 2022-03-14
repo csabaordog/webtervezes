@@ -23,7 +23,7 @@ p {
 
 .grid-item{
     display: grid;
-    border: #2D31FA 3px solid;
+    border: white 3px solid;
     border-radius: 5%;
     text-align: center;
     padding: 15px;
