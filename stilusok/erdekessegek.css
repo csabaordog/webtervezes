@@ -14,6 +14,7 @@ audio {
     display: block;
     margin: 20px auto;
     max-width: 500px;
+    width: 90%;
 }
 
 caption{
@@ -25,7 +26,8 @@ table {
     text-align: center;
     border-collapse: collapse;
     margin: 50px auto;
-    width: 60%;
+    max-width: 800px;
+    width: 90%;
 }
 th,td {
     border: 1px solid black;

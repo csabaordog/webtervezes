@@ -68,6 +68,7 @@ video {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 
@@ -80,7 +81,7 @@ blockquote {
 }
 
 #menu a{
-    min-width: 140px;
+    min-width: 130px;
     text-align: center;
     border-right: 1px solid white;
     display: inline-block;
@@ -97,7 +98,7 @@ blockquote {
 }
 
 main {
-    padding: 20px 40px;
+    padding: 20px;
     margin: 40px auto;
     min-height: 100vh;
 }
@@ -108,14 +109,11 @@ header > h2{
     font-size: 20px;
     text-shadow: 2px 2px black;
 }
-.bi-list{
-    color: white;
-    font-size: 50px;
-}
+
 
 
 /* Legalabb 1200px-es kijelzo (xl) */
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1100px) {
     #menu{
         position: static;
     }
