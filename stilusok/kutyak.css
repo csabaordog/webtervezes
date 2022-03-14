@@ -3,6 +3,19 @@ caption{
     padding: 20px;
 }
 
+#img-cuki-kutya {
+    display: block;
+    margin: 20px auto;
+    max-width: 550px;
+    float: right;
+}
+h2 {
+    margin: 0 0 0 15px;
+}
+ul {
+    margin: 0 0 0 30px;
+}
+
 table {
     border: 1px solid black;
     text-align: center;

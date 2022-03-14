@@ -1,10 +1,10 @@
 input {
-    background-color: #2D31FA;
+    background-color: #DFF6FF;
     border: none;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: #000;
 }
 p {
     padding: 5px;
@@ -23,7 +23,7 @@ p {
 
 .grid-item{
     display: grid;
-    border: white 3px solid;
+    border: #DFF6FF 3px solid;
     border-radius: 5%;
     text-align: center;
     padding: 15px;

@@ -8,6 +8,7 @@ audio {
     margin-right: auto;
     margin-left: auto;
     display: block;
+    z-index:0;
 }
 
 #img-asito-kutya {
