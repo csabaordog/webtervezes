@@ -73,7 +73,8 @@ video {
 
 
 #menu a:hover {
-    background-color: #4D505D;
+    background-color: #6D707D;
+    transition: .75s;
 }
 
 blockquote {
@@ -117,9 +118,9 @@ header > h2{
 
 /* Legalabb 1200px-es kijelzo (xl) */
 @media only screen and (max-width: 1300px) {
-    #menu{
+   /* #menu{
         position: static;
-    }
+    }*/
     #menu a{
         width: 50%;
         border: none !important;
@@ -136,9 +137,9 @@ header > h2{
         margin: 25px auto !important;
 
     }
-    #menu{
+    /* #menu{
         position: static;
-    }
+    }*/
     #menu a{
         width: 100%;
         border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz */
@@ -158,7 +159,9 @@ header > h2{
 
 /* Legalabb 992px-es kijelzo (lg) */
 @media only screen and (min-width: 992px) {
-
+    main{
+        padding: 50px 100px;
+    }
 }
 
 /*

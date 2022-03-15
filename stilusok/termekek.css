@@ -15,6 +15,7 @@ p {
     column-gap: 50px;
     row-gap: 50px;
     width: 100%;
+    justify-content: center;
 }
 .termekek{
     margin:0 auto;
@@ -26,7 +27,10 @@ p {
     border: #DFF6FF 3px solid;
     border-radius: 5%;
     text-align: center;
+
     padding: 15px;
+    width: 325px;
+
 }
 .grid-item input{
     max-width: 100px;
@@ -67,35 +71,20 @@ p {
         grid-column-end: 3;
         grid-row-end: 2;
     }
-    .item3{
-        grid-column-end: 2;
-        grid-row-end: 3;
-    }
-    .grid-container{
-        width: 90%;
-        margin: 0 auto;
 
-    }
 
 }
 
 @media only screen and (max-width: 800px) {
-    .termekek{
-        width: 100%;
 
+    .item1{
+
+        grid-column-end: 2;
+        grid-row-end: 2;
     }
-    .grid-container{
-        display: block;
-        width: 90%;
-
-
+    .item2{
+        grid-column-end: 2;
+        grid-row-end: 3;
     }
-    .grid-item{
-        display: block;
-        width: 75%;
-        max-width: 350px;
-        text-align: center;
-        margin: 20px auto;
 
-    }
 }
