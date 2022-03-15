@@ -74,6 +74,7 @@ video {
 
 #menu a:hover {
     background-color: #6D707D;
+
     transition: .75s;
 }
 
