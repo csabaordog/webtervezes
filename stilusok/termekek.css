@@ -33,8 +33,16 @@ p {
     width: 325px;
 
 }
+.grid-item:hover {
+    border: #000 3px solid;
+}
 .grid-item input{
     max-width: 100px;
+}
+
+.grid-item input:hover {
+    background-color: #0E3EDA;
+    color: #fff;
 }
 
 
