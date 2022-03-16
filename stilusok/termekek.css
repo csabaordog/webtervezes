@@ -37,12 +37,15 @@ p {
     border: #000 3px solid;
 }
 .grid-item input{
-    max-width: 100px;
+    max-width: 120px;
+    width: 50%;
 }
 
 .grid-item input:hover {
     background-color: #0E3EDA;
     color: #fff;
+    transform: scale(0.86);
+    transition: transform .2s ease;
 }
 
 
