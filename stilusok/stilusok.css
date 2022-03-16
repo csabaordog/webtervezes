@@ -33,7 +33,6 @@ h1,h2{
 
 #menu a{
     text-decoration: none;
-    padding: 10px 0;
     display: block;
 }
 
@@ -69,7 +68,7 @@ video {
     background-color: #3D404DFF;
     position: sticky;
     top: 0;
-    padding: 10px;
+
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -78,11 +77,27 @@ video {
 }
 
 
-#menu a:hover {
-    background-color: #6D707D;
-
-    transition: .75s;
+#menu a div{
+    position: relative;
+    padding: 15px 0;
 }
+#menu a div::before{
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background-color: #6D707D;
+    z-index: -1;
+    transition: transform .5s ease;
+}
+#menu a div:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 
 blockquote {
     padding: 20px 0;
@@ -102,7 +117,7 @@ blockquote {
 
 /* aktualis oldal menupontja */
 #menu a[href="#"]{
-    background-color: #2D303D;
+    background-color: #1D202D;
 }
 
 main {

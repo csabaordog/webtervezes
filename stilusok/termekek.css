@@ -52,6 +52,10 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+.termek-kep:hover{
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 1100px) {
     .item1{
 
