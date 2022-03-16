@@ -1,0 +1,9 @@
+main li {
+    padding: 15px 0;
+    list-style-type: none;
+}
+
+img {
+    float: right;
+    max-width: 900px;
+}
