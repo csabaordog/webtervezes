@@ -15,12 +15,17 @@ table {
     margin: 50px auto;
     width: 50%;
     color: #fff;
+    clear: none;
 }
 th,td {
     border: 1px solid #fff;
     height: 50px;
 }
+.kutya-kep{
 
+    height: 300px;
+}
+/*
 .kutya-gomb{
     font-size: 20px;
     background-color: #DFF6FF;
@@ -32,10 +37,7 @@ th,td {
     background-color: #0E3EDA;
     color: #fff;
 }
-.kutya-kep{
 
-    height: 200px;
-}
 .kutya-doboz{
     width: 350px;
     height: 500px;
@@ -62,6 +64,55 @@ th,td {
     width: 100%;
     justify-content: center;
 }
+*/
+
+.kep-box {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    float: right;
+    margin: 10px;
+}
+
+.kep-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.kep-box:hover .kep-box-inner {
+    transform: rotateX(3rad);
+}
+
+.kep-box-elol, .kep-box-hatul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.kep-box-hatul {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    transform: rotateX(3rad);
+}
+
+.kep-box-hatul > p {
+    font-size: 20px;
+    padding: 15px 0;
+}
+.kep-box-hatul > h2 {
+    padding: 15px 0;
+}
+
+/*
+
 @media only screen and (min-width: 1200px) {
     .doboz1{
 
@@ -107,3 +158,4 @@ th,td {
     }
 
 }
+*/
