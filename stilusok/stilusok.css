@@ -296,7 +296,7 @@ html, body {
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     #menu-bg{
         width:100%;
         height:100%;
