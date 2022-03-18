@@ -47,6 +47,7 @@ th,td {
 
 .kutya-doboz:hover {
     border: #000 solid 2px;
+    transform: rotateY(3rad);
 }
 .kutya-tulajdonsagok{
     list-style: none;
