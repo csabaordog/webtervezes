@@ -28,7 +28,7 @@ p {
     border: #DFF6FF 3px solid;
     border-radius: 5%;
     text-align: center;
-
+    background: rgba(255,255,255,0.2);
     padding: 15px;
     width: 325px;
 

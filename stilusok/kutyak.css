@@ -61,7 +61,7 @@ th,td {
     width: 100%;
     justify-content: center;
 }
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1200px) {
     .doboz1{
 
         grid-column-end: 2;
@@ -78,7 +78,7 @@ th,td {
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
     .doboz1{
 
         grid-column-end: 2;

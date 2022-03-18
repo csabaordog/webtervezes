@@ -26,10 +26,12 @@ header h6 {
     font-size: initial;
     font-weight: lighter;
 }
-h1,h2{
+header > h1, header > h2{
     color: #fff;
 }
-
+main  h2{
+    text-shadow: rgba(255,255,255,.7) 1px 1px;
+}
 
 #menu a{
     text-decoration: none;
@@ -108,6 +110,7 @@ blockquote {
     border-right: 1px solid white;
     display: inline-block;
     color: #fff;
+
 }
 #menu a:first-child{
     border-left: 1px solid white;
@@ -142,10 +145,10 @@ header > h2{
    /* #menu{
         position: static;
     }*/
-    #menu a{
+   /* #menu a{
         width: 50%;
         border: none !important;
-    }
+    }*/
 }
 
 
@@ -161,11 +164,11 @@ header > h2{
     /* #menu{
         position: static;
     }*/
-    #menu a{
+    /*#menu a{
         width: 100%;
-        border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz */
+        border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz
 
-    }
+    }*/
 }
 
 /* Legalabb 600px-es kijelzok (s) */
@@ -216,4 +219,133 @@ header > h2{
     margin:0;
     text-align:center;
     color:white;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+}
+
+#menu-pontok {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-pontok > a {
+    margin: 0 1rem;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+
+}
+
+@media (max-width: 700px) {
+    .menu-button-container {
+        display: flex;
+    }
+    #menu-pontok {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu-toggle ~ #menu-pontok a {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    }
+    #menu-toggle:checked ~ #menu-pontok a {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-pontok > a {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+    #menu-pontok > a:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+    #menu{
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #menu a div{
+        padding: 0;
+    }
+    header{
+        display: none;
+    }
 }
