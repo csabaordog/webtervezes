@@ -95,6 +95,7 @@ th,td {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform: rotateX(0deg);
 }
 
 .kep-box-hatul {

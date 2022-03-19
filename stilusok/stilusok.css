@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+p{
+    margin-bottom: 10px;
+}
+
 body {
     font-family: Arial, Verdana, sans-serif;
     bottom: 0;
@@ -29,10 +33,11 @@ header h6 {
 header > h1, header > h2{
     color: #fff;
 }
+/*
 main  h2{
     text-shadow: rgba(255,255,255,.7) 1px 1px;
 }
-
+*/
 #menu a{
     text-decoration: none;
     display: block;
@@ -105,7 +110,7 @@ blockquote {
 }
 
 #menu a{
-    min-width: 125px;
+    min-width: 120px;
     text-align: center;
     border-right: 1px solid white;
     display: inline-block;
@@ -219,10 +224,6 @@ header > h2{
     margin:0;
     text-align:center;
     color:white;
-}
-html, body {
-    margin: 0;
-    height: 100%;
 }
 
 #menu {
