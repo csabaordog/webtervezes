@@ -1,10 +1,10 @@
-input {
-    background-color: #DFF6FF;
+.vasarlas-gomb {
+    background-color: #3D404D;
     border: none;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
-    color: #000;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -36,14 +36,14 @@ p {
     border: #000 3px solid;
 }
 
-.grid-item input{
+.grid-item .vasarlas-gomb{
     width: 150px;
     height: 30px;
     border-radius: 5px;
 }
 
-.grid-item input:hover {
-    background-color: #0E3EDA;
+.grid-item .vasarlas-gomb:hover {
+    background-color: #6D707D;
     color: #fff;
     transform: scale(0.86);
     transition: transform .2s ease;
