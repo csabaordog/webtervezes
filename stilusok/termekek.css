@@ -35,8 +35,9 @@ p {
     border: #000 3px solid;
 }
 .grid-item input{
-    max-width: 120px;
-    width: 50%;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 .grid-item input:hover {

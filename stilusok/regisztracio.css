@@ -3,31 +3,40 @@
     box-sizing: border-box;
 }
 .registration, .login {
-    padding: 30px;
-    border: 3px solid white;
-    border-radius: 20px 20px;
+    padding: 30px 5vw;
+
+
     margin: 20px auto;
     max-width: 700px;
     width: 92%;
 }
 
-main > h2 {
+main > h3 {
     text-align: center;
 }
 
-form > input, form > textarea, form > select, option {
+form > fieldset > input, form > fieldset >  textarea, form > fieldset > select, form > fieldset > option {
     display: block;
     margin: 10px auto;
     padding: 10px;
     width: 100%;
     color: #000;
 }
-
-
-form > div {
+form > input{
+    display: block;
     margin: 10px auto;
     padding: 10px;
-    width: 100%;
+    width: 90%;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+fieldset{
+    padding: 20px;
+    border: 3px solid white;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .checkbox > label {

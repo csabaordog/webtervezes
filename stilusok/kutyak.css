@@ -68,10 +68,11 @@ th,td {
 }
 
 .kep-box input{
-    max-width: 120px;
-    width: 50%;
-    background-color: #85F4FF;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
     border: none;
+    background-color: #85F4FF;
     padding: 8px;
 }
 
@@ -80,8 +81,8 @@ th,td {
     color: #fff;
     transform: scale(0.86);
     transition: transform .2s ease;
+    cursor: pointer;
 }
-
 
 
 .grid-container{

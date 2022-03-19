@@ -34,6 +34,8 @@
         <h3>Regisztráció</h3>
         <div class="registration">
             <form action="#" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>Személyes adatok</legend>
                 <label for="usname">Felhasználónév (Kötelező):</label>
                 <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required>
 
@@ -48,23 +50,26 @@
 
                 <label for="birth">Születési év (Kötelező):</label>
                 <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required>
+                    <div class="radio">
+                        Nem:
+                        <label><input type="radio" name="gender" value="male"> Férfi</label>
+                        <label><input type="radio" name="gender" value="female"> Nő</label>
+                        <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
+                    </div>
 
-                <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
-                <select name="care0" id="care">
-                    <option value="very-little">Naponta pár percet.</option>
-                    <option value="little">Naponta fél órát.</option>
-                    <option value="moderate">Naponta 1-2 órát.</option>
-                    <option value="average">Naponta 3-4 órát.</option>
-                    <option value="lot">Naponta 5-6 órát.</option>
-                    <option value="very-much">Naponta több, mint 6 órát.</option>
-                </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Egyéb</legend>
+                    <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
+                    <select name="care0" id="care">
+                        <option value="very-little">Naponta pár percet.</option>
+                        <option value="little">Naponta fél órát.</option>
+                        <option value="moderate">Naponta 1-2 órát.</option>
+                        <option value="average">Naponta 3-4 órát.</option>
+                        <option value="lot">Naponta 5-6 órát.</option>
+                        <option value="very-much">Naponta több, mint 6 órát.</option>
+                    </select>
 
-                <div class="radio">
-                    Nem:
-                    <label><input type="radio" name="gender" value="male"> Férfi</label>
-                    <label><input type="radio" name="gender" value="female"> Nő</label>
-                    <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
-                </div>
 
                 <label for="love">Miért szereted a kutyákat? (max. 300 karakter): </label>
                 <textarea name="introduction" id="love" maxlength="300" rows="3"></textarea>
@@ -84,9 +89,10 @@
                     </label>
                 </div>
 
+
+                </fieldset>
                 <input type="reset" name="reset-btn" value="Visszaállítás">
                 <input type="submit" name="signup-btn" value="Regisztráció">
-
             </form>
         </div>
         <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
