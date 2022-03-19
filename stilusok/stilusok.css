@@ -269,6 +269,7 @@ html, body {
     position: absolute;
     height: 4px;
     width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 2px;
 }
 
@@ -284,6 +285,7 @@ html, body {
 
 #menu-toggle:checked + .menu-button-container .menu-button::before {
     margin-top: 0px;
+    transform: rotate(45deg);
 
 }
 
@@ -293,6 +295,7 @@ html, body {
 
 #menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
+    transform: rotate(-45deg);
 
 }
 
