@@ -46,16 +46,19 @@ p {
     transition: transform .2s ease;
 }
 
-
+.termek-kep:hover{
+    transition: transform .2s ease;
+    transform: scale(1.08);
+    cursor: pointer;
+}
 .termek-kep{
     max-width: 200px;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
 }
-.termek-kep:hover{
-    cursor: pointer;
-}
+
 
 @media only screen and (max-width: 800px) {
     .grid-container{
