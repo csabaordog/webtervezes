@@ -110,7 +110,6 @@ blockquote {
 }
 
 #menu a{
-    min-width: 120px;
     text-align: center;
     border-right: 1px solid white;
     display: inline-block;
@@ -144,17 +143,19 @@ header > h2{
     font-size: 50px;
 }
 
-
-/* Legalabb 1200px-es kijelzo (xl) */
-@media only screen and (max-width: 1300px) {
-   /* #menu{
-        position: static;
-    }*/
+@media only screen and (min-width: 1000px) {
+    /* #menu{
+         position: static;
+     }*/
+    #menu-pontok{
+        width: 100%;
+        justify-content: center;
+    }
     #menu a{
-        width: 25%;
-        border: none !important;
+        width: 12%;
     }
 }
+
 
 
 /* 600px-nel kisebb kijelzok (xs) */
@@ -189,7 +190,7 @@ header > h2{
 /* Legalabb 992px-es kijelzo (lg) */
 @media only screen and (min-width: 992px) {
     main{
-        padding: 20px 100px;
+        padding: 20px 80px;
     }
 }
 

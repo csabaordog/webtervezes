@@ -11,3 +11,13 @@ window.addEventListener("load",()=>{
         }
     };
 })
+
+
+function hamburger(){
+    let checkbox = document.getElementById("menu-toggle");
+    if(checkbox.checked ){
+        checkbox.checked = false;
+    }else{
+        checkbox.checked = true;
+    }
+}
