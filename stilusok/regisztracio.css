@@ -2,6 +2,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+section {
+    max-width: 800px;
+}
 .registration, .login {
     padding: 30px;
     margin: 20px auto;
