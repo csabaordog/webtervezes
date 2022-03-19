@@ -293,7 +293,7 @@ header > h2{
 }
 
 #menu-toggle:checked + .menu-button-container .menu-button::before {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(45deg);
 
 }
@@ -303,7 +303,7 @@ header > h2{
 }
 
 #menu-toggle:checked + .menu-button-container .menu-button::after {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(-45deg);
 
 }
