@@ -12,8 +12,8 @@ body {
     font-family: Arial, Verdana, sans-serif;
     bottom: 0;
     padding: 0;
-
     background: linear-gradient(90deg, #42C2FF, #0779E4, #0E3EDA);
+
 }
 
 h3{
@@ -54,6 +54,7 @@ section{
     margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid white;
 }
 
 ul {
@@ -72,14 +73,6 @@ video {
 
 blockquote {
     padding: 20px 0;
-}
-
-#menu a{
-    text-align: center;
-    border-right: 1px solid white;
-    display: inline-block;
-    color: #fff;
-
 }
 
 main {

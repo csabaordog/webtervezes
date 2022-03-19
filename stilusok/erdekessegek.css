@@ -6,10 +6,12 @@ p{
     padding: 10px 0;
 }
 
-audio {
+#zene {
     margin-right: auto;
     margin-left: auto;
     display: block;
+    width: 60vw;
+    max-width: 500px;
     z-index:0;
 }
 
