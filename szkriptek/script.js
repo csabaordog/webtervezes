@@ -5,9 +5,9 @@ window.addEventListener("load",()=>{
     };
     window.onscroll = () => {
         if(window.scrollY >= 50){
-            ugrasGomb.style.opacity = 1.0;
+            ugrasGomb.style.opacity = "1.0";
         }else{
-            ugrasGomb.style.opacity = 0.0;
+            ugrasGomb.style.opacity = "0.0";
         }
     };
 })
@@ -15,9 +15,5 @@ window.addEventListener("load",()=>{
 
 function hamburger(){
     let checkbox = document.getElementById("menu-toggle");
-    if(checkbox.checked ){
-        checkbox.checked = false;
-    }else{
-        checkbox.checked = true;
-    }
+    checkbox.checked = !checkbox.checked;
 }

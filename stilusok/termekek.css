@@ -7,11 +7,11 @@ input {
     color: #000;
     cursor: pointer;
 }
+
 p {
     padding: 5px;
     color: #fff;
 }
-
 
 .grid-container{
     width: 100%;
@@ -31,9 +31,11 @@ p {
     min-width: 330px;
 
 }
+
 .grid-item:hover {
     border: #000 3px solid;
 }
+
 .grid-item input{
     width: 150px;
     height: 30px;
@@ -52,6 +54,7 @@ p {
     transform: scale(1.08);
     cursor: pointer;
 }
+
 .termek-kep{
     max-width: 200px;
     width: 75%;
@@ -60,7 +63,6 @@ p {
     margin-bottom: 10px;
     border-radius: 10px;
 }
-
 
 @media only screen and (max-width: 800px) {
     .grid-container{
@@ -75,6 +77,7 @@ p {
     }
 
 }
+
 @media only screen and (min-width: 1250px) {
     .grid-container{
         grid-template-columns: 1fr 1fr 1fr ;

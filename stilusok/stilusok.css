@@ -21,7 +21,6 @@ h3{
     margin-bottom: 20px;
 }
 
-
 header {
     font-size: x-large;
     font-weight: bold;
@@ -36,14 +35,10 @@ header h6 {
     font-size: initial;
     font-weight: lighter;
 }
+
 header > h1, header > h2{
     color: #fff;
 }
-/*
-main  h2{
-    text-shadow: rgba(255,255,255,.7) 1px 1px;
-}
-*/
 
 footer {
     text-align: center;
@@ -53,6 +48,7 @@ footer {
     min-height: 50px;
     background-color: #3D404DFF;
 }
+
 section{
     background-color: rgba(255,255,255,0.2);
     margin: 50px auto;
@@ -67,14 +63,12 @@ ul {
     font-size: large;
     padding: 15px 0;
 }
+
 video {
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
-
-
-
 
 blockquote {
     padding: 20px 0;
@@ -88,23 +82,21 @@ blockquote {
 
 }
 
-
 main {
     padding: 20px 40px;
     margin: 20px auto;
     min-height: 100vh;
 }
+
 header > h1{
     font-size: 45px;
 }
+
 header > h2{
     font-size: 20px;
     text-shadow: 2px 2px black;
 }
 
-
-
-/* 600px-nel kisebb kijelzok (xs) */
 @media only screen and (max-width: 600px) {
     #kepsorozat-doboz {
         float:  none !important;
@@ -113,14 +105,6 @@ header > h2{
         margin: 25px auto !important;
 
     }
-    /* #menu{
-        position: static;
-    }*/
-    /*#menu a{
-        width: 100%;
-        border: none !important; /* nem kene important-ot hasznalni, majd kesobb modositva lesz
-
-    }*/
 }
 
 /* Legalabb 600px-es kijelzok (s) */
@@ -161,9 +145,11 @@ header > h2{
     opacity:0.0;
     transition:opacity 0.3s, transform 0.3s, background-color 0.3s;
 }
+
 #ugras-gomb:hover{
     background-color:#404040;
 }
+
 #ugras-gomb p{
     line-height:0.7rem;
     display:flex;
@@ -172,7 +158,6 @@ header > h2{
     text-align:center;
     color:white;
 }
-
 
 @media (max-width: 1000px){
     header{

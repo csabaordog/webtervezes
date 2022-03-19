@@ -16,15 +16,18 @@
     animation-direction: alternate;
     border-radius: 5px;
 }
+
 main li{
     margin: 10px 0;
     list-style-type: none;
 }
+
 @keyframes kepsorozat{
     0% { background-image: url('../media/kepek/kutya01.png'); }
-    50% { background-image: url('../media/kepek/kutya02.png'); }
-    100% { background-image: url('../media/kepek/kutya03.png'); }
+    33% { background-image: url('../media/kepek/kutya02.png'); }
+    66% { background-image: url('../media/kepek/kutya03.png'); }
 }
+
 #video{
     max-width: 700px;
     width: 92%;
