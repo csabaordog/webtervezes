@@ -33,13 +33,13 @@ th,td {
     height: 30px;
     border-radius: 5px;
     border: none;
-    background-color: #85F4FF;
+    background-color: #3D404D;
+    color: white;
     padding: 8px;
 }
 
 .kep-box input:hover {
-    background-color: #42C2FF;
-    color: #fff;
+    background-color: #6D707D;
     transform: scale(0.86);
     transition: transform .2s ease;
     cursor: pointer;
@@ -114,7 +114,9 @@ th,td {
 
 .kep-box-hatul {
     background-color: rgba(255,255,255,0.2);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transform: rotateX(3.1415rad);
 }
 
