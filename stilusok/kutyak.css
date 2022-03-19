@@ -3,11 +3,7 @@ caption{
     padding: 20px;
 }
 
-h3{
-    color: white;
-    font-size: 25px;
-    margin-bottom: 15px;
-}
+
 table {
     border: 1px solid #fff;
     text-align: center;
@@ -128,7 +124,7 @@ th,td {
     background-color: transparent;
     width: 300px;
     height: 300px;
-    border: 1px solid #f1f1f1;
+
     perspective: 1000px;
     margin: 10px;
     border-radius: 10px;
@@ -159,7 +155,7 @@ th,td {
 
 .kep-box-hatul {
     background-color: rgba(255,255,255,0.2);
-    color: white;
+
     transform: rotateX(3.1415rad);
 }
 
