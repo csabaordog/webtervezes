@@ -63,6 +63,12 @@ section p{
         float: right;
         margin: 15px 20px ;
     }
+    ul::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
 }
 
 @keyframes kepsorozat{

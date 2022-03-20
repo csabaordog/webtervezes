@@ -7,20 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@keyframes beuszas-bal {
-    from { opacity: 0; transform:translateX(calc(-100%)););
-        }
-    to   { opacity: 1;transform:translateX(0); }
-}
-@keyframes beuszas-jobb {
-    from { opacity: 0; transform:translateX(calc(100%)););
-    }
-    to   { opacity: 1;transform:translateX(0); }
-}
+
 
 .becsuszas:not(:nth-child(2)){
     animation: beuszas-bal 1.2s;
@@ -124,5 +111,33 @@ main {
 @media only screen and (max-width: 1000px){
     header{
         display: none;
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to   {
+        opacity: 1;
+    }
+}
+@keyframes beuszas-bal {
+    from {
+        opacity: 0;
+        transform:translateX(calc(-100%)););
+    }
+    to   {
+        opacity: 1;
+        transform:translateX(0);
+    }
+}
+@keyframes beuszas-jobb {
+    from {
+        opacity: 0;
+        transform:translateX(calc(100%)););
+    }
+    to   {
+        opacity: 1;
+        transform:translateX(0);
     }
 }

@@ -27,14 +27,14 @@ window.onscroll = () => {
 
 /*
     Betöltődéskor lefut a függvény, ami minden section-re ellenőrzi, hogy már látszódik-e a képen
-    (a -400px azért került bele, hogy látszódjon is a beúszás és ne egyből ússzon be)
+    (a -350px azért került bele, hogy látszódjon is a beúszás és ne egyből ússzon be)
 */
 
 window.onload = ()=>{
 
     sectionok.forEach((section) => {
         let elem = section.getBoundingClientRect();
-        if( elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 400) {
+        if( elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 350) {
             section.classList.add("becsuszas");
             section.classList.remove("kint");
         }
