@@ -6,7 +6,7 @@ ol {
     padding: 20px;
 }
 
-p{
+p {
     padding: 10px 0;
 }
 
@@ -16,7 +16,7 @@ p{
     display: block;
     width: 60vw;
     max-width: 500px;
-    z-index:0;
+    z-index: 0;
     border-radius: 10px;
 }
 
@@ -29,7 +29,7 @@ p{
     box-shadow: 5px 15px 15px black;
 }
 
-caption{
+caption {
     font-size: 30px;
     padding: 20px;
 }
@@ -44,7 +44,7 @@ caption{
 
 }
 
-th,td {
+th, td {
     border: 1px solid black;
     height: 70px;
 

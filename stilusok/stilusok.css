@@ -2,37 +2,41 @@
     Ez a fájl tartalmazza az általános stílusbeállításokat
  */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-.becsuszas:not(:nth-child(2)){
+.becsuszas:not(:nth-child(2)) {
     animation: beuszas-bal 1.2s;
 }
 
-.becsuszas:nth-child(2){
+.becsuszas:nth-child(2) {
     animation: beuszas-jobb 1.2s;
 }
 
-p{
+p {
     margin-bottom: 10px;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: Arial, Verdana, sans-serif;
     background: linear-gradient(90deg, #42C2FF, #0779E4, #0E3EDA);
     overflow-x: hidden;
 
 }
-.kint{
-    transform:translateX(calc(-150%));
+
+.kint {
+    transform: translateX(calc(-150%));
 }
-h3{
+
+h3 {
     font-size: 25px;
     margin-bottom: 20px;
 }
@@ -43,16 +47,16 @@ header {
     text-shadow: 2px 2px black;
 }
 
-header > h1, header > h2{
+header > h1, header > h2 {
     color: #fff;
     animation: fadein 1.5s;
 }
 
-header > h1{
+header > h1 {
     font-size: 45px;
 }
 
-header > h2{
+header > h2 {
     font-size: 20px;
 }
 
@@ -66,8 +70,8 @@ footer {
     color: #fff;
 }
 
-section{
-    background-color: rgba(255,255,255,0.2);
+section {
+    background-color: rgba(255, 255, 255, 0.2);
     margin: 50px auto;
     padding: 30px;
     border-radius: 10px;
@@ -79,68 +83,71 @@ main {
     min-height: 100vh;
 }
 
-#ugras-gomb{
-    position:fixed;
-    right:0;
-    bottom:0;
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    margin:1rem;
-    background-color:#353535;
-    box-shadow:0.125rem 0.125rem 1rem rgba(53,53,53,0.5);;
-    cursor:pointer;
-    border:2px solid rgba(255,255,255,0.05);
-    display:flex;
-    align-content:center;
-    justify-content:center;
-    opacity:0.0;
-    transition:opacity 0.3s, transform 0.3s, background-color 0.3s;
+#ugras-gomb {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1rem;
+    background-color: #353535;
+    box-shadow: 0.125rem 0.125rem 1rem rgba(53, 53, 53, 0.5);;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    opacity: 0.0;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
 }
 
-#ugras-gomb:hover{
-    background-color:#404040;
+#ugras-gomb:hover {
+    background-color: #404040;
 }
 
-#ugras-gomb p{
-    line-height:0.7rem;
-    display:flex;
-    align-self:center;
-    margin:0;
-    text-align:center;
-    color:white;
+#ugras-gomb p {
+    line-height: 0.7rem;
+    display: flex;
+    align-self: center;
+    margin: 0;
+    text-align: center;
+    color: white;
 }
 
-@media only screen and (max-width: 1000px){
-    header{
+@media only screen and (max-width: 1000px) {
+    header {
         display: none;
     }
 }
+
 @keyframes fadein {
     from {
         opacity: 0;
     }
-    to   {
+    to {
         opacity: 1;
     }
 }
+
 @keyframes beuszas-bal {
     from {
         opacity: 0;
-        transform:translateX(calc(-100%));
+        transform: translateX(calc(-100%));
     }
-    to   {
+    to {
         opacity: 1;
-        transform:translateX(0);
+        transform: translateX(0);
     }
 }
+
 @keyframes beuszas-jobb {
     from {
         opacity: 0;
-        transform:translateX(calc(100%));
+        transform: translateX(calc(100%));
     }
-    to   {
+    to {
         opacity: 1;
-        transform:translateX(0);
+        transform: translateX(0);
     }
 }

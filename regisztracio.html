@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <title>Regisztráció</title>
-        <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
-        <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
-        <link rel="stylesheet" href="stilusok/regisztracio.css" type="text/css">
-        <link rel="icon" href="media/kepek/ikon.jpg" type="image/ico">
-    </head>
-    <body>
-    <header>
-        <h1>Kutya birodalom</h1>
-        <h2>Az állatimádók oldala</h2>
-    </header>
-    <nav id="menu">
-        <div id="menu-logo">Regisztráció</div>
-        <input id="menu-toggle" type="checkbox" />
-        <div class="hamburger-gomb-container" onclick="hamburger()">
-            <div class="hamburger-gomb"></div>
-        </div>
-        <div id="menu-bg"></div>
-        <div id="menu-pontok">
+<head>
+    <meta charset="UTF-8">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
+    <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
+    <link rel="stylesheet" href="stilusok/regisztracio.css" type="text/css">
+    <link rel="icon" href="media/ikon.jpg" type="image/ico">
+</head>
+<body>
+<header>
+    <h1>Kutya birodalom</h1>
+    <h2>Az állatimádók oldala</h2>
+</header>
+<nav id="menu">
+    <div id="menu-logo">Regisztráció</div>
+    <input id="menu-toggle" type="checkbox"/>
+    <div class="hamburger-gomb-container" onclick="hamburger()">
+        <div class="hamburger-gomb"></div>
+    </div>
+    <div id="menu-bg"></div>
+    <div id="menu-pontok">
         <a href="index.html" class="menu-link">
             <div class="menu-link-tartalom">Főoldal</div>
         </a>
@@ -45,17 +45,18 @@
         <a href="#" class="menu-link">
             <div class="menu-link-tartalom">Regisztráció</div>
         </a>
-        </div>
-    </nav>
-    <main>
-        <section class="kint">
-            <h3>Regisztráció</h3>
-            <div class="registration">
-                <form action="#" method="post" autocomplete="off">
-                    <fieldset>
-                        <legend>Személyes adatok:</legend>
+    </div>
+</nav>
+<main>
+    <section class="kint">
+        <h3>Regisztráció</h3>
+        <div class="registration">
+            <form action="#" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
-                    <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required class="form-input">
+                    <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required
+                           class="form-input">
 
                     <label for="pswd">Jelszó (Kötelező):</label>
                     <input type="password" name="password" id="pswd" maxlength="25" required class="form-input">
@@ -64,29 +65,31 @@
                     <input type="password" name="password" id="pswd2" maxlength="25" required class="form-input">
 
                     <label for="email">E-mail cím (Kötelező):</label>
-                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required class="form-input">
+                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required
+                           class="form-input">
 
                     <label for="birth">Születési év (Kötelező):</label>
-                    <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required  class="form-input">
-                        <div class="radio">
-                            <p>Nem:</p>
-                            <label><input type="radio" name="gender" value="male"> Férfi</label>
-                            <label><input type="radio" name="gender" value="female"> Nő</label>
-                            <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
-                        </div>
+                    <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
+                           class="form-input">
+                    <div class="radio">
+                        <p>Nem:</p>
+                        <label><input type="radio" name="gender" value="male"> Férfi</label>
+                        <label><input type="radio" name="gender" value="female"> Nő</label>
+                        <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
+                    </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <legend>Egyéb:</legend>
-                        <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
-                        <select name="care0" id="care" class="form-input">
-                            <option value="very-little">Naponta pár percet.</option>
-                            <option value="little">Naponta fél órát.</option>
-                            <option value="moderate">Naponta 1-2 órát.</option>
-                            <option value="average">Naponta 3-4 órát.</option>
-                            <option value="lot">Naponta 5-6 órát.</option>
-                            <option value="very-much">Naponta több, mint 6 órát.</option>
-                        </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Egyéb:</legend>
+                    <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
+                    <select name="care0" id="care" class="form-input">
+                        <option value="very-little">Naponta pár percet.</option>
+                        <option value="little">Naponta fél órát.</option>
+                        <option value="moderate">Naponta 1-2 órát.</option>
+                        <option value="average">Naponta 3-4 órát.</option>
+                        <option value="lot">Naponta 5-6 órát.</option>
+                        <option value="very-much">Naponta több, mint 6 órát.</option>
+                    </select>
 
 
                     <label for="love">Miért szereted a kutyákat? (max. 300 karakter): </label>
@@ -108,19 +111,19 @@
                     </div>
 
 
-                    </fieldset>
-                    <input type="reset" name="reset-btn" value="Visszaállítás" class="gomb form-input">
-                    <input type="submit" name="signup-btn" value="Regisztráció" class="gomb form-input">
-                </form>
-            </div>
-            <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
-                <p>/\<br>|</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
-    </footer>
-    <script src="szkriptek/script.js"></script>
-    </body>
+                </fieldset>
+                <input type="reset" name="reset-btn" value="Visszaállítás" class="gomb form-input">
+                <input type="submit" name="signup-btn" value="Regisztráció" class="gomb form-input">
+            </form>
+        </div>
+        <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
+            <p>/\<br>|</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
+</footer>
+<script src="szkriptek/script.js"></script>
+</body>
 </html>

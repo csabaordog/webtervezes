@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 
-main li{
+main li {
     margin: 10px 0;
     list-style-type: none;
 }
@@ -32,36 +32,38 @@ video {
     display: block;
 }
 
-#video{
+#video {
     max-width: 700px;
     width: 92%;
     border-radius: 5px;
 }
 
-q{
+q {
     display: block;
     max-width: 500px;
 }
 
-section p{
+section p {
     text-indent: 15px;
 }
 
 @media only screen and (max-width: 750px) {
     #kepsorozat-doboz {
-        float:  none;
+        float: none;
         display: block;
 
         margin: 25px auto;
 
     }
 }
+
 @media only screen and (min-width: 750px) {
     #kepsorozat-doboz {
         float: right;
-        margin: 15px 20px ;
+        margin: 15px 20px;
     }
-    ul::after{
+
+    ul::after {
         content: "";
         display: block;
         clear: both;
@@ -69,8 +71,14 @@ section p{
 
 }
 
-@keyframes kepsorozat{
-    0% { background-image: url('../media/kepek/kutya01.png'); }
-    50% { background-image: url('../media/kepek/kutya02.png'); }
-    100% { background-image: url('../media/kepek/kutya03.png'); }
+@keyframes kepsorozat {
+    0% {
+        background-image: url('../media/kepek/mopsz.jpg');
+    }
+    50% {
+        background-image: url('../media/kepek/puli.jpg');
+    }
+    100% {
+        background-image: url('../media/kepek/goldenretriever.jpg');
+    }
 }

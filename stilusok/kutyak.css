@@ -2,12 +2,12 @@
     Ez a fájl tartalmazza az kutyak.html oldalon levő formázásokat.
  */
 
-.kutya-kep{
+.kutya-kep {
     border-radius: 10px;
     height: 300px;
 }
 
-.kutya-doboz{
+.kutya-doboz {
     display: grid;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .kutya-doboz-hatul {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;

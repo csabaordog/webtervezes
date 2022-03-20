@@ -12,7 +12,7 @@ section {
     width: 100%;
 }
 
-section  > h3 {
+section > h3 {
     text-align: center;
 }
 
@@ -24,20 +24,21 @@ section  > h3 {
     border-radius: 10px;
 }
 
-.gomb{
+.gomb {
     width: 90%;
     margin-top: 20px;
     cursor: pointer;
 }
 
-fieldset{
+fieldset {
     border: none;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
 
 }
-legend{
+
+legend {
     font-weight: 550;
 }
 
@@ -45,7 +46,8 @@ legend{
     display: block;
     margin-bottom: 10px;
 }
-textarea{
+
+textarea {
     resize: none;
     height: 100px;
 }
@@ -57,6 +59,7 @@ input[type="submit"], input[type="reset"] {
     font-size: large;
     border: none;
 }
-input[type="submit"]:hover, input[type="reset"]:hover{
+
+input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #6D707D;
 }

@@ -1,4 +1,3 @@
-
 /*
     Ez egy előre megírt függvény a Google Maps importálásához, ami a #terkep elemre
     helyezi el a téképet. Link:
@@ -7,7 +6,7 @@
 
 function initMap() {
 
-    const uluru = { lat: 46.2504, lng: 20.1448 };
+    const uluru = {lat: 46.2504, lng: 20.1448};
 
     const map = new google.maps.Map(document.getElementById("terkep"), {
         zoom: 17,

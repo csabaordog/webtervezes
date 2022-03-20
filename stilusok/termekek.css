@@ -8,7 +8,7 @@ p {
     color: #fff;
 }
 
-.termek-doboz{
+.termek-doboz {
     display: grid;
     border: #DFF6FF 3px solid;
     border-radius: 5%;
@@ -23,14 +23,13 @@ p {
 }
 
 
-
-.termek-kep:hover{
+.termek-kep:hover {
     transition: transform .2s ease;
     transform: scale(1.08);
     cursor: pointer;
 }
 
-.termek-kep{
+.termek-kep {
     max-width: 200px;
     width: 75%;
     margin-left: auto;

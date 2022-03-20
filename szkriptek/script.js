@@ -1,5 +1,4 @@
-
-let sectionok = document.querySelectorAll("section");;
+let sectionok = document.querySelectorAll("section");
 let ugrasGomb = document.querySelector("#ugras-gomb");
 /*
     Ez a kódrészlet ráhelyez az #ugras-gomb-ra kattintás-figyelést,
@@ -7,8 +6,7 @@ let ugrasGomb = document.querySelector("#ugras-gomb");
  */
 
 ugrasGomb.onclick = () => {
-
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 };
 
 /*
@@ -16,16 +14,16 @@ ugrasGomb.onclick = () => {
     akkor válik láthatóvá, ha nem az oldal tetején vagyunk (+ load esemény is lefut a section-ök beúsztatása miatt)
 */
 window.onscroll = () => {
-    if(window.scrollY >= 50){
+    if (window.scrollY >= 50) {
         ugrasGomb.style.opacity = "1.0";
-    }else{
+    } else {
         ugrasGomb.style.opacity = "0.0";
     }
 
     sectionBeusztatas();
 };
 
-window.onload =  sectionBeusztatas;
+window.onload = sectionBeusztatas;
 
 
 /*
@@ -33,7 +31,7 @@ window.onload =  sectionBeusztatas;
     ami a mobilnézetes menü láthatóságáért felelős
 */
 
-function hamburger(){
+function hamburger() {
     let checkbox = document.getElementById("menu-toggle");
     checkbox.checked = !checkbox.checked;
 }
@@ -43,10 +41,10 @@ function hamburger(){
     (a -350px azért került bele, hogy látszódjon is a beúszás és ne egyből ússzon be)
 */
 
-function sectionBeusztatas(){
+function sectionBeusztatas() {
     sectionok.forEach((section) => {
         let elem = section.getBoundingClientRect();
-        if( elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 350) {
+        if (elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 350) {
             section.classList.add("becsuszas");
             section.classList.remove("kint");
         }
