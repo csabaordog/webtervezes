@@ -1,0 +1,56 @@
+/*
+    Ez a fájl tartalmazza az termekek.html és kutyak.html oldalon levő formázásokat
+ */
+
+@media only screen and (max-width: 875px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media only screen and (min-width: 875px) {
+    .grid-container{
+        grid-template-columns: 1fr 1fr ;
+    }
+
+}
+@media only screen and (min-width: 1300px) {
+    .grid-container{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+
+}
+
+@media only screen and (min-width: 1700px) {
+    .grid-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.grid-container{
+    width: 100%;
+    display: inline-grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    justify-items: center;
+}
+
+.vasarlas-gomb {
+    background-color: #3D404D;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.vasarlas-gomb:hover {
+    background-color: #6D707D;
+    transform: scale(0.86);
+    transition: transform .2s ease;
+    cursor: pointer;
+}

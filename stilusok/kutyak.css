@@ -1,70 +1,17 @@
-caption{
-    font-size: 30px;
-    padding: 20px;
-}
+/*
+    Ez a fájl tartalmazza az kutyak.html oldalon levő formázásokat.
+ */
 
 .kutya-kep{
     border-radius: 10px;
     height: 300px;
 }
 
-.kep-box{
+.kutya-doboz{
     display: grid;
-
 }
 
-.kep-box input{
-    width: 150px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    background-color: #3D404D;
-    color: white;
-    padding: 8px;
-}
-
-.kep-box input:hover {
-    background-color: #6D707D;
-    transform: scale(0.86);
-    transition: transform .2s ease;
-    cursor: pointer;
-}
-
-.grid-container{
-    width: 100%;
-    display: inline-grid;
-    column-gap: 50px;
-    row-gap: 50px;
-    justify-items: center;
-}
-
-@media only screen and (max-width: 875px) {
-    .grid-container{
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media only screen and (min-width: 875px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr ;
-    }
-
-}
-@media only screen and (min-width: 1300px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr 1fr ;
-    }
-
-}
-
-@media only screen and (min-width: 1700px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
-.kep-box {
+.kutya-doboz {
     background-color: transparent;
     width: 300px;
     height: 300px;
@@ -74,7 +21,7 @@ caption{
     border-radius: 10px;
 }
 
-.kep-box-inner {
+.kutya-doboz-belso {
     position: relative;
     width: 100%;
     height: 100%;
@@ -83,11 +30,11 @@ caption{
     transform-style: preserve-3d;
 }
 
-.kep-box:hover .kep-box-inner {
+.kutya-doboz:hover .kutya-doboz-inner {
     transform: rotateX(3.1415rad);
 }
 
-.kep-box-elol, .kep-box-hatul {
+.kutya-doboz-elol, .kutya-doboz-hatul {
     border-radius: 10px;
     position: absolute;
     width: 100%;
@@ -97,7 +44,7 @@ caption{
     transform: rotateX(0deg);
 }
 
-.kep-box-hatul {
+.kutya-doboz-hatul {
     background-color: rgba(255,255,255,0.2);
     display: flex;
     flex-direction: column;
@@ -105,11 +52,11 @@ caption{
     transform: rotateX(3.1415rad);
 }
 
-.kep-box-hatul > p {
+.kutya-doboz-hatul > p {
     font-size: 20px;
     padding: 15px 0;
 }
 
-.kep-box-hatul > h2 {
+.kutya-doboz-hatul > h2 {
     padding: 15px 0;
 }

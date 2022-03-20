@@ -1,11 +1,13 @@
+/*
+    Ez a fájl tartalmazza az index.html oldalon levő formázásokat.
+ */
 
 #kepsorozat-doboz {
-    float: right;
-    right: 0;
-    margin: 10px 20px 15px 10px;
     border: 5px solid lightgray;
-    width: 300px;
-    height: 300px;
+    width: 20vw;
+    height: 20vw;
+    min-width: 350px;
+    min-height: 350px;
     box-shadow: 0 15px 30px black;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +23,7 @@ main li{
     margin: 10px 0;
     list-style-type: none;
 }
+
 ul {
     padding: 5px 0 5px 15px;
 }
@@ -30,31 +33,40 @@ video {
     margin-right: auto;
     display: block;
 }
-@media only screen and (max-width: 600px) {
-    #kepsorozat-doboz {
-        float:  none !important;
-        display: block;
-
-        margin: 25px auto !important;
-
-    }
-}
-
-@keyframes kepsorozat{
-    0% { background-image: url('../media/kepek/kutya01.png'); }
-    33% { background-image: url('../media/kepek/kutya02.png'); }
-    66% { background-image: url('../media/kepek/kutya03.png'); }
-}
 
 #video{
     max-width: 700px;
     width: 92%;
     border-radius: 5px;
 }
+
 q{
     display: block;
     max-width: 500px;
 }
+
 p{
     text-indent: 15px;
+}
+
+@media only screen and (max-width: 750px) {
+    #kepsorozat-doboz {
+        float:  none;
+        display: block;
+
+        margin: 25px auto;
+
+    }
+}
+@media only screen and (min-width: 750px) {
+    #kepsorozat-doboz {
+        float: right;
+        margin: 15px 20px ;
+    }
+}
+
+@keyframes kepsorozat{
+    0% { background-image: url('../media/kepek/kutya01.png'); }
+    50% { background-image: url('../media/kepek/kutya02.png'); }
+    100% { background-image: url('../media/kepek/kutya03.png'); }
 }

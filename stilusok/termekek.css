@@ -1,27 +1,15 @@
-.vasarlas-gomb {
-    background-color: #3D404D;
-    border: none;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fff;
-    cursor: pointer;
-}
+/*
+    Ez a fájl tartalmazza az termekek.html oldalon levő formázásokat
+ */
+
+
 
 p {
     padding: 5px;
     color: #fff;
 }
 
-.grid-container{
-    width: 100%;
-    display: inline-grid;
-    column-gap: 50px;
-    row-gap: 50px;
-    justify-items: center;
-}
-
-.grid-item{
+.termek-doboz{
     display: grid;
     border: #DFF6FF 3px solid;
     border-radius: 5%;
@@ -31,22 +19,11 @@ p {
 
 }
 
-.grid-item:hover {
+.termek-doboz:hover {
     border: #000 3px solid;
 }
 
-.grid-item .vasarlas-gomb{
-    width: 150px;
-    height: 30px;
-    border-radius: 5px;
-}
 
-.grid-item .vasarlas-gomb:hover {
-    background-color: #6D707D;
-    color: #fff;
-    transform: scale(0.86);
-    transition: transform .2s ease;
-}
 
 .termek-kep:hover{
     transition: transform .2s ease;
@@ -63,32 +40,6 @@ p {
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 850px) {
-    .grid-container{
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media only screen and (min-width: 850px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr ;
-    }
-
-}
-
-@media only screen and (min-width: 1250px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr 1fr ;
-    }
-
-}
-
-@media only screen and (min-width: 1700px) {
-    .grid-container{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
 
 
 
