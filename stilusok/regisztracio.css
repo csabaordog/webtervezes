@@ -7,37 +7,38 @@ section {
 }
 
 .registration, .login {
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 700px;
-    width: 92%;
+    margin: 15px auto;
+    max-width: 650px;
+    width: 100%;
 }
 
-main > section  > h3 {
+section  > h3 {
     text-align: center;
 }
 
-form > fieldset > input, form > fieldset >  textarea, form > fieldset > select, form > fieldset > option {
+.form-input {
     display: block;
     margin: 10px auto;
     padding: 10px;
     width: 100%;
+    border-radius: 10px;
 }
 
-form > input{
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
+.gomb{
     width: 90%;
-    border-radius: 10px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
 fieldset{
     border: none;
     padding: 20px;
-    margin: 20px;
+    margin-top: 20px;
     border-radius: 10px;
+
+}
+legend{
+    font-weight: 550;
 }
 
 .checkbox > label {
@@ -51,8 +52,11 @@ textarea{
 
 
 input[type="submit"], input[type="reset"] {
-    background-color: #0E3EDA;
+    background-color: #2D2D2D;
     color: #ffffff;
     font-size: large;
     border: none;
+}
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: #6D707D;
 }

@@ -30,7 +30,7 @@
     transform-style: preserve-3d;
 }
 
-.kutya-doboz:hover .kutya-doboz-inner {
+.kutya-doboz:hover .kutya-doboz-belso {
     transform: rotateX(3.1415rad);
 }
 

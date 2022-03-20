@@ -1,3 +1,7 @@
+/*
+    Ez a fájl tartalmazza az kapcsolat.html oldalon levő formázásokat.
+ */
+
 #terkep{
     height: 80%;
     max-height: 400px;
@@ -7,9 +11,6 @@
     border-radius: 10px;
 
 }
-/*
-    Ez a fájl tartalmazza az kapcsolat.html oldalon levő formázásokat.
- */
 
 main li {
     padding: 15px 0;
@@ -19,7 +20,7 @@ main li {
 section{
     min-height: 200px;
     height: 60vh;
-    width: 75%;
+    max-width: 1200px;
 }
 
 @media only screen and (max-width: 1350px) {

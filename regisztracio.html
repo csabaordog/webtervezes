@@ -56,21 +56,21 @@
                     <fieldset>
                         <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
-                    <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required>
+                    <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required class="form-input">
 
                     <label for="pswd">Jelszó (Kötelező):</label>
-                    <input type="password" name="password" id="pswd" maxlength="25" required>
+                    <input type="password" name="password" id="pswd" maxlength="25" required class="form-input">
 
                     <label for="pswd2">Jelszó ismét (Kötelező):</label>
-                    <input type="password" name="password" id="pswd2" maxlength="25" required>
+                    <input type="password" name="password" id="pswd2" maxlength="25" required class="form-input">
 
                     <label for="email">E-mail cím (Kötelező):</label>
-                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required>
+                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required class="form-input">
 
                     <label for="birth">Születési év (Kötelező):</label>
-                    <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required>
+                    <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required  class="form-input">
                         <div class="radio">
-                            Nem:
+                            <p>Nem:</p>
                             <label><input type="radio" name="gender" value="male"> Férfi</label>
                             <label><input type="radio" name="gender" value="female"> Nő</label>
                             <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
@@ -80,7 +80,7 @@
                     <fieldset>
                         <legend>Egyéb:</legend>
                         <label for="care">Naponta mennyi időt szánsz a kutyádra?</label>
-                        <select name="care0" id="care">
+                        <select name="care0" id="care" class="form-input">
                             <option value="very-little">Naponta pár percet.</option>
                             <option value="little">Naponta fél órát.</option>
                             <option value="moderate">Naponta 1-2 órát.</option>
@@ -91,7 +91,7 @@
 
 
                     <label for="love">Miért szereted a kutyákat? (max. 300 karakter): </label>
-                    <textarea name="introduction" id="love" maxlength="300" rows="3"></textarea>
+                    <textarea name="introduction" id="love" maxlength="300" rows="3" class="form-input"></textarea>
 
                     <div class="checkbox">
                         <label>
@@ -110,8 +110,8 @@
 
 
                     </fieldset>
-                    <input type="reset" name="reset-btn" value="Visszaállítás">
-                    <input type="submit" name="signup-btn" value="Regisztráció">
+                    <input type="reset" name="reset-btn" value="Visszaállítás" class="gomb form-input">
+                    <input type="submit" name="signup-btn" value="Regisztráció" class="gomb form-input">
                 </form>
             </div>
             <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">

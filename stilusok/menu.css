@@ -53,7 +53,7 @@
     inset: 0 0 0 0;
     background-color: #6D707D;
     z-index: -1;
-    transition: transform .5s ease;
+
 }
 
 #menu .menu-link .menu-link-tartalom:hover::before{
@@ -129,6 +129,9 @@
     #menu .menu-link{
         width: 12%;
     }
+    #menu .menu-link .menu-link-tartalom::before{
+        transition: transform .5s ease;
+    }
 
 }
 
@@ -198,6 +201,9 @@
     #menu .menu-link .menu-link-tartalom{
         padding: 0.5rem;
         width: 100%;
+    }
+    #menu .menu-link .menu-link-tartalom::before{
+        transition: transform .8s ease;
     }
 
 }
