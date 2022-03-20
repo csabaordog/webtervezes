@@ -10,8 +10,6 @@ p{
 
 body {
     font-family: Arial, Verdana, sans-serif;
-    bottom: 0;
-    padding: 0;
     background: linear-gradient(90deg, #42C2FF, #0779E4, #0E3EDA);
 
 }
@@ -22,22 +20,21 @@ h3{
 }
 
 header {
-    font-size: x-large;
-    font-weight: bold;
-    background: linear-gradient(90deg, #42C2FF, #0779E4, #0E3EDA);
     text-align: center;
-    text-transform: none;
-    padding: 40px;
+    padding: 35px;
     text-shadow: 2px 2px black;
-}
-
-header h6 {
-    font-size: initial;
-    font-weight: lighter;
 }
 
 header > h1, header > h2{
     color: #fff;
+}
+
+header > h1{
+    font-size: 45px;
+}
+
+header > h2{
+    font-size: 20px;
 }
 
 footer {
@@ -52,73 +49,16 @@ footer {
 section{
     background-color: rgba(255,255,255,0.2);
     margin: 50px auto;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
 }
 
-ul {
-    padding: 5px 0 5px 15px;
-}
-#figyelem {
-    font-size: large;
-    padding: 15px 0;
-}
-
-video {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-blockquote {
-    padding: 20px 0;
-}
-
 main {
-    padding: 20px 40px;
+    padding: 0 7vw;
     margin: 20px auto;
     min-height: 100vh;
 }
 
-header > h1{
-    font-size: 45px;
-}
-
-header > h2{
-    font-size: 20px;
-    text-shadow: 2px 2px black;
-}
-
-@media only screen and (max-width: 600px) {
-    #kepsorozat-doboz {
-        float:  none !important;
-        display: block;
-
-        margin: 25px auto !important;
-
-    }
-}
-
-/* Legalabb 600px-es kijelzok (s) */
-@media only screen and (min-width: 600px) {
-
-}
-
-/* Legalabb 768px-es kijelzok (md) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Legalabb 992px-es kijelzo (lg) */
-@media only screen and (min-width: 992px) {
-    main{
-        padding: 20px 80px;
-    }
-}
-
-/*
-    Ugras a lap tetejere gomb formazasa
- */
 #ugras-gomb{
     position:fixed;
     right:0;
@@ -151,7 +91,7 @@ header > h2{
     color:white;
 }
 
-@media (max-width: 1000px){
+@media only screen and (max-width: 1000px){
     header{
         display: none;
     }

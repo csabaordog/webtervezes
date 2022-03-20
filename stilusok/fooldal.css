@@ -21,6 +21,24 @@ main li{
     margin: 10px 0;
     list-style-type: none;
 }
+ul {
+    padding: 5px 0 5px 15px;
+}
+
+video {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+@media only screen and (max-width: 600px) {
+    #kepsorozat-doboz {
+        float:  none !important;
+        display: block;
+
+        margin: 25px auto !important;
+
+    }
+}
 
 @keyframes kepsorozat{
     0% { background-image: url('../media/kepek/kutya01.png'); }

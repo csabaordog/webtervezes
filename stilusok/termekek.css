@@ -26,9 +26,8 @@ p {
     border: #DFF6FF 3px solid;
     border-radius: 5%;
     text-align: center;
-    background: rgba(255,255,255,0.2);
     padding: 15px;
-    min-width: 330px;
+    min-width: 300px;
 
 }
 
@@ -64,14 +63,14 @@ p {
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     .grid-container{
         grid-template-columns: 1fr;
     }
 
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 850px) {
     .grid-container{
         grid-template-columns: 1fr 1fr ;
     }
