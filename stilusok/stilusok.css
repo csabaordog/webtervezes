@@ -20,7 +20,9 @@
 p{
     margin-bottom: 10px;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, Verdana, sans-serif;
     background: linear-gradient(90deg, #42C2FF, #0779E4, #0E3EDA);

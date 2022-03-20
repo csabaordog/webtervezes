@@ -7,6 +7,7 @@ let ugrasGomb = document.querySelector("#ugras-gomb");
  */
 
 ugrasGomb.onclick = () => {
+
     window.scrollTo(0,0);
 };
 
