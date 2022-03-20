@@ -207,19 +207,24 @@
     }
 
 }
+/* A feltetelek.html szépen néz ki :) */
 @media print {
     #menu{
         display: none;
     }
     header > h2, header > h1{
         text-shadow: none;
-
     }
 
     li{
         page-break-inside: avoid;
         list-style: none;
-        letter-spacing: 2px;
-        margin-bottom:30px;
+
+    }
+    footer{
+        display: none;
+    }
+    #ugras-gomb{
+        display: none;
     }
 }
