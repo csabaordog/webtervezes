@@ -9,7 +9,7 @@
     max-width: 600px;
     float: right;
     border-radius: 10px;
-
+    box-shadow: 5px 15px 15px black;
 }
 
 #elerhetosegek li {

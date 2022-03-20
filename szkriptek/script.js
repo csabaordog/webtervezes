@@ -22,25 +22,10 @@ window.onscroll = () => {
         ugrasGomb.style.opacity = "0.0";
     }
 
-    window.onload();
-
+    sectionBeusztatas();
 };
 
-/*
-    Betöltődéskor lefut a függvény, ami minden section-re ellenőrzi, hogy már látszódik-e a képen
-    (a -350px azért került bele, hogy látszódjon is a beúszás és ne egyből ússzon be)
-*/
-
-window.onload = ()=>{
-
-    sectionok.forEach((section) => {
-        let elem = section.getBoundingClientRect();
-        if( elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 350) {
-            section.classList.add("becsuszas");
-            section.classList.remove("kint");
-        }
-    });
-}
+window.onload =  sectionBeusztatas;
 
 
 /*
@@ -53,4 +38,17 @@ function hamburger(){
     checkbox.checked = !checkbox.checked;
 }
 
+/*
+    Betöltődéskor és görgetéskor lefut a függvény, ami minden section-re ellenőrzi, hogy már látszódik-e a képen
+    (a -350px azért került bele, hogy látszódjon is a beúszás és ne egyből ússzon be)
+*/
 
+function sectionBeusztatas(){
+    sectionok.forEach((section) => {
+        let elem = section.getBoundingClientRect();
+        if( elem.top <= (window.innerHeight || document.documentElement.clientHeight) - 350) {
+            section.classList.add("becsuszas");
+            section.classList.remove("kint");
+        }
+    });
+}

@@ -15,7 +15,7 @@ p {
     text-align: center;
     padding: 15px;
     min-width: 300px;
-
+    box-shadow: 5px 15px 15px black;
 }
 
 .termek-doboz:hover {

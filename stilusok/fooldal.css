@@ -4,11 +4,9 @@
 
 #kepsorozat-doboz {
     border: 5px solid lightgray;
-    width: 20vw;
-    height: 20vw;
-    min-width: 350px;
-    min-height: 350px;
-    box-shadow: 0 15px 30px black;
+    width: 325px;
+    height: 325px;
+    box-shadow: 5px 15px 15px black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
