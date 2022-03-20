@@ -126,7 +126,7 @@ main {
 @keyframes beuszas-bal {
     from {
         opacity: 0;
-        transform:translateX(calc(-100%)););
+        transform:translateX(calc(-100%));
     }
     to   {
         opacity: 1;
@@ -136,7 +136,7 @@ main {
 @keyframes beuszas-jobb {
     from {
         opacity: 0;
-        transform:translateX(calc(100%)););
+        transform:translateX(calc(100%));
     }
     to   {
         opacity: 1;
