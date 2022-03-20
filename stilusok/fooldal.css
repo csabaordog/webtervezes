@@ -13,7 +13,7 @@
     background-size: cover;
     background-position: center;
     animation-name: kepsorozat;
-    animation-duration: 12s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     border-radius: 5px;
@@ -45,7 +45,7 @@ q{
     max-width: 500px;
 }
 
-p{
+section p{
     text-indent: 15px;
 }
 
