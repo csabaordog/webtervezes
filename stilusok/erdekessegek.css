@@ -13,6 +13,7 @@ p{
     width: 60vw;
     max-width: 500px;
     z-index:0;
+    border-radius: 10px;
 }
 
 #img-asito-kutya {
@@ -20,6 +21,7 @@ p{
     margin: 20px auto;
     max-width: 500px;
     width: 90%;
+    border-radius: 10px;
 }
 
 caption{
