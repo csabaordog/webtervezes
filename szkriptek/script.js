@@ -19,7 +19,6 @@ window.onscroll = () => {
     } else {
         ugrasGomb.style.opacity = "0.0";
     }
-
     sectionBeusztatas();
 };
 

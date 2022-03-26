@@ -4,7 +4,7 @@
 
 .kutya-kep {
     border-radius: 10px;
-    height: 300px;
+    width: 100%;
 }
 
 .kutya-doboz {
@@ -13,8 +13,10 @@
 
 .kutya-doboz {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 300px;
+    max-height: 300px;
     box-shadow: 5px 15px 15px black;
     perspective: 1000px;
     margin: 10px;

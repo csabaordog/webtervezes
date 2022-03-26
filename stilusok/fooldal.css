@@ -4,8 +4,10 @@
 
 #kepsorozat-doboz {
     border: 5px solid lightgray;
-    width: 325px;
-    height: 325px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 325px;
+    max-height: 325px;
     box-shadow: 5px 15px 15px black;
     background-repeat: no-repeat;
     background-size: cover;

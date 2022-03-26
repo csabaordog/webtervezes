@@ -14,7 +14,9 @@ p {
     border-radius: 5%;
     text-align: center;
     padding: 15px;
-    min-width: 300px;
+    width: 60vw;
+    max-width: 300px;
+    max-height: 350px;
     box-shadow: 5px 15px 15px black;
 }
 
