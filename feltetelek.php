@@ -22,28 +22,28 @@
     </div>
     <div id="menu-bg"></div>
     <div id="menu-pontok">
-        <a href="index.html" class="menu-link">
+        <a href="index.php" class="menu-link">
             <div class="menu-link-tartalom">Főoldal</div>
         </a>
-        <a href="kutyak.html" class="menu-link">
+        <a href="kutyak.php" class="menu-link">
             <div class="menu-link-tartalom">Kutyák</div>
         </a>
-        <a href="termekek.html" class="menu-link">
+        <a href="termekek.php" class="menu-link">
             <div class="menu-link-tartalom">Termékek</div>
         </a>
-        <a href="erdekessegek.html" class="menu-link">
+        <a href="erdekessegek.php" class="menu-link">
             <div class="menu-link-tartalom">Érdekességek</div>
         </a>
-        <a href="kapcsolat.html" class="menu-link">
+        <a href="kapcsolat.php" class="menu-link">
             <div class="menu-link-tartalom">Kapcsolat</div>
         </a>
-        <a href="beallitasok.html" class="menu-link">
+        <a href="beallitasok.php" class="menu-link">
             <div class="menu-link-tartalom">Beállítások</div>
         </a>
-        <a href="bejelentkezes.html" class="menu-link">
+        <a href="bejelentkezes.php" class="menu-link">
             <div class="menu-link-tartalom">Bejelentkezés</div>
         </a>
-        <a href="regisztracio.html" class="menu-link">
+        <a href="regisztracio.php" class="menu-link">
             <div class="menu-link-tartalom">Regisztráció</div>
         </a>
     </div>

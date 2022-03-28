@@ -2,7 +2,7 @@
 /**
     Itten lenne egy osztály, ami nem a legideálisabban működik, de legalább nem kell sql-t írni :)
  */
-    class Database{
+    class AdatbazisKezelo{
         private $pdo;
         private $database = "mysql:host=localhost;dbname=kutyabirodalom";
         private $user = "root";
@@ -22,27 +22,33 @@
             }
         }
 
+        /**
+            A paraméterben kapott felhasználó adatokat eltárolja az adatbázisban
+         */
         function beszurFelhasznalo($felhasznalonev, $jelszo, $email, $nem){
             $this -> pdo -> prepare("INSERT INTO felhasznalo (felhasznalonev, jelszo, email, nem) VALUES(?, ?, ?, ?) ") -> execute([$felhasznalonev, password_hash("$jelszo", PASSWORD_DEFAULT), $email, $nem]);
         }
 
+        /**
+            Leellenőrzi, hogy a paraméterben kapott felhasználónév és jelszó szerepel-e
+           az adatbázisban "felhasznalonev" és "jelszo" oszlopnevek alatt
+         */
         function ellenorizFelhasznalo($felhasznalonev, $jelszo){
             $felhasznalok = $this -> tablaLekerdezAdatbazisbol("felhasznalok");
             foreach($felhasznalok as $felhasznalo){
                 if($felhasznalo["felhasznalonev"] === $felhasznalonev && password_verify($jelszo, $felhasznalo["jelszo"])){
-                    echo "Egyezik<br>";
-                    break;
+                    return true;
                 }
-
             }
+            return false;
         }
 
+        /**
+          A paraméterben kapott táblát lekérdezi az adatbázisból és visszaadja. pl. tablaLekerdezAdatbazisbol("termekek")
+         */
         function tablaLekerdezAdatbazisbol($tabla){
             $lekerdezes = $this -> pdo -> query("SELECT * FROM $tabla");
             return $lekerdezes->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
-    $adatbazis = new Database;
-    $adatbazis -> ellenorizFelhasznalo("Sanyi", "123");
-    $adatbazis -> ellenorizFelhasznalo("Sanyi", "jelszo");
