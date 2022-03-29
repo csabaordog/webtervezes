@@ -1,8 +1,8 @@
 <?php
-require "adatbazisKezelo.class.php";
-$adatbazis = new AdatbazisKezelo();
-$kutyak = $adatbazis -> tablaLekerdezAdatbazisbol("kutyak");
-print_r($kutyak);
+    require "adatbazisKezelo.class.php";
+    $adatbazis = new AdatbazisKezelo();
+    $kutyak = $adatbazis -> tablaLekerdezAdatbazisbol("kutyak");
+    print_r($kutyak);
 
 ?>
 
@@ -79,7 +79,7 @@ print_r($kutyak);
                     </div>
                 </div>
             <?php endforeach ?>
-
+        </div>
     </section>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
         <p>/\<br>|</p>

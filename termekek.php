@@ -1,3 +1,11 @@
+<?php
+    require "adatbazisKezelo.class.php";
+    $adatbazis = new AdatbazisKezelo();
+    $termekek = $adatbazis -> tablaLekerdezAdatbazisbol("termekek");
+    print_r($termekek);
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -53,60 +61,15 @@
     <section class="kint">
         <h3>Nálunk kapható termékek:</h3>
         <div class="grid-container">
-            <div class="termek-doboz">
-                <img src="media/kepek/szallito.jpg" alt="Szállitó ketrec" title="Szállító ketrec" class="termek-kep">
-                <p>Szállitó ketrec</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/nyakorv.jpg" alt="Nyakörv" title="Nyakörv" class="termek-kep">
-                <p>Nyakörv</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/kutyaagy.jpg" alt="Kutyaágy" title="Kutyaágy" class="termek-kep">
-                <p>Kutyaágy</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/jateklabdak.jpg" alt="Játéklabda" title="Játéklabda" class="termek-kep">
-                <p>Játéklabda</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/frizbi.jpg" alt="Frizbi" title="Frizbi" class="termek-kep">
-                <p>Frizbi</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/kutyatal.jpg" alt="Kutyatál" title="Kutyatál" class="termek-kep">
-                <p>Kutyatál</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/poraz.jpg" alt="Póráz" title="Póráz" class="termek-kep">
-                <p>Póráz</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/kutyahaz.jpg" alt="Kutyaház" title="Kutyaház" class="termek-kep">
-                <p>Kutyaház</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
-            <div class="termek-doboz">
-                <img src="media/kepek/kutyakabat.jpg" alt="Kutyakabát" title="Kutyakabát" class="termek-kep">
-                <p>Kutyakabát</p>
-                <p>666 Ft</p>
-                <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
-            </div>
+            <?php foreach ($termekek as $termek) : ?>
+                <div class="termek-doboz">
+                    <img src="<?= "media/kepek/{$termek["kep"]}" ?>" alt="<?= $termek["nev"] ?>" title="<?= $termek["nev"] ?>" class="termek-kep">
+                    <p><?= $termek["nev"] ?></p>
+                    <p><?= $termek["ar"] ?> Ft</p>
+                    <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
+                </div>
+            <?php endforeach ?>
+
         </div>
     </section>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
