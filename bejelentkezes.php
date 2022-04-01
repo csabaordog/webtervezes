@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    //Bejelentkezés kezelése
+    if(isset($_POST["submit"])){
+
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>

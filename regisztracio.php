@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    //Regisztráció kezelése
+    if(isset($_POST["submit"])){
+
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -52,7 +62,7 @@
     <section class="kint">
         <h3>Regisztráció</h3>
         <div class="registration">
-            <form action="#" method="post" autocomplete="off">
+            <form action="#" method="POST" autocomplete="off">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
