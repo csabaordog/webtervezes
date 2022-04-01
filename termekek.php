@@ -2,7 +2,6 @@
     require "adatbazisKezelo.class.php";
     $adatbazis = new AdatbazisKezelo();
     $termekek = $adatbazis -> tablaLekerdezAdatbazisbol("termekek");
-    print_r($termekek);
 
 ?>
 

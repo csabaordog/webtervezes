@@ -2,8 +2,6 @@
     require "adatbazisKezelo.class.php";
     $adatbazis = new AdatbazisKezelo();
     $kutyak = $adatbazis -> tablaLekerdezAdatbazisbol("kutyak");
-    print_r($kutyak);
-
 ?>
 
 <!DOCTYPE html>
