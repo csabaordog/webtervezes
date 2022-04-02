@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "adatbazisKezelo.class.php";
+    require "Adatbaziskezelo.php";
     $adatbazis = new AdatbazisKezelo();
     $termekek = $adatbazis -> tablaLekerdezAdatbazisbol("termekek");
 
