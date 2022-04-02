@@ -4,9 +4,13 @@
  */
     class AdatbazisKezelo{
         private $pdo;
+        //adatbázis elérése ide
         private $database = "mysql:host=localhost;dbname=kutyabirodalom";
+        //adatbázishoz felhasználónév
         private $user = "root";
+        //adatbázishoz jelszó
         private $password = "";
+        //Ha hiba keletkezik, akkor a PDO object hibát dob
         private $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
         //TODO majd check, hogy sikerült-e a csatlakozás az adatbázishoz
