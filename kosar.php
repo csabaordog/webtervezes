@@ -2,8 +2,7 @@
 session_start();
 //Ha a felhasználó nincs bejelentkezve, akkor át kéne átirányítani a főoldalra
 //Először a felhasználókezelés a fontos, utána lehet ezzel foglalkozni.
-include "menusav.php";
-include "lablec.php";
+
 ?>
 
 
@@ -22,7 +21,6 @@ include "lablec.php";
 <header>
     <h1>Kutya birodalom</h1>
 </header>
-<?php //megjelenitMenu("kosar") ?>
 <main>
     A kosarad üres!!!
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
@@ -30,7 +28,9 @@ include "lablec.php";
     </div>
 </main>
 
-<?php megjelenitLablec();?>
+<footer>
+    <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
+</footer>
 <script src="szkriptek/script.js"></script>
 
 </body>
