@@ -1,5 +1,3 @@
-<?php
-    /*
-     * Ide a láblécet kellene belerakni, majd mindenhonnan meghívni, így csak egyszer kell megírni magát a láblécet.
-     *
-     */
+<footer>
+    <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
+</footer>

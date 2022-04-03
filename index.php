@@ -27,7 +27,7 @@
     </div>
     <div id="menu-bg"></div>
     <div id="menu-pontok">
-        <a href="#" class="menu-link">
+        <a href="index.php" class="menu-link">
             <div class="menu-link-tartalom">Főoldal</div>
         </a>
         <a href="kutyak.php" class="menu-link">
@@ -118,9 +118,9 @@
     </div>
 </main>
 
-<footer>
-    <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
-</footer>
+<?php
+include_once "lablec.php";
+?>
 <script rel="stylesheet" src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="szkriptek/script.js"></script>
 
