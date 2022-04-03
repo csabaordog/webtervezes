@@ -1,10 +1,66 @@
 <?php
     session_start();
     //Regisztráció kezelése
-    if(isset($_POST["submit"])){
+
+    include "Adatbaziskezelo.php";
+    $db = new AdatbazisKezelo();
+    $hibak = [];
+    $felhasznaloMentve = false;
+    //Regisztráció kezelése
+    if(isset($_POST["signup-btn"])){
+        //Űrlapadatok mentése
+        $felhasznalonev = $_POST["uname"];
+        $jelszo = $_POST["password"];
+        $ellenorzoJelszo = $_POST["password2"];
+        $email = $_POST["email"];
+        $szuletesiEv = $_POST["birthd"];
+        $jelolonegyzetek = $_POST["confirmations"];
+        $nem = "egyéb";
+
+        if (isset($_POST["gender"])) {
+            $nem = $_POST["gender"];
+        }
+        //Jelszó validálás
+        if (!(preg_match("/[A-Za-z]/", $jelszo) || preg_match("/[0-9]/", $jelszo))) {
+            $hibak[] = "A jelszónak tartalmaznia kell betűt és számjegyet is!";
+        }
+        //Email cím validálás
+        if (!preg_match("/[0-9a-z\.\-]+@([0-9a-z\-]+\.)[a-z]{2,4}/", $email)) {
+            $hibak[] = "A megadott e-mail cím formátuma nem megfelelő!";
+        }
+        //Jelszavak egyezésének ellenőrzése
+        if($jelszo != $ellenorzoJelszo){
+            $hibak[] = "A megadott jelszavak nem egyeznek!";
+        }
+        //Email cím ellenőrzése
+        $felhasznalok = $db->tablaLekerdezAdatbazisbol("felhasznalok");
+        foreach ($felhasznalok as $felhasznalo){
+            if($felhasznalo["email"] == $email){
+                $hibak[] = "Az email cím foglalt!";
+                break;
+            }
+        }
+        //Felhasználási feltételek elfogadásának ellenőrzése
+        if(!in_array("accept-terms-and-conditions",$jelolonegyzetek)){
+            $hibak[] = "Nem fogadta el a felhasználási feltételeket!";
+        }
+        //Adatok helyességére vonatkozó nyilatkozat ellenőrzése
+        if(!in_array("confirm-data", $jelolonegyzetek)){
+            $hibak[] = "Nem fogadta el az adatok helyességére vonatkozó nyilatkozatot!";
+        }
+        //Ha nincs hiba, akkor mentés az adatbázisba
+        if(count($hibak) == 0){
+            try {
+                $db->beszurFelhasznalo($felhasznalonev, $jelszo, $email, $nem);
+                $felhasznaloMentve = true;
+            }
+            catch (Exception $e){
+                echo "Hiba lépett fel";
+            }
+        }
 
     }
-
+    //TODO egyéb mezők hozzáadása regisztrációnál
 ?>
 
 
@@ -61,6 +117,22 @@
 <main>
     <section class="kint">
         <h3>Regisztráció</h3>
+        <?php
+        //Ha sikerült elmenteni a felhasználót
+        if ($felhasznaloMentve){
+            echo "<div class='uzenet'> A felhasználó mentése sikeres volt! </div>";
+        }
+        //Ha hiba lépett fel a regisztráció során
+        else if (count($hibak) > 0) {
+            echo "<div class='hibak'>";
+
+            foreach ($hibak as $hiba) {
+                echo "<p>" . $hiba . "</p>";
+            }
+
+            echo "</div>";
+        }
+        ?>
         <div class="registration">
             <form action="#" method="POST" autocomplete="off">
                 <fieldset>
@@ -108,11 +180,11 @@
 
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="checkbox1" value="confirm-data" required>
+                            <input type="checkbox" name="confirmations[]" value="confirm-data" required>
                             Nyilatkozom, hogy a megadott adatok a valóságnak megfelelnek.
                         </label>
                         <label>
-                            <input type="checkbox" name="checkbox2" value="accept-terms-and-conditions" required>
+                            <input type="checkbox" name="confirmations[]" value="accept-terms-and-conditions" required>
                             Elfogadom a <a href="feltetelek.php">felhasználási feltételeket. </a>
                         </label>
                         <label>

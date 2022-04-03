@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kutyaimádok</title>
+    <title>Kutyaimádók</title>
     <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
     <link rel="stylesheet" href="stilusok/fooldal.css">

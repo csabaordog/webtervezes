@@ -1,7 +1,7 @@
 <?php
     session_start();
     //Bejelentkezés kezelése
-    if(isset($_POST["submit"])){
+    if(isset($_POST["login-btn"])){
 
     }
 
