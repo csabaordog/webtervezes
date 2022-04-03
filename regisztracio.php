@@ -134,7 +134,7 @@
         }
         ?>
         <div class="registration">
-            <form action="#" method="POST" autocomplete="off">
+            <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
@@ -160,6 +160,9 @@
                         <label><input type="radio" name="gender" value="female"> Nő</label>
                         <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
                     </div>
+                    <br>
+                    <label for="profil-kep">Profilkép feltöltése:</label>
+                    <input type="file" name="profil" accept="image/*" class="form-input">
 
                 </fieldset>
                 <fieldset>
