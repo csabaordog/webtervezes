@@ -160,9 +160,6 @@
                         <label><input type="radio" name="gender" value="female"> Nő</label>
                         <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
                     </div>
-                    <br>
-                    <label for="profil-kep">Profilkép feltöltése:</label>
-                    <input type="file" name="profil" accept="image/*" class="form-input">
 
                 </fieldset>
                 <fieldset>
