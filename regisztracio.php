@@ -134,7 +134,7 @@
         }
         ?>
         <div class="registration">
-            <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <form action="#" method="POST" autocomplete="off">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
