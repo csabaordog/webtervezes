@@ -12,47 +12,39 @@
 
 function navigacioGeneralasa(string $aktualis)
 {
-    echo "<nav><ul>" .
-        "<li>" . ($aktualis === "index" ? "class='active'" : "") . ">" .
-        "<a href='index.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Főoldal</div>
-        </a>" .
-        "</li>" .
-        "<li" . ($aktualis === "kutya" ? "class='active'" : "") . ">" .
-        "<a href='kutyak.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Kutyák</div>
-        </a>" .
-        "</li>" .
-        "<li>" . ($aktualis === "termek" ? "class='active'" : "") . ">" .
-        "<a href='termekek.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Termékek</div>
-        </a>" .
-        "</li>" .
-        "<li" . ($aktualis === "erdekesseg" ? "class='active'" : "") . ">" .
-        "<a href='erdekessegek.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Érdekességek</div>
-        </a>" .
-        "</li>" .
-        "<li>" . ($aktualis === "kapcsolat" ? "class='active'" : "") . ">" .
-        "<a href='kapcsolat.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Kapcsolat</div>
-        </a>" .
-        "</li>" .
-        "<li" . ($aktualis === "beallitas" ? "class='active'" : "") . ">" .
-        "<a href='beallitasok.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Beállítások</div>
-        </a>" .
-        "</li>" .
-        "<li>" . ($aktualis === "bejelentkezes" ? "class='active'" : "") . ">" .
-        "<a href='bejelentkezes.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Bejelentkezés</div>
-        </a>" .
-        "</li>" .
-        "<li" . ($aktualis === "regisztracio" ? "class='active'" : "") . ">" .
-        "<a href='regisztracio.php' class='menu-link'>
-            <div class='menu-link-tartalom'>Regisztráció</div>
-        </a>" .
-        "</li>" .
-        "</ul></nav>";
+    echo '<nav id="menu">
+        <div id="menu-logo">Kutya birodalom</div>
+        <input id="menu-toggle" type="checkbox"/>
+        <div class="hamburger-gomb-container" onclick="hamburger()">
+            <div class="hamburger-gomb"></div>
+        </div>
+        <div id="menu-bg"></div>
+        <div id="menu-pontok">
+            <a href="index.php" class="menu-link '. ($aktualis === "index" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Főoldal</div>
+            </a>
+            <a href="kutyak.php" class="menu-link '. ($aktualis === "kutya" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Kutyák</div>
+            </a>
+            <a href="termekek.php" class="menu-link '. ($aktualis === "termek" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Termékek</div>
+            </a>
+            <a href="erdekessegek.php" class="menu-link '. ($aktualis === "erdekesseg" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Érdekességek</div>
+            </a>
+            <a href="kapcsolat.php" class="menu-link '. ($aktualis === "kapcsolat" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Kapcsolat</div>
+            </a>
+            <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitas" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Beállítások</div>
+            </a>
+            <a href="bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Bejelentkezés</div>
+            </a>
+            <a href="regisztracio.php" class="menu-link '. ($aktualis === "regisztracio" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Regisztráció</div>
+            </a>
+        </div>
+    </nav>';
 }
 

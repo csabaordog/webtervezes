@@ -34,7 +34,7 @@
     border-left: 3px solid #333;
 }
 
-#menu .menu-link[href="#"] {
+.active {
     background-color: #2D2D2D;
 }
 
