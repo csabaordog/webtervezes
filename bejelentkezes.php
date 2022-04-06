@@ -2,6 +2,8 @@
     session_start();
     //Bejelentkezés kezelése
     include "menusav.php";
+    //TODO le kéne ellenőrizni a felhasználónevet és a jelszavat
+    // és ha helyesek, akkor "beléptetni" a felhasználót (mondjuk $_SESSION["felhasznalo"]-ban tárolni
     if(isset($_POST["login-btn"])){
 
     }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-include "menusav.php";
+    include "menusav.php";
     include "osztalyok/Termek.php";
     include "adatkezeles.php";
     $termekek = adatokBetoltese("adatok/termekek.txt");

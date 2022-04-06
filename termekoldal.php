@@ -1,5 +1,2 @@
 <?php
-/*
- * Ide majd GET paraméter alapján megjelenítjünk egy adott terméket, és itt lesznek megvehetők.
- *
- * */
+//TODO GET paraméterben kap majd egy terméket és annak az adatait jeleníti meg

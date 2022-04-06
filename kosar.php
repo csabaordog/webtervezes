@@ -1,8 +1,7 @@
 <?php
 session_start();
 include "menusav.php";
-//Ha a felhasználó nincs bejelentkezve, akkor át kéne átirányítani a főoldalra
-//Először a felhasználókezelés a fontos, utána lehet ezzel foglalkozni.
+//TODO kilistázni a felhasználó kosarát "szépen"
 
 ?>
 

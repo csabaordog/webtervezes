@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "menusav.php";
+    //TODO űrlap amin a felhasználó tudja módosítani az adatait
 ?>
 
 <!DOCTYPE html>

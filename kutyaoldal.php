@@ -1,5 +1,2 @@
 <?php
-/*
- * Itt meg GET paraméter alapján a kutyák lesznek megjelenítve, szóval minden kutyának lesz "külön" oldala, ahol meg lehet őket venni.
- *
- * */
+//TODO GET paraméterben kap meg egy kutyát és annak az adait jeleníti meg
