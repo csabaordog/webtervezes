@@ -23,19 +23,19 @@ function navigacioGeneralasa(string $aktualis)
             <a href="index.php" class="menu-link '. ($aktualis === "index" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Főoldal</div>
             </a>
-            <a href="kutyak.php" class="menu-link '. ($aktualis === "kutya" ? "active" : "") .'">
+            <a href="kutyak.php" class="menu-link '. ($aktualis === "kutyak" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kutyák</div>
             </a>
-            <a href="termekek.php" class="menu-link '. ($aktualis === "termek" ? "active" : "") .'">
+            <a href="termekek.php" class="menu-link '. ($aktualis === "termekek" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Termékek</div>
             </a>
-            <a href="erdekessegek.php" class="menu-link '. ($aktualis === "erdekesseg" ? "active" : "") .'">
+            <a href="erdekessegek.php" class="menu-link '. ($aktualis === "erdekessegek" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Érdekességek</div>
             </a>
             <a href="kapcsolat.php" class="menu-link '. ($aktualis === "kapcsolat" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kapcsolat</div>
             </a>
-            <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitas" ? "active" : "") .'">
+            <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitasok" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Beállítások</div>
             </a>
             <a href="bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'">

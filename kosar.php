@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "menusav.php";
 //Ha a felhasználó nincs bejelentkezve, akkor át kéne átirányítani a főoldalra
 //Először a felhasználókezelés a fontos, utána lehet ezzel foglalkozni.
 
@@ -21,6 +22,7 @@ session_start();
 <header>
     <h1>Kutya birodalom</h1>
 </header>
+<?php navigacioGeneralasa(""); ?>
 <main>
     A kosarad üres!!!
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">

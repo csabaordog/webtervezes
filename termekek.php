@@ -1,5 +1,6 @@
 <?php
     session_start();
+include "menusav.php";
     include "osztalyok/Termek.php";
     include "adatkezeles.php";
     $termekek = adatokBetoltese("adatok/termekek.txt");
@@ -23,40 +24,7 @@
     <h1>Termékek</h1>
     <h2>Az állatimádók oldala</h2>
 </header>
-<nav id="menu">
-    <div id="menu-logo">Termékek</div>
-    <input id="menu-toggle" type="checkbox"/>
-    <div class="hamburger-gomb-container" onclick="hamburger()">
-        <div class="hamburger-gomb"></div>
-    </div>
-    <div id="menu-bg"></div>
-    <div id="menu-pontok">
-        <a href="index.php" class="menu-link">
-            <div class="menu-link-tartalom">Főoldal</div>
-        </a>
-        <a href="kutyak.php" class="menu-link">
-            <div class="menu-link-tartalom">Kutyák</div>
-        </a>
-        <a href="#" class="menu-link">
-            <div class="menu-link-tartalom">Termékek</div>
-        </a>
-        <a href="erdekessegek.php" class="menu-link">
-            <div class="menu-link-tartalom">Érdekességek</div>
-        </a>
-        <a href="kapcsolat.php" class="menu-link">
-            <div class="menu-link-tartalom">Kapcsolat</div>
-        </a>
-        <a href="beallitasok.php" class="menu-link">
-            <div class="menu-link-tartalom">Beállítások</div>
-        </a>
-        <a href="bejelentkezes.php" class="menu-link">
-            <div class="menu-link-tartalom">Bejelentkezés</div>
-        </a>
-        <a href="regisztracio.php" class="menu-link">
-            <div class="menu-link-tartalom">Regisztráció</div>
-        </a>
-    </div>
-</nav>
+<?php navigacioGeneralasa("termekek"); ?>
 <main>
     <section class="kint">
         <h3>Nálunk kapható termékek:</h3>
