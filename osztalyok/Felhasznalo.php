@@ -11,7 +11,6 @@ class Felhasznalo
     private int $szuletesiEv;
     private string $nem;
     private array $kosar;
-    private AdatbazisKezelo $adatbazisKezelo;
 
     public function __construct(string $felhasznalonev, string $jelszo, string $email, int $szuletesiEv, string $nem)
     {
@@ -21,7 +20,6 @@ class Felhasznalo
         $this->szuletesiEv = $szuletesiEv;
         $this->nem = $nem;
         $this->kosar = [];
-        $this->adatbazisKezelo = new AdatbazisKezelo();
     }
 
 

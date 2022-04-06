@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require "Adatbaziskezelo.php";
-    $adatbazis = new AdatbazisKezelo();
-    $termekek = $adatbazis -> tablaLekerdezAdatbazisbol("termekek");
+    include "osztalyok/Termek.php";
+    include "adatkezeles.php";
+    $termekek = adatokBetoltese("adatok/termekek.txt");
 
 ?>
 
@@ -63,9 +63,9 @@
         <div class="grid-container">
             <?php foreach ($termekek as $termek) : ?>
                 <div class="termek-doboz">
-                    <img src="<?= "media/kepek/{$termek["kep"]}" ?>" alt="<?= $termek["nev"] ?>" title="<?= $termek["nev"] ?>" class="termek-kep">
-                    <p><?= $termek["nev"] ?></p>
-                    <p><?= $termek["ar"] ?> Ft</p>
+                    <img src="<?= "media/kepek/{$termek->getKep()}" ?>" alt="<?= $termek->getNev() ?>" title="<?= $termek->getNev() ?>" class="termek-kep">
+                    <p><?= $termek->getNev() ?></p>
+                    <p><?= $termek->getAr() ?> Ft</p>
                     <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
                 </div>
             <?php endforeach ?>

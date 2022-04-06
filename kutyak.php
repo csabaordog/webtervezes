@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require "Adatbaziskezelo.php";
-    $adatbazis = new AdatbazisKezelo();
-    $kutyak = $adatbazis -> tablaLekerdezAdatbazisbol("kutyak");
+    include "osztalyok/Kutya.php";
+    include "adatkezeles.php";
+    $kutyak = adatokBetoltese("adatok/kutyak.txt");
 ?>
 
 <!DOCTYPE html>
@@ -67,10 +67,10 @@
                 <div class="kutya-doboz">
                     <div class="kutya-doboz-belso">
                         <div class="kutya-doboz-elol">
-                            <img src="<?= "media/kepek/{$kutya["kep"]}" ?>" alt="<?= $kutya["nev"] ?>" class="kutya-kep">
+                            <img src="<?= "media/kepek/{$kutya->getKep()}" ?>" alt="<?= $kutya->getNev() ?>" class="kutya-kep">
                         </div>
                         <div class="kutya-doboz-hatul">
-                            <h2><?= $kutya["nev"] ?></h2>
+                            <h2><?= $kutya->getNev() ?></h2>
                             <div>
                                 <input type="button" value="Kérem" class="vasarlas-gomb">
                             </div>

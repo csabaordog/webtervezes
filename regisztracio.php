@@ -1,11 +1,12 @@
 <?php
     session_start();
     //Regisztráció kezelése
+    include "osztalyok/Felhasznalo.php";
+    include "adatkezeles.php";
 
-    include "Adatbaziskezelo.php";
-    $db = new AdatbazisKezelo();
+    $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
-    $felhasznaloMentve = false;
+
     //Regisztráció kezelése
     if(isset($_POST["signup-btn"])){
         //Űrlapadatok mentése
@@ -33,9 +34,8 @@
             $hibak[] = "A megadott jelszavak nem egyeznek!";
         }
         //Email cím ellenőrzése
-        $felhasznalok = $db->tablaLekerdezAdatbazisbol("felhasznalok");
         foreach ($felhasznalok as $felhasznalo){
-            if($felhasznalo["email"] == $email){
+            if($felhasznalo->getEmail() == $email){
                 $hibak[] = "Az email cím foglalt!";
                 break;
             }
@@ -51,8 +51,9 @@
         //Ha nincs hiba, akkor mentés az adatbázisba
         if(count($hibak) == 0){
             try {
-                $db->beszurFelhasznalo($felhasznalonev, $jelszo, $email, $nem);
-                $felhasznaloMentve = true;
+                $ujFelhasznalo = new Felhasznalo($felhasznalonev,password_hash($jelszo,PASSWORD_DEFAULT),$email,$szuletesiEv,$nem);
+                $felhasznalok[] = $ujFelhasznalo;
+                adatokMentese("adatok/felhasznalok.txt", $felhasznalok);
             }
             catch (Exception $e){
                 echo "Hiba lépett fel";
@@ -118,12 +119,9 @@
     <section class="kint">
         <h3>Regisztráció</h3>
         <?php
-        //Ha sikerült elmenteni a felhasználót
-        if ($felhasznaloMentve){
-            echo "<div class='uzenet'> A felhasználó mentése sikeres volt! </div>";
-        }
+
         //Ha hiba lépett fel a regisztráció során
-        else if (count($hibak) > 0) {
+        if (count($hibak) > 0) {
             echo "<div class='hibak'>";
 
             foreach ($hibak as $hiba) {
