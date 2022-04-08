@@ -36,16 +36,24 @@ function navigacioGeneralasa(string $aktualis)
             </a>
             <a href="kapcsolat.php" class="menu-link '. ($aktualis === "kapcsolat" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kapcsolat</div>
+            </a>';
+            if(isset($_SESSION["felhasznalo"])){
+            echo'<a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Kosár</div>
             </a>
             <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitasok" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Beállítások</div>
-            </a>
-            <a href="bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'">
-                <div class="menu-link-tartalom">Bejelentkezés</div>
-            </a>
-            <a href="regisztracio.php" class="menu-link '. ($aktualis === "regisztracio" ? "active" : "") .'">
-                <div class="menu-link-tartalom">Regisztráció</div>
-            </a>
+            </a>';
+            }
+            else {
+               echo '<a href = "bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'" >
+                <div class="menu-link-tartalom" > Bejelentkezés</div >
+            </a >
+            <a href = "regisztracio.php" class="menu-link '. ($aktualis === "regisztracio" ? "active" : "") .'" >
+                <div class="menu-link-tartalom" > Regisztráció</div >
+            </a >';
+            }
+           echo '
         </div>
     </nav>';
 }

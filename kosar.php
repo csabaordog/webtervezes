@@ -21,7 +21,7 @@ include "menusav.php";
 <header>
     <h1>Kutya birodalom</h1>
 </header>
-<?php navigacioGeneralasa(""); ?>
+<?php navigacioGeneralasa("kosar"); ?>
 <main>
     A kosarad üres!!!
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
