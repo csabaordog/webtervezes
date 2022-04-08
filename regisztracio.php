@@ -100,7 +100,7 @@
         }
         ?>
         <div class="registration">
-            <form action="#" method="POST" autocomplete="off">
+            <form action="regisztracio.php" method="POST" autocomplete="off">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
@@ -111,10 +111,10 @@
                     <input type="password" name="password" id="pswd" maxlength="25" required class="form-input">
 
                     <label for="pswd2">Jelszó ismét (Kötelező):</label>
-                    <input type="password" name="password" id="pswd2" maxlength="25" required class="form-input">
+                    <input type="password" name="password2" id="pswd2" maxlength="25" required class="form-input">
 
                     <label for="email">E-mail cím (Kötelező):</label>
-                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required
+                    <input type="email" name="email" id="email" placeholder="valaki@gmail.com" required
                            class="form-input">
 
                     <label for="birth">Születési év (Kötelező):</label>

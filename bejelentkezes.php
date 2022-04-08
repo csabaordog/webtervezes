@@ -2,10 +2,32 @@
     session_start();
     //Bejelentkezés kezelése
     include "menusav.php";
-    //TODO le kéne ellenőrizni a felhasználónevet és a jelszavat
-    // és ha helyesek, akkor "beléptetni" a felhasználót (mondjuk $_SESSION["felhasznalo"]-ban tárolni
+    include "osztalyok/Felhasznalo.php";
+    include "adatkezeles.php";
+
+    $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
+    $hiba = [];
+
     if(isset($_POST["login-btn"])){
 
+        $felhasznalonev = $_POST["uname"];
+        $jelszo = $_POST["password"];
+
+        foreach ($felhasznalok as $felhasznalo){
+
+            if($felhasznalo->getFelhasznalonev() === $felhasznalonev && password_verify($jelszo, $felhasznalo->getJelszo())){
+                $_SESSION["felhasznalo"] = $felhasznalo;
+                break;
+            }
+
+        }
+        if(!isset($_SESSION["felhasznalo"])){
+            $hiba[] = "Rossz felhasználónév vagy jelszó!";
+        }
+    }
+    //TODO bejelentkezés utáni üzenet
+    if(isset($_SESSION["felhasznalo"])){
+        header("Location: index.php");
     }
 
 ?>
@@ -33,7 +55,7 @@
     <section class="kint">
         <h3>Bejelentkezés</h3>
         <div class="login">
-            <form action="#" method="post" autocomplete="off">
+            <form action="bejelentkezes.php" method="post" autocomplete="off">
                 <fieldset>
                     <label for="usname">Felhasználónév:</label>
                     <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required
