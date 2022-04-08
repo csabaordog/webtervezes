@@ -34,7 +34,7 @@
                     <img src="<?= "media/kepek/{$termek->getKep()}" ?>" alt="<?= $termek->getNev() ?>" title="<?= $termek->getNev() ?>" class="termek-kep">
                     <p><?= $termek->getNev() ?></p>
                     <p><?= $termek->getAr() ?> Ft</p>
-                    <input type="button" value="Kosárba tesz" class="vasarlas-gomb">
+                    <a href="<?= "termekoldal.php?termek=".str_replace(" ", "", strtolower($termek->getNev())) ?>">Érdekel</a>
                 </div>
             <?php endforeach ?>
 

@@ -12,8 +12,6 @@
 
 function navigacioGeneralasa(string $aktualis)
 {
-    //TODO majd azt is meg kellene oldani, hogy mondjuk ha a felhasználó be van jelentkezve,
-    // akkor ne jelenjen meg se a bejelentkezés, se a regisztráció, de mondjuk legyen kijelentkezés, kosár, stb..
     echo '<nav id="menu">
         <div id="menu-logo">Kutya birodalom</div>
         <input id="menu-toggle" type="checkbox"/>
@@ -43,7 +41,11 @@ function navigacioGeneralasa(string $aktualis)
             </a>
             <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitasok" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Beállítások</div>
-            </a>';
+            </a>
+             <a href="kijelentkezes.php" class="menu-link">
+                <div class="menu-link-tartalom">Kijelentkezés</div>
+            </a>
+            ';
             }
             else {
                echo '<a href = "bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'" >

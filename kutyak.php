@@ -40,7 +40,8 @@
                         <div class="kutya-doboz-hatul">
                             <h2><?= $kutya->getNev() ?></h2>
                             <div>
-                                <input type="button" value="Kérem" class="vasarlas-gomb">
+
+                                <a href="<?= "kutyaoldal.php?kutya=".str_replace(" ", "", strtolower($kutya->getNev())) ?>">Érdekel</a>
                             </div>
                         </div>
                     </div>
