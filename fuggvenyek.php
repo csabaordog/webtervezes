@@ -3,9 +3,9 @@
 function profilkepFeltoltese(array &$hibak, string $felhasznalonev) {
     // Először érdemes megnézni, hogy ténylegesen feltöltött-e egy fájlt a felhasználó.
 
-    if (isset($_FILES["profile-picture"]) && is_uploaded_file($_FILES["profile-picture"]["tmp_name"])) {
+    if (isset($_FILES["profilkep"]) && is_uploaded_file($_FILES["profilkep"]["tmp_name"])) {
         // Hibakezelés: a fájlfeltöltés során adódó esetleges hibák.
-        if ($_FILES["profile-picture"]["error"] !== 0) {
+        if ($_FILES["profilkep"]["error"] !== 0) {
             $hibak[] = "Hiba történt a fájlfeltöltés során!";
         }
 
@@ -13,7 +13,7 @@ function profilkepFeltoltese(array &$hibak, string $felhasznalonev) {
         $engedelyezettKiterjesztesek = ["png", "jpg"];
 
         // A feltöltött fájl kiterjesztésének lekérdezése.
-        $kiterjesztes = strtolower(pathinfo($_FILES["profile-picture"]["name"], PATHINFO_EXTENSION));
+        $kiterjesztes = strtolower(pathinfo($_FILES["profilkep"]["name"], PATHINFO_EXTENSION));
 
         // Hibakezelés: nem megfelelő kiterjesztés.
         if (!in_array($kiterjesztes, $engedelyezettKiterjesztesek)) {
@@ -22,17 +22,22 @@ function profilkepFeltoltese(array &$hibak, string $felhasznalonev) {
         }
 
         // Hibakezelés: túl nagy (5 MB-nál nagyobb) fájl.
-        if ($_FILES["profile-picture"]["size"] > 5242880) {
+        if ($_FILES["profilkep"]["size"] > 5242880) {
             $hibak[] = "A fájl mérete túl nagy!";
         }
 
         // Ha nem volt hiba, akkor összeállítjuk a profilkép mentési útvonalát, és megpróbáljuk elmenteni a fájlt.
         if (count($hibak) === 0) {
-            $utvonal = "adatok/profilkepek/$felhasznalonev.$kiterjesztes";
-            $flag = move_uploaded_file($_FILES["profile-picture"]["tmp_name"], $utvonal);
+            //TODO még a mentés nem működik
+            $utvonal = "adatok/profilkepek/{$felhasznalonev}.{$kiterjesztes}";
+            echo $_FILES["profilkep"]["tmp_name"];
+            echo $utvonal;
+            $flag = move_uploaded_file($_FILES["profilkep"]["tmp_name"], $utvonal);
 
             // Hibakezelés: sikertelen átmozgatás.
             if (!$flag) {
+                echo $_FILES["profilkep"]["error"];
+
                 $hibak[] = "A profilkép elmentése nem sikerült!";
             }
         }

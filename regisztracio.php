@@ -4,6 +4,7 @@
     include "menusav.php";
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
+    include "fuggvenyek.php";
     //TODO profilkép belerakása
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
@@ -49,6 +50,9 @@
         if(!in_array("confirm-data", $jelolonegyzetek)){
             $hibak[] = "Nem fogadta el az adatok helyességére vonatkozó nyilatkozatot!";
         }
+
+        profilkepFeltoltese($hibak, $felhasznalonev);
+
         //Ha nincs hiba, akkor mentés az adatbázisba
         if(count($hibak) == 0){
             try {
@@ -121,7 +125,7 @@
                     <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
                            class="form-input">
                     <label for="avatar">Profilkép: </label>
-                    <input type="file" name="profile-picture" id="avatar" class="form-input">
+                    <input type="file" name="profilkep" id="avatar" class="form-input">
                     <div class="radio">
                         <p>Nem:</p>
                         <label><input type="radio" name="gender" value="male"> Férfi</label>

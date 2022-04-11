@@ -1,26 +1,26 @@
 <?php
-    include_once "classes/Felhasznalo.php";
-    include_once "common/fuggvenyek.php";
+    include_once "osztalyok/Felhasznalo.php";
+    include_once "adatkezeles.php";
+    include_once "fuggvenyek.php";
     session_start();
 
     // Ha a felhasználó nincs bejelentkezve, akkor átirányítjuk a bejelentkezés oldalra.
 
-    if (!isset($_SESSION["user"])) {
+    if (!isset($_SESSION["felhasznalo"])) {
         header("Location: login.php");
     }
-
     // Ha a felhasználónak nincs profilképe, akkor alapértelmezés szerint a default.png-t jelenítjük meg a kép helyén.
 
-    define("DEFAULT_PROFILKEP", "assets/img/profile-pictures/default.png");
+    define("DEFAULT_PROFILKEP", "adatok/profilkepek/default.jpg");
     $profilkep = DEFAULT_PROFILKEP;
 
-    // Megnézzük, hogy van-e a felhasználó nevével PNG és JPG kiterjesztésű profilkép az assets/img/profile-pictures
+// Megnézzük, hogy van-e a felhasználó nevével PNG és JPG kiterjesztésű profilkép az assets/img/profile-pictures
     // elérési útvonalon. Ha igen, akkor frissítjük ennek megfelelően a $profilkep változó értékét.
 
-    $utvonal = "assets/img/profile-pictures/" . $_SESSION["user"]->getFelhasznalonev();
+    $utvonal = "adatok/profilkepek/" . $_SESSION["felhasznalo"]->getFelhasznalonev();
     $engedelyezettKiterjesztesek = ["png", "jpg"];
 
-    foreach ($engedelyezettKiterjesztesek as $kit) {
+foreach ($engedelyezettKiterjesztesek as $kit) {
         if (file_exists("$utvonal.$kit")) {
             $profilkep = "$utvonal.$kit";
         }
@@ -31,9 +31,9 @@
 
     // A módosított profilkép feldolgozása.
 
-    if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["tmp_name"])) {
+if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["tmp_name"])) {
         // A fuggvenyek.php-ban lévő profilepFeltoltese() függvénnyel ellenőrzött módon töltjük fel az új profilképet.
-        profilkepFeltoltese($hibak, $_SESSION["user"]->getFelhasznalonev());
+        profilkepFeltoltese($hibak, $_SESSION["felhasznalo"]->getFelhasznalonev());
 
         // Ha a fájl sikeresen fel lett töltve, akkor meg kell győződnünk arról, hogy a régi profilkép törölve lett.
 
@@ -41,7 +41,7 @@
             // Lekérdezzük az elmentett, új profilkép elérési útonalát az $utvonal változóba.
 
             $kit = strtolower(pathinfo($_FILES["profile-picture"]["name"], PATHINFO_EXTENSION));
-            $utvonal = "assets/img/profile-pictures/" . $_SESSION["user"]->getFelhasznalonev() . "." . $kit;
+            $utvonal = "adatok/profilkepek/" . $_SESSION["felhasznalo"]->getFelhasznalonev() . "." . $kit;
 
             // Ha az új profilkép kiterjesztése ugyanaz, mint a régi profilképé, akkor rendben vagyunk, az új kép
             // ugyanolyan néven lett feltöltve, mint a régi, ezáltal a régi fájlt felülírtuk. Egyéb esetben, ha a régi
@@ -53,9 +53,10 @@
             }
 
             // Az oldal újratöltése.
-            header("Location: profile.php");
+            header("Location: profil.php");
         }
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -64,16 +65,15 @@
     <title>Profilom</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/icon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="media/ikon.jpg">
+    <link rel="stylesheet" href="stilusok/stilusok.css">
 </head>
 <body>
     <?php
-        include_once "common/header.php";
-        navigacioGeneralasa("profile");
+        navigacioGeneralasa("profil");
 
         // A bejelentkezett felhasználó (tulajdonképpen egy Felhasznalo objektum).
-        $felhasznalo = $_SESSION["user"];
+        $felhasznalo = $_SESSION["felhasznalo"];
     ?>
 
     <main>
@@ -99,7 +99,7 @@
                 <td colspan="2">
                     <img src="<?php echo $profilkep; ?>" alt="Profilkép" height="200">
 
-                    <form action="profile.php" method="POST" enctype="multipart/form-data">
+                    <form action="profil.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="profile-picture">
                         <input type="submit" name="upload-btn" value="Profilkép módosítása">
                     </form>
@@ -123,13 +123,13 @@
             </tr>
         </table>
 
-        <form action="logout.php" method="POST" class="logout-form">
+        <form action="kijelentkezes.php" method="POST" class="logout-form">
             <input type="submit" name="logout-btn" value="Kijelentkezés">
         </form>
     </main>
 
     <?php
-        include_once "common/footer.php";
+        include_once "lablec.php";
     ?>
 </body>
 </html>
