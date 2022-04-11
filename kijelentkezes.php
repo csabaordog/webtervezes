@@ -1,3 +1,7 @@
 <?php
-//TODO itt meg kéne oldani, hogy kijelentkezzen a felhasználó, utána meg átirányítani mondjuk a főoldalra
-// ... hát igen, ez lesz a legbonyolultabb, attól tartok.... :s
+session_start();
+
+
+session_unset();
+session_destroy();
+header("Location: index.php");

@@ -20,8 +20,8 @@ regisztracio.php:
 termekek.php:
     Elérhető termékek listázása, majd a "Kosárba tesz" gombra kattintás után a terméket a kosárba teszi (ha a felhasználó be van jelentkezve)
 
-uzenofal.php(??):
+uzenofal.php:
     A felhasználók ezt az oldalt hasznnálhatják arra, hogy egymással beszélhessenek. (ha a felhasználó be van jelentkezve)
 
-profil.php(??):
+profil.php:
     Itt megtekinthető más felhasználónak a profilja, amin a publikus adatai jelennek meg. (ha a felhasználó be van jelentkezve)

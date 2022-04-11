@@ -4,7 +4,7 @@
     include "menusav.php";
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
-
+    //TODO profilkép belerakása
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
 
@@ -100,7 +100,7 @@
         }
         ?>
         <div class="registration">
-            <form action="regisztracio.php" method="POST" autocomplete="off">
+            <form action="regisztracio.php" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
@@ -120,6 +120,8 @@
                     <label for="birth">Születési év (Kötelező):</label>
                     <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
                            class="form-input">
+                    <label for="avatar">Profilkép: </label>
+                    <input type="file" name="profile-picture" id="avatar" class="form-input">
                     <div class="radio">
                         <p>Nem:</p>
                         <label><input type="radio" name="gender" value="male"> Férfi</label>
