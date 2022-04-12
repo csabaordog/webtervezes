@@ -6,7 +6,6 @@
     include_once "fuggvenyek.php";
     session_start();
 
-    // Ha a felhasználó nincs bejelentkezve, akkor átirányítjuk a bejelentkezés oldalra.
 
     if (!isset($_SESSION["felhasznalo"])) {
         header("Location: bejelentkezes.php");
@@ -27,6 +26,7 @@ foreach ($engedelyezettKiterjesztesek as $kit) {
             $profilkep = "$utvonal.$kit";
         }
     }
+$felhasznalo = $_SESSION["felhasznalo"];
 
 
 ?>
@@ -48,10 +48,7 @@ foreach ($engedelyezettKiterjesztesek as $kit) {
 </header>
     <?php
         navigacioGeneralasa("profil");
-
-        // A bejelentkezett felhasználó (tulajdonképpen egy Felhasznalo objektum).
-        $felhasznalo = $_SESSION["felhasznalo"];
-    ?>
+        ?>
 
     <main>
         <section>
