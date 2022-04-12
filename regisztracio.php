@@ -4,7 +4,6 @@
     include "menusav.php";
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
-    include "fuggvenyek.php";
 
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
@@ -15,7 +14,7 @@
         $felhasznalonev = $_POST["uname"];
         $jelszo = $_POST["password"];
         $ellenorzoJelszo = $_POST["password2"];
-        $email = $_POST["email"];
+        $email = $_POST["mail"];
         $szuletesiEv = $_POST["birthd"];
         $jelolonegyzetek = $_POST["confirmations"];
         $nem = "egyéb";
@@ -32,20 +31,15 @@
             $hibak[] = "A megadott e-mail cím formátuma nem megfelelő!";
         }
         //Jelszavak egyezésének ellenőrzése
-        if($jelszo != $ellenorzoJelszo){
+        if($jelszo !== $ellenorzoJelszo){
             $hibak[] = "A megadott jelszavak nem egyeznek!";
         }
         //Email cím ellenőrzése
         foreach ($felhasznalok as $felhasznalo){
-            if($felhasznalo->getEmail() === $email){
+            if($felhasznalo->getEmail() == $email){
                 $hibak[] = "Az email cím foglalt!";
+                break;
             }
-            if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
-                $hibak[] = "A felhasználónév már foglalt!";
-            }
-        }
-        if ($felhasznalonev === "default") {
-            $hibak[] = "A felhasználónév már foglalt!";
         }
         //Felhasználási feltételek elfogadásának ellenőrzése
         if(!in_array("accept-terms-and-conditions",$jelolonegyzetek)){
@@ -55,15 +49,13 @@
         if(!in_array("confirm-data", $jelolonegyzetek)){
             $hibak[] = "Nem fogadta el az adatok helyességére vonatkozó nyilatkozatot!";
         }
-
-        profilkepFeltoltese($hibak, $felhasznalonev);
-
         //Ha nincs hiba, akkor mentés az adatbázisba
         if(count($hibak) === 0){
             try {
                 $ujFelhasznalo = new Felhasznalo($felhasznalonev,password_hash($jelszo,PASSWORD_DEFAULT),$email,$szuletesiEv,$nem);
                 $felhasznalok[] = $ujFelhasznalo;
                 adatokMentese("adatok/felhasznalok.txt", $felhasznalok);
+                header("Location: regisztracio.php?siker=true");
             }
             catch (Exception $e){
                 echo "Hiba lépett fel";
@@ -96,7 +88,9 @@
     <section class="kint">
         <h3>Regisztráció</h3>
         <?php
-
+        if (isset($_GET["siker"])) {
+            echo "<div class='siker'>Sikeres regisztráció!</div>";
+        }
         //Ha hiba lépett fel a regisztráció során
         if (count($hibak) > 0) {
             echo "<div class='hibak'>";
@@ -109,12 +103,12 @@
         }
         ?>
         <div class="registration">
-            <form action="regisztracio.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <form action="#" method="POST" autocomplete="off">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>
                     <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required
-                           class="form-input">
+                           class="form-input"  <?php if (isset($_POST["uname"])) echo "value='" . $_POST["uname"] . "'" ?>>
 
                     <label for="pswd">Jelszó (Kötelező):</label>
                     <input type="password" name="password" id="pswd" maxlength="25" required class="form-input">
@@ -123,19 +117,20 @@
                     <input type="password" name="password2" id="pswd2" maxlength="25" required class="form-input">
 
                     <label for="email">E-mail cím (Kötelező):</label>
-                    <input type="email" name="email" id="email" placeholder="valaki@gmail.com" required
-                           class="form-input">
+                    <input type="email" name="mail" id="email" placeholder="valaki@gmail.com" required
+                           class="form-input" <?php if (isset($_POST["mail"])) echo "value='" . $_POST["mail"] . "'" ?>>
 
                     <label for="birth">Születési év (Kötelező):</label>
                     <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
-                           class="form-input">
-                    <label for="avatar">Profilkép: </label>
-                    <input type="file" name="profilkep" id="avatar" accept="image/*" class="form-input">
+                           class="form-input" <?php if (isset($_POST["birthd"])) echo "value='" . $_POST["birthd"] . "'" ?>>
                     <div class="radio">
                         <p>Nem:</p>
-                        <label><input type="radio" name="gender" value="male"> Férfi</label>
-                        <label><input type="radio" name="gender" value="female"> Nő</label>
-                        <label><input type="radio" name="gender" value="other" checked> Egyéb</label>
+                        <label><input type="radio" name="gender" value="male"
+                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "male") echo "checked"; ?>> Férfi</label>
+                        <label><input type="radio" name="gender" value="female"
+                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "female") echo "checked"; ?>> Nő</label>
+                        <label><input type="radio" name="gender" value="other"
+                                <?php if (!isset($_POST["gender"]) || $_POST["gender"] === "other") echo "checked"; ?>> Egyéb</label>
                     </div>
 
                 </fieldset>

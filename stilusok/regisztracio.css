@@ -1,7 +1,14 @@
 /*
     Ez a fájl tartalmazza az regisztracio.php és a bejelentkezes.php oldalon levő formázásokat
  */
-
+.hibak, .siker {
+    background-color: #0E3EDA;
+    width: 600px;
+    margin: 10px auto;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
 section {
     max-width: 800px;
 }
