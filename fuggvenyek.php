@@ -28,15 +28,11 @@ function profilkepFeltoltese(array &$hibak, string $felhasznalonev) {
 
         // Ha nem volt hiba, akkor összeállítjuk a profilkép mentési útvonalát, és megpróbáljuk elmenteni a fájlt.
         if (count($hibak) === 0) {
-            //TODO még a mentés nem működik
-            $utvonal = "adatok/profilkepek/{$felhasznalonev}.{$kiterjesztes}";
-            echo $_FILES["profilkep"]["tmp_name"];
-            echo $utvonal;
-            $flag = move_uploaded_file($_FILES["profilkep"]["tmp_name"], $utvonal);
 
+            $utvonal = "adatok/profilkepek/{$felhasznalonev}.{$kiterjesztes}";
             // Hibakezelés: sikertelen átmozgatás.
-            if (!$flag) {
-                echo $_FILES["profilkep"]["error"];
+            if (!move_uploaded_file($_FILES["profilkep"]["tmp_name"], $utvonal)) {
+
 
                 $hibak[] = "A profilkép elmentése nem sikerült!";
             }

@@ -37,10 +37,15 @@
         }
         //Email cím ellenőrzése
         foreach ($felhasznalok as $felhasznalo){
-            if($felhasznalo->getEmail() == $email){
+            if($felhasznalo->getEmail() === $email){
                 $hibak[] = "Az email cím foglalt!";
-                break;
             }
+            if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
+                $hibak[] = "A felhasználónév már foglalt!";
+            }
+        }
+        if ($felhasznalonev === "default") {
+            $hibak[] = "A felhasználónév már foglalt!";
         }
         //Felhasználási feltételek elfogadásának ellenőrzése
         if(!in_array("accept-terms-and-conditions",$jelolonegyzetek)){
@@ -54,7 +59,7 @@
         profilkepFeltoltese($hibak, $felhasznalonev);
 
         //Ha nincs hiba, akkor mentés az adatbázisba
-        if(count($hibak) == 0){
+        if(count($hibak) === 0){
             try {
                 $ujFelhasznalo = new Felhasznalo($felhasznalonev,password_hash($jelszo,PASSWORD_DEFAULT),$email,$szuletesiEv,$nem);
                 $felhasznalok[] = $ujFelhasznalo;
@@ -125,7 +130,7 @@
                     <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
                            class="form-input">
                     <label for="avatar">Profilkép: </label>
-                    <input type="file" name="profilkep" id="avatar" class="form-input">
+                    <input type="file" name="profilkep" id="avatar" accept="image/*" class="form-input">
                     <div class="radio">
                         <p>Nem:</p>
                         <label><input type="radio" name="gender" value="male"> Férfi</label>
