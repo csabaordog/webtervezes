@@ -42,9 +42,6 @@ function navigacioGeneralasa(string $aktualis)
             <a href="profil.php" class="menu-link '. ($aktualis === "profil" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Profilom</div>
             </a>
-            <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitasok" ? "active" : "") .'">
-                <div class="menu-link-tartalom">Beállítások</div>
-            </a>
              <a href="kijelentkezes.php" class="menu-link">
                 <div class="menu-link-tartalom">Kijelentkezés</div>
             </a>

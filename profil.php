@@ -28,36 +28,6 @@ foreach ($engedelyezettKiterjesztesek as $kit) {
         }
     }
 
-    // Egy tömb, amelyben a profilkép módosítása során adódó esetleges hibákat fogjuk tárolni.
-    $hibak = [];
-
-    // A módosított profilkép feldolgozása.
-
-if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profilkep"]["tmp_name"])) {
-        // A fuggvenyek.php-ban lévő profilepFeltoltese() függvénnyel ellenőrzött módon töltjük fel az új profilképet.
-        profilkepFeltoltese($hibak, $_SESSION["felhasznalo"]->getFelhasznalonev());
-
-        // Ha a fájl sikeresen fel lett töltve, akkor meg kell győződnünk arról, hogy a régi profilkép törölve lett.
-
-        if (count($hibak) === 0) {
-            // Lekérdezzük az elmentett, új profilkép elérési útonalát az $utvonal változóba.
-
-            $kit = strtolower(pathinfo($_FILES["profilkep"]["name"], PATHINFO_EXTENSION));
-            $utvonal = "adatok/profilkepek/" . $_SESSION["felhasznalo"]->getFelhasznalonev() . "." . $kit;
-
-            // Ha az új profilkép kiterjesztése ugyanaz, mint a régi profilképé, akkor rendben vagyunk, az új kép
-            // ugyanolyan néven lett feltöltve, mint a régi, ezáltal a régi fájlt felülírtuk. Egyéb esetben, ha a régi
-            // és az új fájlnév eltér, akkor a régi profilképet ($profilkep változó) töröljük. Fontos ellenőrizni, hogy
-            // az alapértelmezett profilképet (DEFAULT_PROFILKEP) ne töröljük!
-
-            if ($utvonal !== $profilkep && $profilkep !== DEFAULT_PROFILKEP) {
-                unlink($profilkep);     // A $profilkep elérési útvonalon található fájl törlése.
-            }
-
-            // Az oldal újratöltése.
-            //header("Location: profil.php");
-        }
-    }
 
 ?>
 
@@ -87,18 +57,6 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profilkep"]["tmp_na
         <section>
             <h1 class="center">Profilom</h1>
 
-            <?php
-                if (count($hibak) > 0) {
-                    echo "<div class='errors'>";
-
-                    foreach ($hibak as $hiba) {
-                        echo "<p>" . $hiba . "</p>";
-                    }
-
-                    echo "</div>";
-                }
-            ?>
-
             <table id="profile-table">
                 <tr>
                     <th colspan="2">Felhasználói adatok</th>
@@ -107,10 +65,6 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profilkep"]["tmp_na
                     <td colspan="2">
                         <img src="<?php echo $profilkep; ?>" alt="Profilkép" height="200">
 
-                        <form action="profil.php" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="profile-picture">
-                            <input type="submit" name="upload-btn" value="Profilkép módosítása">
-                        </form>
                     </td>
                 </tr>
                 <tr>
@@ -130,10 +84,10 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profilkep"]["tmp_na
                     <td><?php echo $felhasznalo->getNem(); ?></td>
                 </tr>
             </table>
+            <a href="beallitasok.php">
+                <button>Beállítások</button>
+            </a>
 
-            <form action="kijelentkezes.php" method="POST" class="logout-form">
-                <input type="submit" name="logout-btn" value="Kijelentkezés">
-            </form>
         </section>
     </main>
 

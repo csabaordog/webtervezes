@@ -5,7 +5,7 @@
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
     include "fuggvenyek.php";
-    //TODO profilkép belerakása
+
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
 

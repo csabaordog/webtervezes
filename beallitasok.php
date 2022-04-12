@@ -21,7 +21,7 @@
     <h1>Beállítások</h1>
     <h2>Az állatimádók oldala</h2>
 </header>
-<?php navigacioGeneralasa("beallitasok"); ?>
+<?php navigacioGeneralasa(""); ?>
 <main>
     <section class="kint">
         <h3>Ez csak placeholder, később beállítások kerülnek majd ide. (pl. jelszó- felhasználónév módosítás)</h3>
