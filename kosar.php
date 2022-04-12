@@ -1,7 +1,16 @@
 <?php
 session_start();
 include "menusav.php";
+include_once "osztalyok/Kosar.php";
 //TODO kilistázni a felhasználó kosarát "szépen"
+//ha nincs bejelentkezve, akkor atiranyitjuk
+ if (!isset($_SESSION["user"])) {
+     header("Location: login.php");
+ }
+
+
+ $felhasznalo = $_SESSION["user"];
+ $kosar = $felhasznalo->getKosar();
 
 ?>
 
@@ -23,7 +32,38 @@ include "menusav.php";
 </header>
 <?php navigacioGeneralasa("kosar"); ?>
 <main>
-    A kosarad üres!!!
+    <?php if (count($kosar) > 0) { ?>
+        <table id="cart-table">
+            <tr>
+                <th>Pizza neve</th>
+                <th>Mennyiség</th>
+                <th>Ár</th>
+                <th>Törlés</th>
+            </tr>
+            <?php foreach ($kosar as $item) { ?>
+                <tr>
+                    <td><?php echo $item->getNev(); ?></td>
+                    <td><?php echo $item->getMennyiseg(); ?></td>
+                    <td><?php echo $item->getAr() . " Ft"; ?></td>
+                    <td>
+                        <form action="kosar.php" method="GET" class="cart-delete-form">
+                            <input type="hidden" name="item-name" value="<?php echo $item->getNev(); ?>">
+                            <input type="submit" name="delete-from-cart-btn" value="Törlés">
+                        </form>
+                    </td>
+                </tr>
+            <?php } ?>
+            <tr class="total-sum">
+                <th colspan="4">Végösszeg:  Ft</th>
+            </tr>
+        </table>
+
+        <form action="kosar.php" method="GET" class="order-form">
+            <input type="submit" name="order-btn" value="Rendelés">
+        </form>
+    <?php } else { ?>
+        <p class="center strong">A kosarad jelenleg üres!</p>
+    <?php } ?>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
         <p>/\<br>|</p>
     </div>

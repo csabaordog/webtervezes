@@ -27,7 +27,7 @@
     }
     //TODO bejelentkezés utáni üzenet
     if(isset($_SESSION["felhasznalo"])){
-        header("Location: index.php");
+        header("Location: profil.php");
     }
 
 ?>
