@@ -1,4 +1,6 @@
 <?php
+    include "menusav.php";
+
     include_once "osztalyok/Felhasznalo.php";
     include_once "adatkezeles.php";
     include_once "fuggvenyek.php";
@@ -7,7 +9,7 @@
     // Ha a felhasználó nincs bejelentkezve, akkor átirányítjuk a bejelentkezés oldalra.
 
     if (!isset($_SESSION["felhasznalo"])) {
-        header("Location: login.php");
+        header("Location: bejelentkezes.php");
     }
     // Ha a felhasználónak nincs profilképe, akkor alapértelmezés szerint a default.png-t jelenítjük meg a kép helyén.
 
@@ -31,7 +33,7 @@ foreach ($engedelyezettKiterjesztesek as $kit) {
 
     // A módosított profilkép feldolgozása.
 
-if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["tmp_name"])) {
+if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profilkep"]["tmp_name"])) {
         // A fuggvenyek.php-ban lévő profilepFeltoltese() függvénnyel ellenőrzött módon töltjük fel az új profilképet.
         profilkepFeltoltese($hibak, $_SESSION["felhasznalo"]->getFelhasznalonev());
 
@@ -40,7 +42,7 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["
         if (count($hibak) === 0) {
             // Lekérdezzük az elmentett, új profilkép elérési útonalát az $utvonal változóba.
 
-            $kit = strtolower(pathinfo($_FILES["profile-picture"]["name"], PATHINFO_EXTENSION));
+            $kit = strtolower(pathinfo($_FILES["profilkep"]["name"], PATHINFO_EXTENSION));
             $utvonal = "adatok/profilkepek/" . $_SESSION["felhasznalo"]->getFelhasznalonev() . "." . $kit;
 
             // Ha az új profilkép kiterjesztése ugyanaz, mint a régi profilképé, akkor rendben vagyunk, az új kép
@@ -53,7 +55,7 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["
             }
 
             // Az oldal újratöltése.
-            header("Location: profil.php");
+            //header("Location: profil.php");
         }
     }
 
@@ -66,9 +68,14 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="media/ikon.jpg">
+    <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css">
 </head>
 <body>
+<header>
+    <h1>Kutya birodalom</h1>
+    <h2>Profil</h2>
+</header>
     <?php
         navigacioGeneralasa("profil");
 
@@ -77,59 +84,63 @@ if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-picture"]["
     ?>
 
     <main>
-        <h1 class="center">Profilom</h1>
+        <section>
+            <h1 class="center">Profilom</h1>
 
-        <?php
-            if (count($hibak) > 0) {
-                echo "<div class='errors'>";
+            <?php
+                if (count($hibak) > 0) {
+                    echo "<div class='errors'>";
 
-                foreach ($hibak as $hiba) {
-                    echo "<p>" . $hiba . "</p>";
+                    foreach ($hibak as $hiba) {
+                        echo "<p>" . $hiba . "</p>";
+                    }
+
+                    echo "</div>";
                 }
+            ?>
 
-                echo "</div>";
-            }
-        ?>
+            <table id="profile-table">
+                <tr>
+                    <th colspan="2">Felhasználói adatok</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <img src="<?php echo $profilkep; ?>" alt="Profilkép" height="200">
 
-        <table id="profile-table">
-            <tr>
-                <th colspan="2">Felhasználói adatok</th>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <img src="<?php echo $profilkep; ?>" alt="Profilkép" height="200">
+                        <form action="profil.php" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="profile-picture">
+                            <input type="submit" name="upload-btn" value="Profilkép módosítása">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Felhasználónév</th>
+                    <td><?php echo $felhasznalo->getFelhasznalonev(); ?></td>
+                </tr>
+                <tr>
+                    <th>E-mail cím</th>
+                    <td><?php echo $felhasznalo->getEmail(); ?></td>
+                </tr>
+                <tr>
+                    <th>Születési év</th>
+                    <td><?php echo $felhasznalo->getSzuletesiEv(); ?></td>
+                </tr>
+                <tr>
+                    <th>Nem</th>
+                    <td><?php echo $felhasznalo->getNem(); ?></td>
+                </tr>
+            </table>
 
-                    <form action="profil.php" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="profile-picture">
-                        <input type="submit" name="upload-btn" value="Profilkép módosítása">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Felhasználónév</th>
-                <td><?php echo $felhasznalo->getFelhasznalonev(); ?></td>
-            </tr>
-            <tr>
-                <th>E-mail cím</th>
-                <td><?php echo $felhasznalo->getEmail(); ?></td>
-            </tr>
-            <tr>
-                <th>Születési év</th>
-                <td><?php echo $felhasznalo->getSzuletesiEv(); ?></td>
-            </tr>
-            <tr>
-                <th>Nem</th>
-                <td><?php echo $felhasznalo->getNem(); ?></td>
-            </tr>
-        </table>
-
-        <form action="kijelentkezes.php" method="POST" class="logout-form">
-            <input type="submit" name="logout-btn" value="Kijelentkezés">
-        </form>
+            <form action="kijelentkezes.php" method="POST" class="logout-form">
+                <input type="submit" name="logout-btn" value="Kijelentkezés">
+            </form>
+        </section>
     </main>
 
     <?php
         include_once "lablec.php";
     ?>
+<script src="szkriptek/script.js"></script>
+
 </body>
 </html>

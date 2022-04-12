@@ -39,6 +39,9 @@ function navigacioGeneralasa(string $aktualis)
             echo'<a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kosár</div>
             </a>
+            <a href="profil.php" class="menu-link '. ($aktualis === "profil" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Profilom</div>
+            </a>
             <a href="beallitasok.php" class="menu-link '. ($aktualis === "beallitasok" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Beállítások</div>
             </a>
