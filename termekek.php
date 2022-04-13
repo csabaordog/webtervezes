@@ -35,7 +35,12 @@
                     <img src="<?= "media/kepek/{$termek->getKep()}" ?>" alt="<?= $termek->getNev() ?>" title="<?= $termek->getNev() ?>" class="termek-kep">
                     <p><?= $termek->getNev() ?></p>
                     <p><?= $termek->getAr() ?> Ft</p>
-                    <a href="<?= "termekoldal.php?termek=".str_replace(" ", "", strtolower($termek->getNev())) ?>">Érdekel</a>
+                    <?php if(isset($_SESSION["felhasznalo"])) {?>
+                        <form action="termekek.php" method="GET">
+                            <input type="hidden" name="termek-nev" value="<?php echo $termek->getNev(); ?>">
+                            <input type="submit" name="kosarba-tesz" value="Kosárba">
+                        </form>
+                    <?php }?>
                 </div>
             <?php endforeach ?>
 
