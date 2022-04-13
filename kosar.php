@@ -13,6 +13,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 
  $felhasznalo = $_SESSION["felhasznalo"];
  $kosar = $felhasznalo->getKosar();
+ $vegosszeg=0;
 
 ?>
 
@@ -25,6 +26,7 @@ if (!isset($_SESSION["felhasznalo"])) {
     <title>Kutyaimádók</title>
     <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
+    <link rel="stylesheet" href="stilusok/profileskosar.css" type="text/css">
     <link rel="icon" href="media/ikon.jpg" type="image/ico">
 
 </head>
@@ -35,28 +37,29 @@ if (!isset($_SESSION["felhasznalo"])) {
 <?php navigacioGeneralasa("kosar"); ?>
 <main>
     <?php if (count($kosar) > 0) { ?>
-        <table id="cart-table">
+        <table id="kosar-tablazat">
             <tr>
-                <th>Pizza neve</th>
+                <th>Termék/Kutya neve</th>
                 <th>Mennyiség</th>
                 <th>Ár</th>
                 <th>Törlés</th>
             </tr>
-            <?php foreach ($kosar as $item) { ?>
+            <?php foreach ($kosar as $termek) { ?>
                 <tr>
-                    <td><?php echo $item->getNev(); ?></td>
-                    <td><?php echo $item->getMennyiseg(); ?></td>
-                    <td><?php echo $item->getAr() . " Ft"; ?></td>
+                    <td><?php echo $termek->getNev(); ?></td>
+                    <td><?php echo $termek->getMennyiseg(); ?></td>
+                    <td><?php echo $termek->getAr() . " Ft"; ?></td>
+                    <?php $vegosszeg=$termek->getAr()+$vegosszeg; ?>
                     <td>
                         <form action="kosar.php" method="GET" class="cart-delete-form">
-                            <input type="hidden" name="item-name" value="<?php echo $item->getNev(); ?>">
+                            <input type="hidden" name="item-name" value="<?php echo $termek->getNev(); ?>">
                             <input type="submit" name="delete-from-cart-btn" value="Törlés">
                         </form>
                     </td>
                 </tr>
             <?php } ?>
             <tr class="total-sum">
-                <th colspan="4">Végösszeg:  Ft</th>
+                <th colspan="4">Végösszeg: <?php echo $vegosszeg;?> Ft</th>
             </tr>
         </table>
 

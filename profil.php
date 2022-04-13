@@ -39,6 +39,7 @@ $felhasznalo = $_SESSION["felhasznalo"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="media/ikon.jpg">
     <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
+    <link rel="stylesheet" href="stilusok/profileskosar.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css">
 </head>
 <body>
