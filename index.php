@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include "menusav.php";
+    include_once "menusav.php";
+    include_once "osztalyok/Felhasznalo.php";
 ?>
 
 
@@ -20,7 +21,7 @@
     <h1>Kutya birodalom</h1>
     <h2>Az állatimádók oldala</h2>
 </header>
-<?php navigacioGeneralasa("index");?>
+<?php navigacioGeneralasa("index"); ?>
 <main>
 
     <section class="kint">

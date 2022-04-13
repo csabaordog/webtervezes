@@ -12,6 +12,8 @@
 
 function navigacioGeneralasa(string $aktualis)
 {
+    //TODO majd azt is meg kellene oldani, hogy mondjuk ha a felhasználó be van jelentkezve,
+    // akkor ne jelenjen meg se a bejelentkezés, se a regisztráció, de mondjuk legyen kijelentkezés, kosár, stb..
     echo '<nav id="menu">
         <div id="menu-logo">Kutya birodalom</div>
         <input id="menu-toggle" type="checkbox"/>
@@ -35,28 +37,24 @@ function navigacioGeneralasa(string $aktualis)
             <a href="kapcsolat.php" class="menu-link '. ($aktualis === "kapcsolat" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kapcsolat</div>
             </a>';
-            if(isset($_SESSION["felhasznalo"])){
-            echo'<a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
+            
+            if(!isset($_SESSION["felhasznalo"])) {
+            echo '<a href="bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Bejelentkezés</div>
+            </a>
+            <a href="regisztracio.php" class="menu-link '. ($aktualis === "regisztracio" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Regisztráció</div>
+            </a>';
+            }else {
+            echo '<a href="profil.php" class="menu-link '. ($aktualis === "profil" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Profil</div>
+            </a>
+            <a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kosár</div>
-            </a>
-            <a href="profil.php" class="menu-link '. ($aktualis === "profil" ? "active" : "") .'">
-                <div class="menu-link-tartalom">Profilom</div>
-            </a>
-             <a href="kijelentkezes.php" class="menu-link">
-                <div class="menu-link-tartalom">Kijelentkezés</div>
-            </a>
-            ';
+            </a>';
+
             }
-            else {
-               echo '<a href = "bejelentkezes.php" class="menu-link '. ($aktualis === "bejelentkezes" ? "active" : "") .'" >
-                <div class="menu-link-tartalom" > Bejelentkezés</div >
-            </a >
-            <a href = "regisztracio.php" class="menu-link '. ($aktualis === "regisztracio" ? "active" : "") .'" >
-                <div class="menu-link-tartalom" > Regisztráció</div >
-            </a >';
-            }
-           echo '
-        </div>
+        echo '</div>
     </nav>';
 }
 
