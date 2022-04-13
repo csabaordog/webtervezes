@@ -1,10 +1,28 @@
 <?php
-    session_start();
-    include "menusav.php";
-    include "osztalyok/Termek.php";
-    include "adatkezeles.php";
+
+    include_once "menusav.php";
+    include_once "osztalyok/Termek.php";
+    include_once "adatkezeles.php";
     include_once "osztalyok/Felhasznalo.php";
+    include_once "osztalyok/Kosar.php";
+    session_start();
     $termekek = adatokBetoltese("adatok/termekek.txt");
+
+if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {
+    $felhasznalo = $_SESSION["felhasznalo"];
+    $kosar = $felhasznalo->getKosar();
+
+    $termekNeve = $_GET["termek-nev"];
+
+    foreach ($termekek as $termek) {
+        if ($termek->getNev() === $termekNeve) {
+            $ujTermek = new Kosar($termek);
+            $felhasznalo->kosarbaTesz($ujTermek);
+        }
+    }
+    felhasznaloAdatainakModositasa("adatok/felhasznalok.txt", $felhasznalo);
+    header("Location: termekek.php?siker=true");
+}
 
 ?>
 
@@ -29,6 +47,11 @@
 <main>
     <section class="kint">
         <h3>Nálunk kapható termékek:</h3>
+        <?php
+        if (isset($_GET["siker"])) {
+            echo "<div class='siker'><p>A terméket sikeresen a kosárba tetted!</p></div>";
+        }
+        ?>
         <div class="grid-container">
             <?php foreach ($termekek as $termek) : ?>
                 <div class="termek-doboz">

@@ -1,8 +1,9 @@
 <?php
-session_start();
+
 include "menusav.php";
 include_once "osztalyok/Kosar.php";
 include_once "osztalyok/Felhasznalo.php";
+session_start();
 //TODO kilistázni a felhasználó kosarát "szépen"
 //ha nincs bejelentkezve, akkor atiranyitjuk
 if (!isset($_SESSION["felhasznalo"])) {
@@ -11,7 +12,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
  $felhasznalo = $_SESSION["felhasznalo"];
- $kosar = $felhasznalo->getKosar(); //erre valamiert hibat dob ki
+ $kosar = $felhasznalo->getKosar();
 
 ?>
 

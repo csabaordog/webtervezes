@@ -36,3 +36,15 @@ function adatokBetoltese(string $fajlnev): array {
     fclose($file);
     return $adatok;
 }
+
+function felhasznaloAdatainakModositasa(string $fajlnev, Felhasznalo $modositandoFelhasznalo) {
+    $felhasznalok = adatokBetoltese($fajlnev);
+
+    foreach ($felhasznalok as &$felhasznalo) {
+        if ($felhasznalo->getFelhasznalonev() === $modositandoFelhasznalo->getFelhasznalonev()) {
+            $felhasznalo = $modositandoFelhasznalo;
+        }
+    }
+
+    adatokMentese($fajlnev, $felhasznalok);
+}

@@ -85,6 +85,18 @@ class Felhasznalo
         $this->kosar = $kosar;
     }
 
+    public function kosarbaTesz(Kosar $ujTermek): void {
+        foreach ($this->kosar as $termek) {
+            if ($termek->getNev() === $ujTermek->getNev()) {
+                $termek->setMennyiseg($termek->getMennyiseg() + 1);
+                $termek->setAr($termek->getAr() + $ujTermek->getAr());
+                return;
+            }
+        }
+
+        $this->kosar[] = $ujTermek;
+    }
+
 
     public function __toString(): string
     {
