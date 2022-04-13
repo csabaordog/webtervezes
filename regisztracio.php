@@ -36,10 +36,15 @@
         }
         //Email cím ellenőrzése
         foreach ($felhasznalok as $felhasznalo){
-            if($felhasznalo->getEmail() == $email){
+            if($felhasznalo->getEmail() === $email){
                 $hibak[] = "Az email cím foglalt!";
-                break;
             }
+            if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
+                $hibak[] = "A felhasználónév már foglalt!";
+            }
+        }
+        if ($felhasznalonev === "default") {
+            $hibak[] = "A felhasználónév már foglalt!";
         }
         //Felhasználási feltételek elfogadásának ellenőrzése
         if(!in_array("accept-terms-and-conditions",$jelolonegyzetek)){
@@ -49,6 +54,8 @@
         if(!in_array("confirm-data", $jelolonegyzetek)){
             $hibak[] = "Nem fogadta el az adatok helyességére vonatkozó nyilatkozatot!";
         }
+        profilkepFeltoltese($hibak, $felhasznalonev);
+
         //Ha nincs hiba, akkor mentés az adatbázisba
         if(count($hibak) === 0){
             try {
@@ -123,6 +130,9 @@
                     <label for="birth">Születési év (Kötelező):</label>
                     <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977" required
                            class="form-input" <?php if (isset($_POST["birthd"])) echo "value='" . $_POST["birthd"] . "'" ?>>
+
+                    <label for="avatar">Profilkép: </label>
+                    <input type="file" name="profilkep" id="avatar" accept="image/*" class="form-input">
                     <div class="radio">
                         <p>Nem:</p>
                         <label><input type="radio" name="gender" value="male"
