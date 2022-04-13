@@ -1,6 +1,8 @@
 <?php
 
 include "menusav.php";
+include_once "adatkezeles.php";
+include_once "osztalyok/Rendelesek.php";
 include_once "osztalyok/Kosar.php";
 include_once "osztalyok/Felhasznalo.php";
 session_start();
@@ -14,6 +16,32 @@ if (!isset($_SESSION["felhasznalo"])) {
  $felhasznalo = $_SESSION["felhasznalo"];
  $kosar = $felhasznalo->getKosar();
  $vegosszeg=0;
+
+if (isset($_GET["delete-from-cart-btn"])) {
+    $torlendoTermekNeve = $_GET["termek-nev"];
+    $ujKosar = [];
+
+    foreach ($kosar as $termek) {
+        if ($termek->getNev() !== $torlendoTermekNeve) {
+            $ujKosar[] = $termek;
+        }
+    }
+
+    $felhasznalo->setKosar($ujKosar);
+    felhasznaloAdatainakModositasa("adatok/felhasznalok.txt", $felhasznalo);
+    header("Location: kosar.php");
+}
+
+if (isset($_GET["order-btn"])) {
+    $rendel = adatokBetoltese("adatok/rendelesek.txt");
+    $rendeles = new Rendelesek($felhasznalo->getFelhasznalonev(), $kosar);
+    $rendel[] = $rendeles;
+    adatokMentese("adatok/rendelesek.txt", $rendel);
+    $felhasznalo->setKosar([]);
+    felhasznaloAdatainakModositasa("adatok/felhasznalok.txt", $felhasznalo);
+    header("Location: kosar.php?siker=true");
+}
+
 
 ?>
 
@@ -52,7 +80,7 @@ if (!isset($_SESSION["felhasznalo"])) {
                     <?php $vegosszeg=$termek->getAr()+$vegosszeg; ?>
                     <td>
                         <form action="kosar.php" method="GET" class="cart-delete-form">
-                            <input type="hidden" name="item-name" value="<?php echo $termek->getNev(); ?>">
+                            <input type="hidden" name="termek-nev" value="<?php echo $termek->getNev(); ?>">
                             <input type="submit" name="delete-from-cart-btn" value="Törlés">
                         </form>
                     </td>
