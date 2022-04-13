@@ -1,6 +1,10 @@
 <?php
     session_start();
     include "menusav.php";
+    include_once "osztalyok/Felhasznalo.php";
+if (!isset($_SESSION["felhasznalo"])) {
+    header("Location: bejelentkezes.php");
+}
     //TODO űrlap amin a felhasználó tudja módosítani az adatait
 ?>
 

@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "menusav.php";
+    include_once "osztalyok/Felhasznalo.php"
 ?>
 
 <!DOCTYPE html>

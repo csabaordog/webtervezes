@@ -3,6 +3,7 @@
     include "menusav.php";
     include "osztalyok/Kutya.php";
     include "adatkezeles.php";
+    include_once "osztalyok/Felhasznalo.php";
     $kutyak = adatokBetoltese("adatok/kutyak.txt");
 ?>
 

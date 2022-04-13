@@ -2,15 +2,16 @@
 session_start();
 include "menusav.php";
 include_once "osztalyok/Kosar.php";
+include_once "osztalyok/Felhasznalo.php";
 //TODO kilistázni a felhasználó kosarát "szépen"
 //ha nincs bejelentkezve, akkor atiranyitjuk
- if (!isset($_SESSION["user"])) {
-     header("Location: login.php");
- }
+if (!isset($_SESSION["felhasznalo"])) {
+    header("Location: bejelentkezes.php");
+}
 
 
- $felhasznalo = $_SESSION["user"];
- $kosar = $felhasznalo->getKosar();
+ $felhasznalo = $_SESSION["felhasznalo"];
+ $kosar = $felhasznalo->getKosar(); //erre valamiert hibat dob ki
 
 ?>
 

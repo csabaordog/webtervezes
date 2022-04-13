@@ -85,6 +85,10 @@ $felhasznalo = $_SESSION["felhasznalo"];
                 <button>Beállítások</button>
             </a>
 
+            <form action="kijelentkezes.php" method="POST" class="logout-form">
+                <input type="submit" name="logout-btn" value="Kijelentkezés">
+            </form>
+
         </section>
     </main>
 
