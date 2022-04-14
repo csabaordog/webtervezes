@@ -2,10 +2,77 @@
 
     include "menusav.php";
     include_once "osztalyok/Felhasznalo.php";
+    include_once "adatkezeles.php";
     session_start();
 if (!isset($_SESSION["felhasznalo"])) {
     header("Location: bejelentkezes.php");
 }
+
+    $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
+    $hibak = [];
+
+    if(isset($_POST["settings-btn"])) {
+        //Űrlapadatok mentése
+        $felhasznalonev = $_POST["uname"];
+        $jelszo = $_POST["password"];
+        $ellenorzoJelszo = $_POST["password2"];
+        $email = $_POST["mail"];
+        $szuletesiEv = $_POST["birthd"];
+
+        if($jelszo!=="") {
+            if (strlen($jelszo) < 5) {
+                $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
+            }
+
+            //Jelszó validálás
+            if (!(preg_match("/[A-Za-z]/", $jelszo) && preg_match("/[0-9]/", $jelszo))) {
+                $hibak[] = "A jelszónak tartalmaznia kell betűt és számjegyet is!";
+            }
+        }
+
+
+        //Email cím validálás
+        if($email!=="") {
+            if (!preg_match("/[0-9a-z\.\-]+@([0-9a-z\-]+\.)[a-z]{2,4}/", $email)) {
+                $hibak[] = "A megadott e-mail cím formátuma nem megfelelő!";
+            }
+        }
+
+
+        //Jelszavak egyezésének ellenőrzése
+        if($jelszo !== $ellenorzoJelszo){
+            $hibak[] = "A megadott jelszavak nem egyeznek!";
+        }
+
+        foreach ($felhasznalok as $felhasznalo){
+            if($felhasznalo->getEmail() === $email){
+                $hibak[] = "Az email cím foglalt!";
+            }
+            if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
+                $hibak[] = "A felhasználónév már foglalt!";
+            }
+        }
+        if ($felhasznalonev === "default") {
+            $hibak[] = "A felhasználónév már foglalt!";
+        }
+
+
+        if(count($hibak) === 0) {
+            if($felhasznalonev !== "" && $felhasznalonev!==$_SESSION["felhasznalo"]->getFelhasznalonev()) {
+                $_SESSION["felhasznalo"]->setFelhasznalonev($felhasznalonev);
+            }
+            if($jelszo!=="" && $jelszo===$ellenorzoJelszo){
+                $_SESSION["felhasznalo"]->setJelszo(password_hash($jelszo, PASSWORD_DEFAULT));
+            }
+            if($email!=="" && $email!==$_SESSION["felhasznalo"]->getEmail()) {
+                $_SESSION["felhasznalo"]->setEmail($email);
+            }
+            if($szuletesiEv!=="" && $szuletesiEv!==$_SESSION["felhasznalo"]->getSzuletesiev()) {
+                $_SESSION["felhasznalo"]->setSzuletesiev($szuletesiEv);
+            }
+            header("Location: beallitasok.php?siker=true");
+        }
+    }
     //TODO űrlap amin a felhasználó tudja módosítani az adatait
 ?>
 
@@ -18,6 +85,7 @@ if (!isset($_SESSION["felhasznalo"])) {
     <title>Beállítások</title>
     <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
+    <link rel="stylesheet" href="stilusok/regisztracio.css" type="text/css">
     <link rel="icon" href="media/ikon.jpg" type="image/ico">
 
 </head>
@@ -29,8 +97,42 @@ if (!isset($_SESSION["felhasznalo"])) {
 <?php navigacioGeneralasa("beallitasok"); ?>
 <main>
     <section class="kint">
-        <h3>Ez csak placeholder, később beállítások kerülnek majd ide. (pl. jelszó- felhasználónév módosítás)</h3>
+        <?php
+        if (isset($_GET["siker"])) {
+            echo "<div class='siker'>Sikeres adatmegváltoztatás!</div>";
+        }
+        if (count($hibak) > 0) {
+            echo "<div class='hibak'>";
 
+            foreach ($hibak as $hiba) {
+                echo "<p>" . $hiba . "</p>";
+            }
+
+            echo "</div>";
+        }
+        ?>
+        <form action="beallitasok.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <legend>Személyes adatok:</legend>
+            <label for="usname">Felhasználónév megváltoztatása:</label>
+            <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12"
+                   class="form-input">
+
+            <label for="pswd">Jelszó megváltoztatása:</label>
+            <input type="password" name="password" id="pswd" maxlength="25" class="form-input">
+
+            <label for="pswd2">Jelszó ismét:</label>
+            <input type="password" name="password2" id="pswd2" maxlength="25" class="form-input">
+
+            <label for="email">E-mail cím megváltoztatása:</label>
+            <input type="email" name="mail" id="email" placeholder="valaki@gmail.com"
+                   class="form-input">
+
+            <label for="birth">Születési év megváltoztatása:</label>
+            <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977"
+                   class="form-input">
+            <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">
+
+        </form>
     </section>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
         <p>/\<br>|</p>

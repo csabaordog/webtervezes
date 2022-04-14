@@ -23,8 +23,18 @@
         if (isset($_POST["gender"])) {
             $nem = $_POST["gender"];
         }
+
+        if (trim($felhasznalonev) === "" || trim($jelszo) === "" || trim($ellenorzoJelszo) === "" ||
+            trim($email) === "" || trim($szuletesiEv) === "") {
+            $hibak[] = "Minden kötelezően kitöltendő mezőt ki kell tölteni!";
+        }
+
+        if (strlen($jelszo) < 5) {
+            $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
+        }
+
         //Jelszó validálás
-        if (!(preg_match("/[A-Za-z]/", $jelszo) || preg_match("/[0-9]/", $jelszo))) {
+        if (!(preg_match("/[A-Za-z]/", $jelszo) && preg_match("/[0-9]/", $jelszo))) {
             $hibak[] = "A jelszónak tartalmaznia kell betűt és számjegyet is!";
         }
         //Email cím validálás
@@ -136,12 +146,12 @@
                     <input type="file" name="profilkep" id="avatar" accept="image/*" class="form-input">
                     <div class="radio">
                         <p>Nem:</p>
-                        <label><input type="radio" name="gender" value="male"
-                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "male") echo "checked"; ?>> Férfi</label>
-                        <label><input type="radio" name="gender" value="female"
-                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "female") echo "checked"; ?>> Nő</label>
-                        <label><input type="radio" name="gender" value="other"
-                                <?php if (!isset($_POST["gender"]) || $_POST["gender"] === "other") echo "checked"; ?>> Egyéb</label>
+                        <label><input type="radio" name="gender" value="férfi"
+                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "férfi") echo "checked"; ?>> Férfi</label>
+                        <label><input type="radio" name="gender" value="nő"
+                                <?php if (isset($_POST["gender"]) && $_POST["gender"] === "nő") echo "checked"; ?>> Nő</label>
+                        <label><input type="radio" name="gender" value="egyéb"
+                                <?php if (!isset($_POST["gender"]) || $_POST["gender"] === "egyéb") echo "checked"; ?>> Egyéb</label>
                     </div>
 
                 </fieldset>
