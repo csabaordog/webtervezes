@@ -45,7 +45,8 @@ function navigacioGeneralasa(string $aktualis)
             <a href="regisztracio.php" class="menu-link ' . ($aktualis === "regisztracio" ? "active" : "") . '">
                 <div class="menu-link-tartalom">Regisztráció</div>
             </a>';
-            }else{
+            }
+            else{
                 echo'<a href="profil.php" class="menu-link '. ($aktualis === "profil" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Profil</div>
             </a>';
@@ -53,9 +54,13 @@ function navigacioGeneralasa(string $aktualis)
                 echo '<a href="rendelesek.php" class="menu-link ' . ($aktualis === "rendelesek" ? "active" : "") . '">
                 <div class="menu-link-tartalom">Rendelések</div>
             </a>';
-                } else {
+            }
+            else {
                 echo '<a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kosár</div>
+            </a>
+            <a href="uzenofal.php" class="menu-link '. ($aktualis === "uzenofal" ? "active" : "") .'">
+                <div class="menu-link-tartalom">Üzenőfal</div>
             </a>';
 
             }
