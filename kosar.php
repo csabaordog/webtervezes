@@ -17,7 +17,7 @@ if (!isset($_SESSION["felhasznalo"])) {
  $kosar = $felhasznalo->getKosar();
  $vegosszeg=0;
 
-if (isset($_GET["delete-from-cart-btn"])) {
+if (isset($_GET["kosar-torol-btn"])) {
     $torlendoTermekNeve = $_GET["termek-nev"];
     $ujKosar = [];
 
@@ -32,7 +32,7 @@ if (isset($_GET["delete-from-cart-btn"])) {
     header("Location: kosar.php");
 }
 
-if (isset($_GET["order-btn"])) {
+if (isset($_GET["rendeles-btn"])) {
     $rendel = adatokBetoltese("adatok/rendelesek.txt");
     $rendeles = new Rendelesek($felhasznalo->getFelhasznalonev(), $kosar);
     $rendel[] = $rendeles;
@@ -79,9 +79,9 @@ if (isset($_GET["order-btn"])) {
                     <td><?php echo $termek->getAr() . " Ft"; ?></td>
                     <?php $vegosszeg=$termek->getAr()+$vegosszeg; ?>
                     <td>
-                        <form action="kosar.php" method="GET" class="cart-delete-form">
+                        <form action="kosar.php" method="GET" class="kosar-torol-form">
                             <input type="hidden" name="termek-nev" value="<?php echo $termek->getNev(); ?>">
-                            <input type="submit" name="delete-from-cart-btn" value="Törlés">
+                            <input type="submit" name="kosar-torol-btn" value="Törlés">
                         </form>
                     </td>
                 </tr>
@@ -91,8 +91,8 @@ if (isset($_GET["order-btn"])) {
             </tr>
         </table>
 
-        <form action="kosar.php" method="GET" class="order-form">
-            <input type="submit" name="order-btn" value="Rendelés">
+        <form action="kosar.php" method="GET" class="rendeles-form">
+            <input type="submit" name="rendeles-btn" value="Rendelés">
         </form>
     <?php } else { ?>
         <p class="center strong">A kosarad jelenleg üres!</p>
