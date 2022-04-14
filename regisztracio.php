@@ -121,7 +121,7 @@
         }
         ?>
         <div class="registration">
-            <form action="regisztracio.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <form action="#" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Személyes adatok:</legend>
                     <label for="usname">Felhasználónév (Kötelező):</label>

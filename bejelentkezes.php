@@ -55,7 +55,7 @@
     <section class="kint">
         <h3>Bejelentkezés</h3>
         <div class="login">
-            <form action="bejelentkezes.php" method="post" autocomplete="off">
+            <form action="#" method="post" autocomplete="off">
                 <fieldset>
                     <label for="usname">Felhasználónév:</label>
                     <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12" required
