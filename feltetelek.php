@@ -1,6 +1,6 @@
 <?php
-    session_start();
     include "menusav.php";
+    session_start();
 ?>
 
 <!DOCTYPE html>

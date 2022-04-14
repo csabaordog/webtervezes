@@ -1,9 +1,10 @@
 <?php
-    session_start();
+
     include "menusav.php";
     include "osztalyok/Kutya.php";
     include "adatkezeles.php";
     include_once "osztalyok/Felhasznalo.php";
+    session_start();
     $kutyak = adatokBetoltese("adatok/kutyak.txt");
 ?>
 

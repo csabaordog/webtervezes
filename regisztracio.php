@@ -1,10 +1,10 @@
 <?php
-    session_start();
     //Regisztráció kezelése
     include "menusav.php";
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
     include "fuggvenyek.php";
+    session_start();
 
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];

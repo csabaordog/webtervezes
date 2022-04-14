@@ -1,9 +1,9 @@
 <?php
-    session_start();
     //Bejelentkezés kezelése
     include "menusav.php";
     include "osztalyok/Felhasznalo.php";
     include "adatkezeles.php";
+    session_start();
 
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hiba = [];

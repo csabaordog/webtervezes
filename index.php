@@ -1,7 +1,7 @@
 <?php
-    session_start();
     include_once "menusav.php";
     include_once "osztalyok/Felhasznalo.php";
+    session_start();
 ?>
 
 
