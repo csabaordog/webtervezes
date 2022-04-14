@@ -187,9 +187,9 @@
         </div>
     </section>
 </main>
-<footer>
-    <em>© A weboldalt készítette: Tóth Edina és Ördög Csaba</em>
-</footer>
+<?php
+include_once "lablec.php";
+?>
 <script src="szkriptek/script.js"></script>
 </body>
 </html>
