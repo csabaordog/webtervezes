@@ -58,14 +58,11 @@ function navigacioGeneralasa(string $aktualis)
             else {
                 echo '<a href="kosar.php" class="menu-link '. ($aktualis === "kosar" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Kosár</div>
-            </a>
-            <a href="uzenofal.php" class="menu-link '. ($aktualis === "uzenofal" ? "active" : "") .'">
+            </a>';
+            }
+            echo '<a href="uzenofal.php" class="menu-link '. ($aktualis === "uzenofal" ? "active" : "") .'">
                 <div class="menu-link-tartalom">Üzenőfal</div>
             </a>';
-
-            }
-
-
             }
         echo '</div>
     </nav>';
