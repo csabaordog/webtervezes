@@ -75,7 +75,7 @@ if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {
                                     <form action="kutyak.php" method="GET">
                                         <input type="hidden" name="kutya-nev" value="<?php echo $kutya->getNev(); ?>">
                                         <input type="submit" name="kosarba-tesz" value="Kosárba a szukát">
-
+                                        <input type="submit" name="kosarba-tesz" value="Kosárba a hímet">
                                     </form>
                                 <?php }?>
                             </div>
