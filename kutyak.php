@@ -1,11 +1,30 @@
 <?php
 
-    include "menusav.php";
-    include "osztalyok/Kutya.php";
-    include "adatkezeles.php";
+    include_once "menusav.php";
+    include_once "osztalyok/Kutya.php";
+    include_once "adatkezeles.php";
     include_once "osztalyok/Felhasznalo.php";
+    include_once "osztalyok/Kosar.php";
     session_start();
     $kutyak = adatokBetoltese("adatok/kutyak.txt");
+
+if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {
+    $felhasznalo = $_SESSION["felhasznalo"];
+    $kosar = $felhasznalo->getKosar();
+
+    $kutyaNeve = $_GET["kutya-nev"];
+
+    foreach ($kutyak as $kutya) {
+        if ($kutya->getNev() === $kutyaNeve) {
+            $ujKutya = new Kosar($kutya);
+            $felhasznalo->kosarbaTesz($ujKutya);
+        }
+    }
+    felhasznaloAdatainakModositasa("adatok/felhasznalok.txt", $felhasznalo);
+    header("Location: kutyak.php?siker=true");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +49,11 @@
 <?php navigacioGeneralasa("kutyak"); ?>
 <main>
     <section class="kint">
+        <?php
+        if (isset($_GET["siker"])) {
+            echo "<div class='siker'><p>A kutyát sikeresen a kosárba tetted!</p></div>";
+        }
+        ?>
         <h3>Nálunk kapható kutyafajták:</h3>
         <div class="grid-container">
 
@@ -41,9 +65,19 @@
                         </div>
                         <div class="kutya-doboz-hatul">
                             <h2><?= $kutya->getNev() ?></h2>
+                            <p><?= $kutya->getSzukadDB()?> db szukánk van</p>
+                            <p><?= $kutya->getHimDB()?> db hímünk van</p>
+                            <p><?= $kutya->getAr()?> Ft</p>
                             <div>
 
-                                <a href="<?= "kutyaoldal.php?kutya=".str_replace(" ", "", strtolower($kutya->getNev())) ?>">Érdekel</a>
+
+                                <?php if(isset($_SESSION["felhasznalo"])) {?>
+                                    <form action="kutyak.php" method="GET">
+                                        <input type="hidden" name="kutya-nev" value="<?php echo $kutya->getNev(); ?>">
+                                        <input type="submit" name="kosarba-tesz" value="Kosárba a szukát">
+
+                                    </form>
+                                <?php }?>
                             </div>
                         </div>
                     </div>

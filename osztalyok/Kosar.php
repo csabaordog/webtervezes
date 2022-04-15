@@ -6,7 +6,7 @@ class Kosar{
     private int $mennyiseg;
 
     //kiszamolja, hogy mibol mennyit vett
-    public function __construct(Termek $termek, int $mennyiseg=1) {
+    public function __construct(Kutya $termek, int $mennyiseg=1) {
         $this->nev = $termek->getNev();
         $this->mennyiseg = $mennyiseg;
         $this->ar = $this->mennyiseg * $termek->getAr();

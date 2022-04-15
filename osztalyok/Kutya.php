@@ -65,6 +65,18 @@ class Kutya{
         $this->himDB = $himDB;
     }
 
+    public function getAr(): int
+    {
+        return $this->ar;
+    }
+
+    public function setAr(int $ar): void
+    {
+        $this->ar = $ar;
+    }
+
+
+
     public function __toString(): string
     {
         // TODO: Implement __toString() method.
