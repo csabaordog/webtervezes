@@ -11,6 +11,7 @@
     }
 
     $uzenetek = adatokBetoltese("adatok/uzenetek.txt");
+    $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
 
         if(isset($_GET["uzenet-kuld"])) {
             $felhasznalo=($_SESSION["felhasznalo"]);
@@ -30,10 +31,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kutyaimádók</title>
+    <title>Üzenőfal</title>
     <link rel="stylesheet" href="stilusok/menu.css" type="text/css">
     <link rel="stylesheet" href="stilusok/stilusok.css" type="text/css">
-
+    <link rel="stylesheet" href="stilusok/profileskosar.css" type="text/css">
     <link rel="icon" href="media/ikon.jpg" type="image/ico">
 </head>
 <body>
@@ -59,6 +60,20 @@
             <input type="text" name="uzen" id="uzenet" maxlength="300">
             <input type="submit" name="uzenet-kuld" value="Üzenet elküldése">
         </form>
+    </section>
+    <section>
+        <h3>További felhasználók:</h3>
+        <div>
+            <?php foreach ($felhasznalok as $felhasznalo){ ?>
+                <section class="felhasznalok">
+                    <h4><?php echo $felhasznalo->getFelhasznalonev(); ?> </h4>
+                    <p>Születési év: <?php echo $felhasznalo->getSzuletesiEv(); ?> </p>
+                    <p>Nem: <?php echo $felhasznalo->getNem(); ?> </p>
+                </section>
+            <?php } ?>
+        </div>
+
+
     </section>
 
 
