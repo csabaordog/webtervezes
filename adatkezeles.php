@@ -48,3 +48,4 @@ function felhasznaloAdatainakModositasa(string $fajlnev, Felhasznalo $modositand
 
     adatokMentese($fajlnev, $felhasznalok);
 }
+

@@ -1,7 +1,7 @@
 <?php
     class Uzenet{
         private string $szoveg;
-        private Felhasznalo $felhasznalo;
+        private string $felhasznalo;
         private DateTime $letrehozva;
 
         public function getSzoveg(): string
@@ -14,7 +14,7 @@
             $this->szoveg = $szoveg;
         }
 
-        public function getFelhasznalo(): Felhasznalo
+        public function getFelhasznalo(): string
         {
             return $this->felhasznalo;
         }
@@ -36,11 +36,12 @@
         }
 
 
-        public function __construct(string $szoveg, Felhasznalo $felhasznalo, DateTime $letrehozva)
+        public function __construct(string $szoveg, Felhasznalo $felhasznalo)
         {
             $this->szoveg = $szoveg;
-            $this->felhasznalo = $felhasznalo;
-            $this->letrehozva = $letrehozva;
+            $this->felhasznalo = $felhasznalo->getFelhasznalonev();
+            $this->letrehozva = new DateTime();
+            $this->letrehozva->setTimezone(new DateTimeZone("Europe/Budapest"));
         }
 
     }

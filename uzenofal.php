@@ -9,7 +9,17 @@
     if (!isset($_SESSION["felhasznalo"])) {
         header("Location: bejelentkezes.php");
     }
+
     $uzenetek = adatokBetoltese("adatok/uzenetek.txt");
+
+        if(isset($_GET["uzenet-kuld"])) {
+            $felhasznalo=($_SESSION["felhasznalo"]);
+            $uzenet = $_GET["uzen"];
+            $ujUzenet=new Uzenet($uzenet,$felhasznalo);
+            $uzenetek[]=$ujUzenet;
+            adatokMentese("adatok/uzenetek.txt", $uzenetek);
+        }
+
 
 
 ?>
@@ -36,12 +46,19 @@
 
     <section class="kint">
         <div class="uzenetek">
-            <?php
-                foreach ($uzenetek as $uzenet){
-                    echo "<div class='uzenet'>{$uzenet->getSzoveg()} {$uzenet->getFelhasznalo()} {$uzenet->getLetrehozva()}</div>";
-                }
-            ?>
+            <?php foreach ($uzenetek as $uzenet){ ?>
+                <section>
+                    <p> Üzenet dátuma: <?php echo $uzenet->getLetrehozva()->format("Y-m-d H:i:s"); ?> </p>
+                    <p> Üzenő: <?php echo $uzenet->getFelhasznalo(); ?> </p>
+                    <p> Üzenet: <?php echo $uzenet->getSzoveg(); ?> </p>
+                </section>
+               <?php } ?>
         </div>
+        <form action="uzenofal.php" method="GET">
+            <label for="uzenet">Mit üzensz másoknak? (max. 300 karaktert írhatsz!)</label>
+            <input type="text" name="uzen" id="uzenet" maxlength="300">
+            <input type="submit" name="uzenet-kuld" value="Üzenet elküldése">
+        </form>
     </section>
 
 
