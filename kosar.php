@@ -5,6 +5,7 @@ include_once "adatkezeles.php";
 include_once "osztalyok/Rendelesek.php";
 include_once "osztalyok/Kosar.php";
 include_once "osztalyok/Felhasznalo.php";
+include_once "osztalyok/TermekKosar.php";
 session_start();
 //TODO kilistázni a felhasználó kosarát "szépen"
 //ha nincs bejelentkezve, akkor atiranyitjuk
@@ -33,8 +34,12 @@ if (isset($_GET["kosar-torol-btn"])) {
 }
 
 if (isset($_GET["rendeles-btn"])) {
+    $termekNevek[]="";
+    foreach($kosar as $termek) {
+        $termekNevek[]=$termek->getNev();
+    }
     $rendel = adatokBetoltese("adatok/rendelesek.txt");
-    $rendeles = new Rendelesek($felhasznalo->getFelhasznalonev(), $kosar);
+    $rendeles = new Rendelesek($felhasznalo->getFelhasznalonev(), $termekNevek);
     $rendel[] = $rendeles;
     adatokMentese("adatok/rendelesek.txt", $rendel);
     $felhasznalo->setKosar([]);

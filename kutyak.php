@@ -5,6 +5,7 @@
     include_once "adatkezeles.php";
     include_once "osztalyok/Felhasznalo.php";
     include_once "osztalyok/Kosar.php";
+    include_once "osztalyok/TermekKosar.php";
     session_start();
     $kutyak = adatokBetoltese("adatok/kutyak.txt");
 

@@ -5,6 +5,7 @@
     include_once "adatkezeles.php";
     include_once "osztalyok/Felhasznalo.php";
     include_once "osztalyok/Kosar.php";
+    include_once "osztalyok/TermekKosar.php";
     session_start();
     $termekek = adatokBetoltese("adatok/termekek.txt");
 
@@ -16,8 +17,8 @@ if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {
 
     foreach ($termekek as $termek) {
         if ($termek->getNev() === $termekNeve) {
-            $ujTermek = new Kosar($termek);
-            $felhasznalo->kosarbaTesz($ujTermek);
+            $ujTermek = new TermekKosar($termek);
+            $felhasznalo->kosarbaTeszTermek($ujTermek);
         }
     }
     felhasznaloAdatainakModositasa("adatok/felhasznalok.txt", $felhasznalo);

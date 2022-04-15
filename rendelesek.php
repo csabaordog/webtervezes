@@ -5,6 +5,7 @@
     include_once "osztalyok/Felhasznalo.php";
     include_once "osztalyok/Kosar.php";
     include_once "osztalyok/Rendelesek.php";
+    include_once "osztalyok/TermekKosar.php";
     session_start();
 
     if ($_SESSION["felhasznalo"]->getFelhasznalonev() !== "admin") {
