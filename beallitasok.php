@@ -70,10 +70,10 @@ if (!isset($_SESSION["felhasznalo"])) {
             if($szuletesiEv!=="" && $szuletesiEv!==$_SESSION["felhasznalo"]->getSzuletesiev()) {
                 $_SESSION["felhasznalo"]->setSzuletesiev($szuletesiEv);
             }
+            //TODO a fájlban is felülírni a felhasználó adait
             header("Location: beallitasok.php?siker=true");
         }
     }
-    //TODO űrlap amin a felhasználó tudja módosítani az adatait
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +115,7 @@ if (!isset($_SESSION["felhasznalo"])) {
             <legend>Személyes adatok:</legend>
             <label for="usname">Felhasználónév megváltoztatása:</label>
             <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12"
-                   class="form-input">
+                   class="form-input" >
 
             <label for="pswd">Jelszó megváltoztatása:</label>
             <input type="password" name="password" id="pswd" maxlength="25" class="form-input">
@@ -125,11 +125,11 @@ if (!isset($_SESSION["felhasznalo"])) {
 
             <label for="email">E-mail cím megváltoztatása:</label>
             <input type="email" name="mail" id="email" placeholder="valaki@gmail.com"
-                   class="form-input">
+                   class="form-input" >
 
             <label for="birth">Születési év megváltoztatása:</label>
             <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977"
-                   class="form-input">
+                   class="form-input" >
             <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">
 
         </form>

@@ -1,26 +1,25 @@
 <?php
 
-    include_once "menusav.php";
-    include_once "osztalyok/Felhasznalo.php";
-    include_once "osztalyok/Uzenet.php";
-    include_once "adatkezeles.php";
-    session_start();
+include_once "menusav.php";
+include_once "osztalyok/Felhasznalo.php";
+include_once "osztalyok/Uzenet.php";
+include_once "adatkezeles.php";
+session_start();
 
-    if (!isset($_SESSION["felhasznalo"])) {
-        header("Location: bejelentkezes.php");
-    }
+if (!isset($_SESSION["felhasznalo"])) {
+    header("Location: bejelentkezes.php");
+}
+$uzenetek = adatokBetoltese("adatok/uzenetek.txt");
+$felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
 
-    $uzenetek = adatokBetoltese("adatok/uzenetek.txt");
-    $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
 
-        if(isset($_GET["uzenet-kuld"])) {
-            $felhasznalo=($_SESSION["felhasznalo"]);
-            $uzenet = $_GET["uzen"];
-            $ujUzenet=new Uzenet($uzenet,$felhasznalo);
-            $uzenetek[]=$ujUzenet;
-            adatokMentese("adatok/uzenetek.txt", $uzenetek);
-        }
-
+if (isset($_GET["uzenet-kuld"])) {
+    $felhasznalo = $_SESSION["felhasznalo"];
+    $uzenet = $_GET["uzen"];
+    $ujUzenet = new Uzenet($uzenet, $felhasznalo);
+    $uzenetek[] = $ujUzenet;
+    adatokMentese("adatok/uzenetek.txt", $uzenetek);
+}
 
 
 ?>
@@ -47,13 +46,13 @@
 
     <section class="kint">
         <div class="uzenetek">
-            <?php foreach ($uzenetek as $uzenet){ ?>
+            <?php foreach ($uzenetek as $uzenet) { ?>
                 <section>
                     <p> Üzenet dátuma: <?php echo $uzenet->getLetrehozva()->format("Y-m-d H:i:s"); ?> </p>
                     <p> Üzenő: <?php echo $uzenet->getFelhasznalo(); ?> </p>
                     <p> Üzenet: <?php echo $uzenet->getSzoveg(); ?> </p>
                 </section>
-               <?php } ?>
+            <?php } ?>
         </div>
         <form action="uzenofal.php" method="GET">
             <label for="uzenet">Mit üzensz másoknak? (max. 300 karaktert írhatsz!)</label>
@@ -64,7 +63,7 @@
     <section>
         <h3>További felhasználók:</h3>
         <div>
-            <?php foreach ($felhasznalok as $felhasznalo){ ?>
+            <?php foreach ($felhasznalok as $felhasznalo) { ?>
                 <section class="felhasznalok">
                     <h4><?php echo $felhasznalo->getFelhasznalonev(); ?> </h4>
                     <p>Születési év: <?php echo $felhasznalo->getSzuletesiEv(); ?> </p>

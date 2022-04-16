@@ -82,8 +82,8 @@ $felhasznalo = $_SESSION["felhasznalo"];
                     <td><?php echo $felhasznalo->getNem(); ?></td>
                 </tr>
             </table>
-            <a href="beallitasok.php">
-                <button>Beállítások</button>
+            <a href="beallitasok.php" class="button">
+               Beállítások
             </a>
 
             <form action="kijelentkezes.php" method="POST" class="logout-form">
@@ -91,6 +91,9 @@ $felhasznalo = $_SESSION["felhasznalo"];
             </form>
 
         </section>
+        <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
+            <p>/\<br>|</p>
+        </div>
     </main>
 
     <?php

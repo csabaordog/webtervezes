@@ -7,6 +7,7 @@
     include_once "osztalyok/Kosar.php";
     include_once "osztalyok/TermekKosar.php";
     session_start();
+
     $termekek = adatokBetoltese("adatok/termekek.txt");
 
 if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {

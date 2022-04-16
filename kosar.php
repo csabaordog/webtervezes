@@ -7,8 +7,7 @@ include_once "osztalyok/Kosar.php";
 include_once "osztalyok/Felhasznalo.php";
 include_once "osztalyok/TermekKosar.php";
 session_start();
-//TODO kilistázni a felhasználó kosarát "szépen"
-//ha nincs bejelentkezve, akkor atiranyitjuk
+
 if (!isset($_SESSION["felhasznalo"])) {
     header("Location: bejelentkezes.php");
 }

@@ -25,7 +25,6 @@
             $hiba[] = "Rossz felhasználónév vagy jelszó!";
         }
     }
-    //TODO bejelentkezés utáni üzenet
     if(isset($_SESSION["felhasznalo"])){
         header("Location: profil.php");
     }
