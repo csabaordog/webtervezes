@@ -83,7 +83,7 @@
                                 <form action="rendelesek.php" method="GET" class="rendeles-form">
                                     <input type="hidden" name="megrendelo" value="<?php echo $rendeles->getMegrendelo(); ?>">
                                     <input type="hidden" name="rendeles-datum" value="<?php echo $rendeles->getRendelesDatuma()->format('Y-m-d H:i:s'); ?>">
-                                    <input type="submit" name="rendeles-btn" value="Teljesítés">
+                                    <input type="submit" class="rendel-gomb" name="rendeles-btn" value="Teljesítés">
                                 </form>
                             </td>
                         </tr>

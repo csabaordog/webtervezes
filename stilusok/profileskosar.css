@@ -58,8 +58,8 @@ input:hover, .button:hover{
     transition: 400ms;
 }
 
-.kosarbolTorol {
-    width: 150px;
+.kosarbolTorol, .rendel-gomb {
+    max-width: 150px;
 }
 
 img {
