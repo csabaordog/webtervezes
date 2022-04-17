@@ -17,6 +17,7 @@ define("DEFAULT_PROFILKEP", "adatok/profilkepek/default.jpg");
 if (isset($_POST["uzenet-kuld"])) {
     $felhasznalo = $_SESSION["felhasznalo"];
     $uzenet = $_POST["uzen"];
+
     $ujUzenet = new Uzenet($uzenet, $felhasznalo);
     $uzenetek[] = $ujUzenet;
     adatokMentese("adatok/uzenetek.txt", $uzenetek);

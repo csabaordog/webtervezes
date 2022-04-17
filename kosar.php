@@ -98,7 +98,12 @@ if (isset($_GET["rendeles-btn"])) {
         <form action="kosar.php" method="GET" class="rendeles-form">
             <input type="submit" name="rendeles-btn" value="Rendelés">
         </form>
+        <?php } else if (isset($_GET["siker"])) {
+            echo "<div style='text-align: center'><h2>Rendelés sikeresen leadva!</h2></div>";
+
+        ?>
     <?php } else { ?>
+
         <div style="text-align: center">
             <h2>A kosarad jelenleg üres!</h2>
         </div>
