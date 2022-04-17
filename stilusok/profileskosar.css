@@ -14,8 +14,32 @@ td,th {
 
 }
 
+h4 {
+    font-size: 20px;
+}
+
+.felhasznalok {
+    width: 100%;
+    display: inline-grid;
+    column-gap: 50px;
+    row-gap: 50px;
+
+}
+
+.felhasznalo {
+    justify-items: center;
+    display: grid;
+    padding: 15px;
+    margin: 20px;
+    max-height: 350px;
+    max-width: 300px;
+    width: 60vw;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 input, .button {
-    width: 150px;
+    width: 300px;
     font-size: 15px;
     display: block;
     padding: 15px 30px;
@@ -25,5 +49,24 @@ input, .button {
     color: #fff;
     margin: 10px auto;
     cursor: pointer;
+    text-align: center;
+}
+
+img {
+   padding: 10px;
+}
+
+#uzenet {
+    width: 500px;
+}
+
+#uzenet-kuld {
+    width: 300px;
+}
+
+#uzenet, #uzenet-kuld {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #000000;
 }
 
