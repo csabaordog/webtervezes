@@ -1,4 +1,5 @@
 <?php
+
     include_once "menusav.php";
     include_once "osztalyok/Felhasznalo.php";
     session_start();
@@ -90,7 +91,7 @@
 <?php
 include_once "lablec.php";
 ?>
-<script rel="stylesheet" src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script rel="stylesheet" src="szkriptek/fontawesome.js" crossorigin="anonymous"></script>
 <script src="szkriptek/script.js"></script>
 
 </body>

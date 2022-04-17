@@ -99,8 +99,10 @@ if (isset($_GET["rendeles-btn"])) {
             <input type="submit" name="rendeles-btn" value="Rendelés">
         </form>
     <?php } else { ?>
-        <p class="center strong">A kosarad jelenleg üres!</p>
-    <?php } ?>
+        <div style="text-align: center">
+            <h2>A kosarad jelenleg üres!</h2>
+        </div>
+            <?php } ?>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
         <p>/\<br>|</p>
     </div>

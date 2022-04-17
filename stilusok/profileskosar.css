@@ -25,7 +25,9 @@ h4 {
     row-gap: 50px;
 
 }
-
+img{
+    border-radius: 10%;
+}
 .felhasznalo {
     justify-items: center;
     display: grid;
@@ -44,12 +46,16 @@ input, .button {
     display: block;
     padding: 15px 30px;
     text-decoration: none;
-    background-color: #6D707D;
+    background-color: #3D404D;
     border: none;
     color: #fff;
     margin: 10px auto;
     cursor: pointer;
     text-align: center;
+}
+input:hover, .button:hover{
+    background-color: #6D707D;
+    transition: 400ms;
 }
 
 .kosarbolTorol {

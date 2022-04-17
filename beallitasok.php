@@ -3,11 +3,14 @@
     include "menusav.php";
     include_once "osztalyok/Felhasznalo.php";
     include_once "adatkezeles.php";
+    include_once "fuggvenyek.php";
+
     session_start();
 if (!isset($_SESSION["felhasznalo"])) {
     header("Location: bejelentkezes.php");
 }
-
+    define("DEFAULT_PROFILKEP", "adatok/profilkepek/default.jpg");
+    $profilkep = DEFAULT_PROFILKEP;
     $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
     $hibak = [];
 
@@ -18,6 +21,7 @@ if (!isset($_SESSION["felhasznalo"])) {
         $ellenorzoJelszo = $_POST["password2"];
         $email = $_POST["mail"];
         $szuletesiEv = $_POST["birthd"];
+        $profilkep = $_FILES["profilkep"];
 
         if ($jelszo !== "") {
             if (strlen($jelszo) < 5) {
@@ -55,7 +59,9 @@ if (!isset($_SESSION["felhasznalo"])) {
         if ($felhasznalonev === "default") {
             $hibak[] = "A felhasználónév már foglalt!";
         }
-
+        if(is_uploaded_file($profilkep["tmp_name"])){
+            profilkepFeltoltese($hibak, ($felhasznalonev == "") ? $_SESSION["felhasznalo"]->getFelhasznalonev() : $felhasznalonev);
+        }
 
         if (count($hibak) === 0) {
             if ($felhasznalonev !== "" && $felhasznalonev !== $_SESSION["felhasznalo"]->getFelhasznalonev()) {
@@ -69,6 +75,13 @@ if (!isset($_SESSION["felhasznalo"])) {
             }
             if ($szuletesiEv !== "" && $szuletesiEv !== $_SESSION["felhasznalo"]->getSzuletesiev()) {
                 $_SESSION["felhasznalo"]->setSzuletesiev($szuletesiEv);
+            }
+            if(is_uploaded_file($profilkep["tmp_name"])) {
+                $kit = strtolower(pathinfo($profilkep["name"], PATHINFO_EXTENSION));
+                $utvonal = "adatok/profilkepek/" . $_SESSION["felhasznalo"]->getFelhasznalonev() . "." . $kit;
+                if ($utvonal !== $profilkep && $profilkep !== DEFAULT_PROFILKEP) {
+                    unlink($profilkep);
+                }
             }
             //TODO a fájlban is felülírni a felhasználó adait
             header("Location: beallitasok.php?siker=true");
@@ -111,7 +124,7 @@ if (!isset($_SESSION["felhasznalo"])) {
             echo "</div>";
         }
         ?>
-        <form action="beallitasok.php" method="POST" autocomplete="off" >
+        <form action="beallitasok.php" method="POST" autocomplete="off" enctype="multipart/form-data">
             <legend>Személyes adatok:</legend>
             <label for="usname">Felhasználónév megváltoztatása:</label>
             <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12"
@@ -130,6 +143,9 @@ if (!isset($_SESSION["felhasznalo"])) {
             <label for="birth">Születési év megváltoztatása:</label>
             <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977"
                    class="form-input" >
+
+            <label for="profilkep">Profilkép megváltoztatása:</label>
+            <input type="file" name="profilkep" id="profilkep" accept="image/*" class="form-input">
 
 
             <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">

@@ -63,7 +63,8 @@ if (isset($_GET["uzenet-kuld"])) {
     </section>
     <section class="felhasznalok">
         <h3>További felhasználók:</h3>
-        <div>
+        <div style="margin: 0px auto; max-width: 1400px">
+
             <?php foreach ($felhasznalok as $felhasznalo) {
                 $profilkep = DEFAULT_PROFILKEP;
                 $utvonal = "adatok/profilkepek/" . $felhasznalo->getFelhasznalonev();
