@@ -14,9 +14,9 @@ $felhasznalok = adatokBetoltese("adatok/felhasznalok.txt");
 
 define("DEFAULT_PROFILKEP", "adatok/profilkepek/default.jpg");
 
-if (isset($_GET["uzenet-kuld"])) {
+if (isset($_POST["uzenet-kuld"])) {
     $felhasznalo = $_SESSION["felhasznalo"];
-    $uzenet = $_GET["uzen"];
+    $uzenet = $_POST["uzen"];
     $ujUzenet = new Uzenet($uzenet, $felhasznalo);
     $uzenetek[] = $ujUzenet;
     adatokMentese("adatok/uzenetek.txt", $uzenetek);
@@ -55,7 +55,7 @@ if (isset($_GET["uzenet-kuld"])) {
                 </section>
             <?php } ?>
         </div>
-        <form action="uzenofal.php" method="GET" style="text-align: center">
+        <form action="uzenofal.php" method="POST" style="text-align: center">
             <label for="uzenet">Mit üzensz másoknak? (max. 300 karaktert írhatsz!)</label>
             <textarea name="uzen" id="uzenet" maxlength="300" rows="10"></textarea>
             <input type="submit" name="uzenet-kuld" id="uzenet-kuld" value="Üzenet elküldése">
