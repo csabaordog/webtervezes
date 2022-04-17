@@ -24,7 +24,7 @@ if (!isset($_SESSION["felhasznalo"])) {
         $szuletesiEv = $_POST["birthd"];
         $profilkep = $_FILES["profilkep"];
 
-        if ($jelszo !== "") {
+        if($jelszo!=="") {
             if (strlen($jelszo) < 5) {
                 $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
             }
@@ -37,7 +37,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
         //Email cím validálás
-        if ($email !== "") {
+        if($email!=="") {
             if (!preg_match("/[0-9a-z\.\-]+@([0-9a-z\-]+\.)[a-z]{2,4}/", $email)) {
                 $hibak[] = "A megadott e-mail cím formátuma nem megfelelő!";
             }
@@ -45,12 +45,12 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
         //Jelszavak egyezésének ellenőrzése
-        if ($jelszo !== $ellenorzoJelszo) {
+        if($jelszo !== $ellenorzoJelszo){
             $hibak[] = "A megadott jelszavak nem egyeznek!";
         }
 
-        foreach ($felhasznalok as $felhasznalo) {
-            if ($felhasznalo->getEmail() === $email) {
+        foreach ($felhasznalok as $felhasznalo){
+            if($felhasznalo->getEmail() === $email){
                 $hibak[] = "Az email cím foglalt!";
             }
             if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
@@ -64,17 +64,17 @@ if (!isset($_SESSION["felhasznalo"])) {
             profilkepFeltoltese($hibak, ($felhasznalonev == "") ? $_SESSION["felhasznalo"]->getFelhasznalonev() : $felhasznalonev);
         }
 
-        if (count($hibak) === 0) {
-            if ($felhasznalonev !== "" && $felhasznalonev !== $_SESSION["felhasznalo"]->getFelhasznalonev()) {
+        if(count($hibak) === 0) {
+            if($felhasznalonev !== "" && $felhasznalonev!==$_SESSION["felhasznalo"]->getFelhasznalonev()) {
                 $_SESSION["felhasznalo"]->setFelhasznalonev($felhasznalonev);
             }
-            if ($jelszo !== "" && $jelszo === $ellenorzoJelszo) {
+            if($jelszo!=="" && $jelszo===$ellenorzoJelszo){
                 $_SESSION["felhasznalo"]->setJelszo(password_hash($jelszo, PASSWORD_DEFAULT));
             }
-            if ($email !== "" && $email !== $_SESSION["felhasznalo"]->getEmail()) {
+            if($email!=="" && $email!==$_SESSION["felhasznalo"]->getEmail()) {
                 $_SESSION["felhasznalo"]->setEmail($email);
             }
-            if ($szuletesiEv !== "" && $szuletesiEv !== $_SESSION["felhasznalo"]->getSzuletesiev()) {
+            if($szuletesiEv!=="" && $szuletesiEv!==$_SESSION["felhasznalo"]->getSzuletesiev()) {
                 $_SESSION["felhasznalo"]->setSzuletesiev($szuletesiEv);
             }
             if(is_uploaded_file($profilkep["tmp_name"])) {

@@ -51,8 +51,21 @@
 <?php navigacioGeneralasa("bejelentkezes"); ?>
 <main>
 
+
     <section class="kint">
         <h3>Bejelentkezés</h3>
+        <?php
+        //Ha hiba lépett fel a bejelentkezés során
+        if (count($hiba) > 0) {
+            echo "<div class='hibak'>";
+
+            foreach ($hiba as $hiba) {
+                echo "<p>" . $hiba . "</p>";
+            }
+
+            echo "</div>";
+        }
+        ?>
         <div class="login">
             <form action="#" method="post" autocomplete="off">
                 <fieldset>
