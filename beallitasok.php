@@ -84,6 +84,13 @@ if (!isset($_SESSION["felhasznalo"])) {
                     unlink($profilkep);
                 }
             }
+            $kiterjesztes = ".jpg";
+            if(file_exists($_SESSION["felhasznalo"]->getFelhasznalonev()."png")){
+                $kiterjesztes = ".png";
+            }
+            if($_SESSION["felhasznalo"]->getFelhasznalonev() !== $eredetinev && $eredetinev !== "default"){
+                rename("adatok/profilkepek/".$eredetinev.$kiterjesztes, "adatok/profilkepek/".$_SESSION["felhasznalo"]->getFelhasznalonev().$kiterjesztes );
+            }
 
             $ujFelhasznalok = [];
             foreach ($felhasznalok as $felhasznalo){
