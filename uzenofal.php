@@ -68,7 +68,8 @@ if (isset($_GET["uzenet-kuld"])) {
                     <h4><?php echo $felhasznalo->getFelhasznalonev(); ?> </h4>
                     <p>Születési év: <?php echo $felhasznalo->getSzuletesiEv(); ?> </p>
                     <p>Nem: <?php echo $felhasznalo->getNem(); ?> </p>
-                    
+                    <!-- TODO ahh, ezt for ciklussal kell, meg kéne nézni a kiterjesztéseket !>
+                    <img src="<?php (file_exists("adatok/profilkepek/{$felhasznalo->getFelhasznaloNev()}")) ?>" alt="<?php echo $felhasznalo->getFelhasznalonev(); ?>-profilkep" width="100" height="100">
                 </section>
             <?php } ?>
         </div>

@@ -130,6 +130,9 @@ if (!isset($_SESSION["felhasznalo"])) {
             <label for="birth">Születési év megváltoztatása:</label>
             <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977"
                    class="form-input" >
+            <label for="profilkep">Profilkép megváltoztatása:</label>
+            <input type="file" name="profilkep" id="profilkep" accept="image/*" class="form-input">
+
             <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">
 
         </form>
