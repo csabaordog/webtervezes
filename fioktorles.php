@@ -10,6 +10,13 @@
     foreach ($felhasznalok as $felhasznalo){
         if($felhasznalo->getFelhasznaloNev() !== $_SESSION["felhasznalo"]->getFelhasznaloNev()){
             $felhasznalokUj[] = $felhasznalo;
+        }else{
+            $kiterjesztesek = [".jpg", ".png"];
+            foreach ($kiterjesztesek as $kit){
+                if(file_exists("adatok/profilkepek/".$felhasznalo->getFelhasznalonev().$kit)){
+                    unlink("adatok/profilkepek/".$felhasznalo->getFelhasznalonev().$kit);
+                }
+            }
         }
     }
     adatokMentese("adatok/felhasznalok.txt", $felhasznalokUj);
