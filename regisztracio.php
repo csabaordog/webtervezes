@@ -19,7 +19,7 @@
         $szuletesiEv = $_POST["birthd"];
         $jelolonegyzetek = $_POST["confirmations"];
         $nem = "egyéb";
-        //TODO egyéb mezők hozzáadása regisztrációnál
+
         if (isset($_POST["gender"])) {
             $nem = $_POST["gender"];
         }

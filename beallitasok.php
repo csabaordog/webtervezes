@@ -17,6 +17,7 @@ if (!isset($_SESSION["felhasznalo"])) {
     if(isset($_POST["settings-btn"])) {
         //Űrlapadatok mentése
         $felhasznalonev = $_POST["uname"];
+        $eredetinev = $_SESSION["felhasznalo"] -> getFelhasznalonev();
         $jelszo = $_POST["password"];
         $ellenorzoJelszo = $_POST["password2"];
         $email = $_POST["mail"];
@@ -83,7 +84,18 @@ if (!isset($_SESSION["felhasznalo"])) {
                     unlink($profilkep);
                 }
             }
-            //TODO a fájlban is felülírni a felhasználó adait
+
+            $ujFelhasznalok = [];
+            foreach ($felhasznalok as $felhasznalo){
+
+                if($felhasznalo->getFelhasznalonev() === $eredetinev){
+
+                    $ujFelhasznalok[] = $_SESSION["felhasznalo"];
+                }else{
+                    $ujFelhasznalok[] = $felhasznalo;
+                }
+            }
+            adatokMentese("adatok/felhasznalok.txt", $ujFelhasznalok);
             header("Location: beallitasok.php?siker=true");
         }
     }

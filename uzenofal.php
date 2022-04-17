@@ -55,15 +55,15 @@ if (isset($_GET["uzenet-kuld"])) {
                 </section>
             <?php } ?>
         </div>
-        <form action="uzenofal.php" method="GET">
+        <form action="uzenofal.php" method="GET" style="text-align: center">
             <label for="uzenet">Mit üzensz másoknak? (max. 300 karaktert írhatsz!)</label>
-            <input type="text" name="uzen" id="uzenet" maxlength="300">
+            <textarea name="uzen" id="uzenet" maxlength="300" rows="10"></textarea>
             <input type="submit" name="uzenet-kuld" id="uzenet-kuld" value="Üzenet elküldése">
         </form>
     </section>
     <section class="felhasznalok">
         <h3>További felhasználók:</h3>
-        <div style="margin: 0px auto; max-width: 1400px">
+        <div style="margin: 0 auto; max-width: 1400px">
 
             <?php foreach ($felhasznalok as $felhasznalo) {
                 $profilkep = DEFAULT_PROFILKEP;
