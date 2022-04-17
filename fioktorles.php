@@ -13,3 +13,4 @@
         }
     }
     adatokMentese("adatok/felhasznalok.txt", $felhasznalokUj);
+    header("Location: kijelentkezes.php");

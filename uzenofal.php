@@ -68,6 +68,7 @@ if (isset($_GET["uzenet-kuld"])) {
                     <h4><?php echo $felhasznalo->getFelhasznalonev(); ?> </h4>
                     <p>Születési év: <?php echo $felhasznalo->getSzuletesiEv(); ?> </p>
                     <p>Nem: <?php echo $felhasznalo->getNem(); ?> </p>
+                    
                 </section>
             <?php } ?>
         </div>

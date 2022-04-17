@@ -1,4 +1,4 @@
-let sectionok = document.querySelectorAll("section");
+let sectionok = document.querySelectorAll("section.kint");
 let ugrasGomb = document.querySelector("#ugras-gomb");
 /*
     Ez a kódrészlet ráhelyez az #ugras-gomb-ra kattintás-figyelést,
