@@ -89,7 +89,9 @@ $felhasznalo = $_SESSION["felhasznalo"];
             <form action="kijelentkezes.php" method="POST" class="logout-form">
                 <input type="submit" name="logout-btn" value="Kijelentkezés">
             </form>
-
+            <form action="fioktorles.php" method="POST">
+                <input type="submit" value="Fiók törlése">
+            </form>
         </section>
         <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">
             <p>/\<br>|</p>
