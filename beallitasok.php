@@ -129,6 +129,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 <?php navigacioGeneralasa("beallitasok"); ?>
 <main>
     <section class="kint">
+        <h2>Beállítások</h2>
         <?php
         if (isset($_GET["siker"])) {
             echo "<div class='siker'>Sikeres adatmegváltoztatás!</div>";
@@ -144,6 +145,7 @@ if (!isset($_SESSION["felhasznalo"])) {
         }
         ?>
         <form action="beallitasok.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <fieldset>
             <legend>Személyes adatok:</legend>
             <label for="usname">Felhasználónév megváltoztatása:</label>
             <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12"
@@ -168,7 +170,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
             <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">
-
+            </fieldset>
         </form>
     </section>
     <div id="ugras-gomb" title="Oldal tetejere ugrik" class="hidden">

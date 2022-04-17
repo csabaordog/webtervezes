@@ -91,7 +91,7 @@
 <?php
 include_once "lablec.php";
 ?>
-<script rel="stylesheet" src="szkriptek/fontawesome.js" crossorigin="anonymous"></script>
+
 <script src="szkriptek/script.js"></script>
 
 </body>

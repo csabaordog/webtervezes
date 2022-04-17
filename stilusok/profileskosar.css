@@ -81,4 +81,9 @@ img {
     max-width: 80%;
     color: #000000;
 }
-
+.uzenet-doboz{
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff20;
+    border-radius: 10px 10px;
+}

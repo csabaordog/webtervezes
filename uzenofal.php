@@ -47,13 +47,14 @@ if (isset($_POST["uzenet-kuld"])) {
 <main>
 
     <section class="kint">
+        <h2>Üzenetek:</h2>
         <div class="uzenetek">
             <?php foreach ($uzenetek as $uzenet) { ?>
-                <section>
+                <div class="uzenet-doboz">
                     <p> Üzenet dátuma: <?php echo $uzenet->getLetrehozva()->format("Y-m-d H:i:s"); ?> </p>
                     <p> Üzenő: <?php echo $uzenet->getFelhasznalo(); ?> </p>
                     <p> Üzenet: <?php echo $uzenet->getSzoveg(); ?> </p>
-                </section>
+                </div>
             <?php } ?>
         </div>
         <form action="uzenofal.php" method="POST" style="text-align: center">
