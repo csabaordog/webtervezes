@@ -52,6 +52,10 @@ input, .button {
     text-align: center;
 }
 
+.kosarbolTorol {
+    width: 150px;
+}
+
 img {
    padding: 10px;
 }

@@ -19,7 +19,7 @@ if (!isset($_SESSION["felhasznalo"])) {
         $email = $_POST["mail"];
         $szuletesiEv = $_POST["birthd"];
 
-        if($jelszo!=="") {
+        if ($jelszo !== "") {
             if (strlen($jelszo) < 5) {
                 $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
             }
@@ -32,7 +32,7 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
         //Email cím validálás
-        if($email!=="") {
+        if ($email !== "") {
             if (!preg_match("/[0-9a-z\.\-]+@([0-9a-z\-]+\.)[a-z]{2,4}/", $email)) {
                 $hibak[] = "A megadott e-mail cím formátuma nem megfelelő!";
             }
@@ -40,12 +40,12 @@ if (!isset($_SESSION["felhasznalo"])) {
 
 
         //Jelszavak egyezésének ellenőrzése
-        if($jelszo !== $ellenorzoJelszo){
+        if ($jelszo !== $ellenorzoJelszo) {
             $hibak[] = "A megadott jelszavak nem egyeznek!";
         }
 
-        foreach ($felhasznalok as $felhasznalo){
-            if($felhasznalo->getEmail() === $email){
+        foreach ($felhasznalok as $felhasznalo) {
+            if ($felhasznalo->getEmail() === $email) {
                 $hibak[] = "Az email cím foglalt!";
             }
             if ($felhasznalo->getFelhasznalonev() === $felhasznalonev) {
@@ -57,17 +57,17 @@ if (!isset($_SESSION["felhasznalo"])) {
         }
 
 
-        if(count($hibak) === 0) {
-            if($felhasznalonev !== "" && $felhasznalonev!==$_SESSION["felhasznalo"]->getFelhasznalonev()) {
+        if (count($hibak) === 0) {
+            if ($felhasznalonev !== "" && $felhasznalonev !== $_SESSION["felhasznalo"]->getFelhasznalonev()) {
                 $_SESSION["felhasznalo"]->setFelhasznalonev($felhasznalonev);
             }
-            if($jelszo!=="" && $jelszo===$ellenorzoJelszo){
+            if ($jelszo !== "" && $jelszo === $ellenorzoJelszo) {
                 $_SESSION["felhasznalo"]->setJelszo(password_hash($jelszo, PASSWORD_DEFAULT));
             }
-            if($email!=="" && $email!==$_SESSION["felhasznalo"]->getEmail()) {
+            if ($email !== "" && $email !== $_SESSION["felhasznalo"]->getEmail()) {
                 $_SESSION["felhasznalo"]->setEmail($email);
             }
-            if($szuletesiEv!=="" && $szuletesiEv!==$_SESSION["felhasznalo"]->getSzuletesiev()) {
+            if ($szuletesiEv !== "" && $szuletesiEv !== $_SESSION["felhasznalo"]->getSzuletesiev()) {
                 $_SESSION["felhasznalo"]->setSzuletesiev($szuletesiEv);
             }
             //TODO a fájlban is felülírni a felhasználó adait
@@ -111,7 +111,7 @@ if (!isset($_SESSION["felhasznalo"])) {
             echo "</div>";
         }
         ?>
-        <form action="beallitasok.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+        <form action="beallitasok.php" method="POST" autocomplete="off" >
             <legend>Személyes adatok:</legend>
             <label for="usname">Felhasználónév megváltoztatása:</label>
             <input type="text" name="uname" id="usname" maxlength="20" placeholder="kutyaimado12"
@@ -130,8 +130,7 @@ if (!isset($_SESSION["felhasznalo"])) {
             <label for="birth">Születési év megváltoztatása:</label>
             <input type="number" name="birthd" id="birth" min="1922" max="2013" placeholder="1977"
                    class="form-input" >
-            <label for="profilkep">Profilkép megváltoztatása:</label>
-            <input type="file" name="profilkep" id="profilkep" accept="image/*" class="form-input">
+
 
             <input type="submit" name="settings-btn" value="Megváltoztat" class="gomb form-input">
 

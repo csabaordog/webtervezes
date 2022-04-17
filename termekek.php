@@ -63,7 +63,7 @@ if (isset($_SESSION["felhasznalo"]) && isset($_GET["kosarba-tesz"])) {
                     <?php if(isset($_SESSION["felhasznalo"])) {?>
                         <form action="termekek.php" method="GET">
                             <input type="hidden" name="termek-nev" value="<?php echo $termek->getNev(); ?>">
-                            <input type="submit" name="kosarba-tesz" value="Kosárba">
+                            <input type="submit" class="vasarlas-gomb" name="kosarba-tesz" value="Kosárba">
                         </form>
                     <?php }?>
                 </div>

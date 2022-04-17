@@ -85,7 +85,7 @@ if (isset($_GET["rendeles-btn"])) {
                     <td>
                         <form action="kosar.php" method="GET" class="kosar-torol-form">
                             <input type="hidden" name="termek-nev" value="<?php echo $termek->getNev(); ?>">
-                            <input type="submit" name="kosar-torol-btn" value="Törlés">
+                            <input type="submit" name="kosar-torol-btn" class="kosarbolTorol" value="Törlés">
                         </form>
                     </td>
                 </tr>
